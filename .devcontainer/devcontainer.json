@@ -60,6 +60,5 @@
             }
         }
     },
-    "postCreateCommand": "python3 -m pip install -r requirements.txt",
-    "postStartCommand": "bash -c git remote set-url origin 'https://github.com/OnslowCollege/$(basename $(pwd))'"
+    "postStartCommand": "python3 -m pip install --upgrade -r ruff && bash -c git remote set-url origin 'https://github.com/OnslowCollege/$(basename $(pwd))'"
 }
