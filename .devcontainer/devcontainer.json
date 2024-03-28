@@ -17,7 +17,7 @@
                 "almenon.arepl",
                 "vsls-contrib.gitdoc",
                 "slightc.pip-manager",
-                "danielgjackson.auto-dark-mode-windows"
+                "seunlanlege.action-buttons"
             ],
             "settings": {
                 "AREPL.telemetry": false,
@@ -55,10 +55,38 @@
                 "pip-manager.source": "pypi",
                 "python.pythonPath": "/usr/local/bin/python",
                 "workbench.colorTheme": "Default Light Modern",
-                "workbench.preferredDarkColorTheme": "Default Dark Modern",
-                "workbench.preferredLightColorTheme": "Default Light Modern"
+                "actionButtons": {
+                    "commands": [
+                        {
+                            "cwd": "${workspaceFolder}",
+                            "name": "$(run-all) Run and debug",
+                            "useVsCodeApi": true,
+                            "command": "workbench.action.debug.start"
+                        },
+                        {
+                            "cwd": "{workspaceFolder}",
+                            "name": "$(pencil) Format file",
+                            "useVsCodeApi": true,
+                            "command": "editor.action.formatDocument"
+                        },
+                        {
+                            "name": "$(terminal-view-icon) New Terminal",
+                            "useVsCodeApi": true,
+                            "command": "workbench.action.terminal.newInActiveWorkspace"
+                        },
+                        {
+                            "name": "$(terminal-kill) Kill all Terminals",
+                            "useVsCodeApi": true,
+                            "command": "workbench.action.terminal.killAll"
+                        }
+                    ],
+                    "defaultColor": "none",
+                    "reloadButton": "↻",
+                    "loadNpmCommands": false
+                }
             }
         }
     },
-    "postStartCommand": "python3 -m pip install --upgrade -r ruff && bash -c git remote set-url origin 'https://github.com/OnslowCollege/$(basename $(pwd))'"
+    "postStartCommand": "bash -c git remote set-url origin 'https://github.com/OnslowCollege/$(basename $(pwd))'",
+    "postAttachCommand": "python3 -m pip install --upgrade -r ruff"
 }
