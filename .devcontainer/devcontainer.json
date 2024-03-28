@@ -17,7 +17,8 @@
                 "almenon.arepl",
                 "vsls-contrib.gitdoc",
                 "slightc.pip-manager",
-                "seunlanlege.action-buttons"
+                "seunlanlege.action-buttons",
+                "tomoki1207.pdf"
             ],
             "settings": {
                 "AREPL.telemetry": false,
