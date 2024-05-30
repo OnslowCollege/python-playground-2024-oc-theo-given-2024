@@ -17,8 +17,7 @@
                 "almenon.arepl",
                 "vsls-contrib.gitdoc",
                 "slightc.pip-manager",
-                "seunlanlege.action-buttons",
-                "tomoki1207.pdf"
+                "seunlanlege.action-buttons"
             ],
             "settings": {
                 "AREPL.telemetry": false,
@@ -55,12 +54,13 @@
                 "gitlens.showWelcomeOnInstall": false,
                 "pip-manager.source": "pypi",
                 "python.pythonPath": "/usr/local/bin/python",
+                "ruff.importStrategy": "useBundled",
                 "workbench.colorTheme": "Default Light Modern",
                 "actionButtons": {
                     "commands": [
                         {
                             "cwd": "${workspaceFolder}",
-                            "name": "$(run-all) Run and debug",
+                            "name": "$(run-all) Debug",
                             "useVsCodeApi": true,
                             "command": "workbench.action.debug.start"
                         },
