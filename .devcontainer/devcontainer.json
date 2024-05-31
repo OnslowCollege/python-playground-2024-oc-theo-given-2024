@@ -90,7 +90,5 @@
                 }
             }
         }
-    },
-    "postStartCommand": "bash -c git remote set-url origin 'https://github.com/OnslowCollege/$(basename $(pwd))'",
-    "postAttachCommand": "python3 -m pip install --upgrade -r ruff"
+    }
 }
