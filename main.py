@@ -8,6 +8,8 @@ Date: 24 June 2024
 wall1width = int(input("Enter width of wall 1 (m): "))
 wall2width = int(input("Enter width of wall 2 (m): "))
 wall1height = int(input("Enter height of walls (m): "))
+doorsnum = int(input("Enter number of doors: "))
+windowsnum = int(input("Enter number of windows: "))
 #Wall 1 Calculations for paint required and price
 wall1area = wall1width * wall1height
 wall1paint = wall1area/11 * 2
