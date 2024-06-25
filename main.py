@@ -10,6 +10,9 @@ wall2width = int(input("Enter width of wall 2 (m): "))
 wall1height = int(input("Enter height of walls (m): "))
 doorsnum = int(input("Enter number of doors: "))
 windowsnum = int(input("Enter number of windows: "))
+#Windows area calculations
+for i in range(windowsnum):
+    windowheight = float(input("Enter height of window " + str(i + 1) + ": "))
 #Wall 1 Calculations for paint required and price
 wall1area = wall1width * wall1height
 wall1paint = wall1area/11 * 2
