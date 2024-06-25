@@ -11,16 +11,18 @@ wall2width = int(input("Enter width of wall 2 (m): "))
 wall1height = int(input("Enter height of walls (m): "))
 doorsnum = int(input("Enter number of doors: "))
 windowsnum = int(input("Enter number of windows: "))
-#Windows area calculations
+#Windows area and paint calculations
 for i in range(windowsnum):
     windowheight = float(input("Enter height of window " + str(i + 1) + ": "))
     windowwidth = float(input("Enter width of window " + str(i + 1) + ": "))
     windowarea = windowheight * windowwidth
     totalwindowarea = totalwindowarea + windowarea
-totaltotalwindowarea/11 * 2
-#Door area calculations
+windowspaint = totalwindowarea/11 * 2
+windowsprice = windowspaint * 24.68
+#Doors area and paint calculations
 doorsarea = doorsnum * (2.4 * 0.4)
 doorspaint = doorsarea/11 * 2
+doorsprice = doorspaint * 24.68
 #Wall 1 Calculations for paint required and price
 wall1area = wall1width * wall1height
 wall1paint = wall1area/11 * 2
@@ -37,8 +39,8 @@ ceilingprice = ceilingpaint * 24.68
 wallspaint = (wall1paint + wall2paint) * 2
 wallsprice = wallspaint * 24.68
 #Calculations for paint required and price of whole room
-totalpaint = wallspaint + ceilingpaint
-totalprice= wallsprice + ceilingprice
+totalpaint = wallspaint + ceilingpaint - (doorspaint + windowspaint)
+totalprice= wallsprice + ceilingprice - (doorsprice + windowsprice)
 #Outputting results
 print ("Total paint required (L): " + str(totalpaint))
 print ("Total price: " + f"{wallsprice:.2f}")
