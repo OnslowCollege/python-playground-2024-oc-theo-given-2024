@@ -10,19 +10,19 @@ validanswer = False
 #Asking for dimensions and number of doors and windows
 while not validanswer:
     wall1width = input("Enter width of wall 1 (m): ")
-    if wall1width <= 0:
+    if int(wall1width) <= 0:
         print ("Invalid width.")
     else:
         validanswer = True
 validanswer = False
 while not validanswer:
-    wall2width = input("Enter width of wall 2 (m): ")
+    wall2width = float(input("Enter width of wall 2 (m): "))
     if wall2width == type(float) or type(int):
-        float(wall2width)
+        wall2width = int(wall2width)
+        if float(wall2width) > 0:
+            validanswer = True
     else:
         print ("Invalid width.")
-    elif :
-        validanswer = True
 validanswer = False
 while not validanswer:
     wall1height = int(input("Enter height of walls (m): "))
