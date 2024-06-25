@@ -18,7 +18,8 @@ for i in range(windowsnum):
     windowarea = windowheight * windowwidth
     totalwindowarea = totalwindowarea + windowarea
 #Door area calculations
-totaldoorarea = doorsnum * (2.4 * 0.4)
+doorsarea = doorsnum * (2.4 * 0.4)
+doorspaint = doorsarea/11 * 2
 #Wall 1 Calculations for paint required and price
 wall1area = wall1width * wall1height
 wall1paint = wall1area/11 * 2
@@ -32,7 +33,7 @@ ceilingarea = wall1width * wall2width
 ceilingpaint = ceilingarea/11 * 2
 ceilingprice = ceilingpaint * 24.68
 #Calculations for paint required and price of all walls
-wallspaint = (wall1paint + wall2paint - (totalwindowarea + totaldoorarea)) * 2
+wallspaint = (wall1paint + wall2paint) * 2
 wallsprice = wallspaint * 24.68
 #Calculations for paint required and price of whole room
 totalpaint = wallspaint + ceilingpaint
