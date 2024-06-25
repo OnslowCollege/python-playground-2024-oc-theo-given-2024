@@ -36,7 +36,7 @@ wallspaint = wall1paint + wall2paint * 2
 wallsprice = wallspaint * 24.68
 #Calculations for paint required and price of whole room
 totalpaint = wallspaint + ceilingpaint - (totaldoorarea + totalwindowarea * 2)
-totalprice= wallsprice + ceilingprice
+totalprice= wallsprice + ceilingprice - (totaldoorarea + totalwindowarea * 2)
 #Outputting results
 print ("Total paint required (L): " + str(totalpaint))
 print ("Total price: " + f"{wallsprice:.2f}")
