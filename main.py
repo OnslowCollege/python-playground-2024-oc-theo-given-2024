@@ -4,8 +4,9 @@ Main.
 Created by: Theo
 Date: 24 June 2024
 """
+#Setting variables
 totalwindowarea = 0.0
-#Asking for dimensions and number of... thingies
+#Asking for dimensions and number of doors and windows
 wall1width = int(input("Enter width of wall 1 (m): "))
 wall2width = int(input("Enter width of wall 2 (m): "))
 wall1height = int(input("Enter height of walls (m): "))
