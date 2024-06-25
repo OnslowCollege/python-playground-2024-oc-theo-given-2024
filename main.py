@@ -18,19 +18,15 @@ for i in range(windowsnum):
     windowwidth = float(input("Enter width of window " + str(i + 1) + ": "))
     windowarea = windowheight * windowwidth
     totalwindowarea = totalwindowarea + windowarea
-#Doors area calculation
+#Area Calculations
 doorsarea = doorsnum * (2.4 * 0.4)
-#Wall 1 Calculation for area
 wall1area = wall1width * wall1height
-#Wall 2 Calculation for area
 wall2area = wall2width * wall1height
-#Ceiling Calculation for area
 ceilingarea = wall1width * wall2width
-#Calculation for area of all walls
 wallsarea = (wall1area + wall2area) * 2
 #Calculations for paint required and price of whole room
 totalpaint = (wallsarea + ceilingarea - (doorsarea + totalwindowarea))/11
 totalprice= totalpaint * 24.68
 #Outputting results
 print ("Total paint required (L): " + str(totalpaint))
-print ("Total price: " + f"{totalprice:.2f}")
+print ("Total price: " + f"${totalprice:.2f}")
