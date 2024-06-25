@@ -17,7 +17,7 @@ while not validanswer:
 validanswer = False
 while not validanswer:
     wall2width = input("Enter width of wall 2 (m): ")
-    if wall2width != type(float):
+    if wall2width != type(float) or type(int):
         print("Invalid width")
     elif wall2width <= 0:
         print ("Invalid width.")
