@@ -6,8 +6,11 @@ Date: 24 June 2024
 """
 #Setting variables
 totalwindowarea = 0.0
+validanswer = False
 #Asking for dimensions and number of doors and windows
-wall1width = int(input("Enter width of wall 1 (m): "))
+while not validanswer:
+    wall1width = int(input("Enter width of wall 1 (m): "))
+    if 
 wall2width = int(input("Enter width of wall 2 (m): "))
 wall1height = int(input("Enter height of walls (m): "))
 doorsnum = int(input("Enter number of doors: "))
