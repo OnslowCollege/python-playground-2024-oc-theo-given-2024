@@ -17,6 +17,7 @@ for i in range(windowsnum):
     windowwidth = float(input("Enter width of window " + str(i + 1) + ": "))
     windowarea = windowheight * windowwidth
     totalwindowarea = totalwindowarea + windowarea
+totaltotalwindowarea/11 * 2
 #Door area calculations
 doorsarea = doorsnum * (2.4 * 0.4)
 doorspaint = doorsarea/11 * 2
