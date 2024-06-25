@@ -24,7 +24,7 @@ wall1area = wall1width * wall1height
 wall1paint = wall1area/11 * 2
 wall1price = wall1paint * 24.68
 #Wall 2 Calculations for paint required and price
-wall2area = wall1height * wall2width
+wall2area = wall2width * wall1height
 wall2paint = wall2area/11 * 2
 wall2price = wall2paint * 24.68
 #Ceiling Calculations for paint required and price
