@@ -6,29 +6,25 @@ Date: 24 June 2024
 """
 #Setting variables
 totalwindowarea = 0.0
-validanswer = False
+wall1width = ":)"
+wall2width = ":)"
+wallsheight = ":)"
 #Asking for dimensions and number of doors and windows
-while not validanswer:
-    wall1width = input("Enter width of wall 1 (m): ")
-    if int(wall1width) <= 0:
-        print ("Invalid width.")
-    else:
-        validanswer = True
-validanswer = False
-while not validanswer:
-    wall2width = float(input("Enter width of wall 2 (m): "))
-    if float(wall2width) > 0:
-        validanswer = True
-    else:
-        print ("Invalid width.")
-validanswer = False
-while not validanswer:
-    wall1height = int(input("Enter height of walls (m): "))
-    if wall1height <= 0:
-        print ("Invalid height.")
-    else:
-        validanswer = True
-validanswer = False
+while wall1width != type(float):
+    try:
+        wall1width = float(input("Enter width of wall 1 (m): "))
+    except ValueError:
+        print("Invalid value")
+while wall2width != type(float):
+    try:
+        wall2width = float(input("Enter width of wall 1 (m): "))
+    except ValueError:
+        print("Invalid value")
+while wallsheight != type(float):
+    try:
+        wallsheight = float(input("Enter width of wall 1 (m): "))
+    except ValueError:
+        print("Invalid value")
 doorsnum = int(input("Enter number of doors: "))
 windowsnum = int(input("Enter number of windows: "))
 #Windows area and paint calculations
