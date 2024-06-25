@@ -6,22 +6,29 @@ Date: 24 June 2024
 """
 #Setting variables
 totalwindowarea = 0.0
-wall1width = ":)"
-#Asking for dimensions and number of doors and windows
-while wall1width != type(float):
+wall1width = -1.0
+wall2width = -1.0
+wallsheight = -1.0
+#Asking for width of Wall 1
+print("All values must be a number greater than zero.")
+while wall1width <=0 :
     try:
         wall1width = float(input("Enter width of wall 1 (m): "))
     except ValueError:
-        print("Invalid")
-validanswer = False
-while not validanswer:
-    wall2width = float(input("Enter width of wall 2 (m): "))
-    if float(wall2width) > 0:
-        print("")
-while not validanswer:
-    wall1height = int(input("Enter height of walls (m): "))
-    if wall1height <= 0:
-        print ("Invalid height.")
+        print("Invalid Value")
+#Asking for width of Wall 2
+while wall2width <=0 :
+    try:
+        wall2width = float(input("Enter width of wall 2 (m): "))
+    except ValueError:
+        print("Invalid Value")
+#Asking for height of all Walls
+while wallsheight <=0 :
+    try:
+        wallsheight = float(input("Enter height of walls (m): "))
+    except ValueError:
+        print("Invalid Value")
+#Asking for number of doors and windows
 doorsnum = int(input("Enter number of doors: "))
 windowsnum = int(input("Enter number of windows: "))
 #Windows area and paint calculations
@@ -32,8 +39,8 @@ for i in range(windowsnum):
     totalwindowarea = totalwindowarea + windowarea
 #Area Calculations
 doorsarea = doorsnum * (2.4 * 0.4)
-wall1area = wall1width * wall1height
-wall2area = wall2width * wall1height
+wall1area = wall1width * wallsheight
+wall2area = wall2width * wallsheight
 ceilingarea = wall1width * wall2width
 wallsarea = (wall1area + wall2area) * 2
 #Calculations for paint required and price of whole room
