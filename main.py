@@ -9,25 +9,25 @@ totalwindowarea = 0.0
 validanswer = False
 #Asking for dimensions and number of doors and windows
 while not validanswer:
-    wall1width = int(input("Enter width of wall 1 (m): "))
-    if wall1width > 0:
-        validanswer = True
-    else:
+    wall1width = input("Enter width of wall 1 (m): ")
+    if wall1width <= 0:
         print ("Invalid width.")
+    else:
+        validanswer = True
 validanswer = False
 while not validanswer:
-    wall2width = int(input("Enter width of wall 2 (m): "))
-    if wall2width > 0:
-        validanswer = True
+    wall2width = input("Enter width of wall 2 (m): ")
+    if wall2width <= 0:
+        print ("Invalid height.")
     else:
-        print ("Invalid width.")
+        validanswer = True
 validanswer = False
 while not validanswer:
     wall1height = int(input("Enter height of walls (m): "))
-    if wall1height > 0:
-        validanswer = True
-    else:
+    if wall1height <= 0:
         print ("Invalid height.")
+    else:
+        validanswer = True
 validanswer = False
 doorsnum = int(input("Enter number of doors: "))
 windowsnum = int(input("Enter number of windows: "))
