@@ -5,7 +5,7 @@ Created by: Theo
 Date: 24 June 2024
 """
 totalwindowarea = 0.0
-#Asking for dimensions
+#Asking for dimensions and number of... thingies
 wall1width = int(input("Enter width of wall 1 (m): "))
 wall2width = int(input("Enter width of wall 2 (m): "))
 wall1height = int(input("Enter height of walls (m): "))
