@@ -4,6 +4,7 @@ Main.
 Created by: Theo
 Date: 24 June 2024
 """
+totalwindowarea = 0.0
 #Asking for dimensions
 wall1width = int(input("Enter width of wall 1 (m): "))
 wall2width = int(input("Enter width of wall 2 (m): "))
@@ -13,6 +14,9 @@ windowsnum = int(input("Enter number of windows: "))
 #Windows area calculations
 for i in range(windowsnum):
     windowheight = float(input("Enter height of window " + str(i + 1) + ": "))
+    windowwidth = float(input("Enter width of window " + str(i + 1) + ": "))
+    windowarea = windowheight * windowwidth
+    totalwindowarea = totalwindowarea + windowarea
 #Wall 1 Calculations for paint required and price
 wall1area = wall1width * wall1height
 wall1paint = wall1area/11 * 2
