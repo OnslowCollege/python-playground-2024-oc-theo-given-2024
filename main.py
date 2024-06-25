@@ -17,7 +17,7 @@ validanswer = False
 while not validanswer:
     wall2width = float(input("Enter width of wall 2 (m): "))
     if float(wall2width) > 0:
-        print
+        print("")
 while not validanswer:
     wall1height = int(input("Enter height of walls (m): "))
     if wall1height <= 0:
