@@ -18,7 +18,7 @@ for i in range(windowsnum):
     windowarea = windowheight * windowwidth
     totalwindowarea = totalwindowarea + windowarea
 #Door area calculations
-totaldoorarea = 
+totaldoorarea = doorsnum * (2.4 * 0.4)
 #Wall 1 Calculations for paint required and price
 wall1area = wall1width * wall1height
 wall1paint = wall1area/11 * 2
