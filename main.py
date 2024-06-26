@@ -50,7 +50,7 @@ for i in range(windowsnum):
             windowheight=float(input("Enter window height "+str(i + 1)+": "))
         except ValueError:
             print("Invalid Value")
-    while windowwidth <=0 and windowheight <= wall1width and windowwidth <= wall2width :  # noqa: E501
+    while windowwidth<=0 and windowwidth<=wall1width or windowwidth<=wall2width:
         try:
             windowwidth=float(input("Enter window width "+str(i + 1)+": "))
         except ValueError:
