@@ -16,7 +16,7 @@ while wall1width <=0 :
         wall1width = float(input("Enter width of wall 1 (m): "))
     except ValueError:
         print ("Invalid Value")
-    if wall1width == type(float) and wall1width <= 0:
+    if wall1width <= 0:
         print("Invalid Number")
 #Asking for width of Wall 2
 while wall2width <=0 :
