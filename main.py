@@ -44,15 +44,13 @@ while winnum <=0 :
     except ValueError:
         print("Invalid Value")
 #Windows area and paint calculations
-winheight = wallsheight
-winwidth = wall1width + wall2width
 for i in range(winnum):
-    while winheight <=0 and winheight >= wallsheight :
+    while winheight <=0:
         try:
             winheight=float(input("Enter window height "+str(i + 1)+": "))
         except ValueError:
             print("Invalid Value")
-    while winwidth<=0 and winwidth>=wall1width or winwidth>=wall2width:
+    while winwidth<=0:
         try:
             winwidth=float(input("Enter window width "+str(i + 1)+": "))
         except ValueError:
