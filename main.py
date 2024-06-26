@@ -9,6 +9,8 @@ totalwindowarea = 0.0
 wall1width = -1.0
 wall2width = -1.0
 wallsheight = -1.0
+windowwidth = -1.0
+windowheight = -1.0
 #Asking for width of Wall 1
 print("All values must be a number greater than zero.")
 while wall1width <=0 :
@@ -33,10 +35,20 @@ doorsnum = int(input("Enter number of doors: "))
 windowsnum = int(input("Enter number of windows: "))
 #Windows area and paint calculations
 for i in range(windowsnum):
-    windowheight = float(input("Enter height of window " + str(i + 1) + ": "))
-    windowwidth = float(input("Enter width of window " + str(i + 1) + ": "))
+    while windowheight <=0 :
+        try:
+            windowheight=float(input("Enter window height "+str(i + 1)+": "))
+        except ValueError:
+            print("Invalid Value")
+    while windowwidth <=0 :
+        try:
+            windowwidth=float(input("Enter window width "+str(i + 1)+": "))
+        except ValueError:
+            print("Invalid Value")
     windowarea = windowheight * windowwidth
     totalwindowarea = totalwindowarea + windowarea
+    windowwidth = -1.0
+    windowheight = -1.0
 #Area Calculations
 doorsarea = doorsnum * (2.4 * 0.4)
 wall1area = wall1width * wallsheight
