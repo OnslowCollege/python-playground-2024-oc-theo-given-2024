@@ -5,14 +5,14 @@ Created by: Theo
 Date: 24 June 2024
 """
 #Setting variables
-totalwindowarea = 0.0
+totalwinarea = 0.0
 wall1width = -1.0
 wall2width = -1.0
 wallsheight = -1.0
-windowwidth = -1.0
-windowheight = -1.0
+winwidth = -1.0
+winheight = -1.0
 doorsnum = -1
-windowsnum = -1
+winnum = -1
 #Asking for width of Wall 1
 print("All values must be a number greater than zero.")
 while wall1width <=0 :
@@ -38,27 +38,27 @@ while doorsnum <=0 and wallsheight >= 2.4:
         doorsnum = int(input("Enter number of doors: "))
     except ValueError:
         print("Invalid Value")
-while windowsnum <=0 :
+while winnum <=0 :
     try:
-        windowsnum = int(input("Enter number of windows: "))
+        winnum = int(input("Enter number of windows: "))
     except ValueError:
         print("Invalid Value")
 #Windows area and paint calculations
-for i in range(windowsnum):
-    while windowheight <=0 and windowheight <= wallsheight :
+for i in range(winnum):
+    while winheight <=0 and winheight <= wallsheight :
         try:
-            windowheight=float(input("Enter window height "+str(i + 1)+": "))
+            winheight=float(input("Enter window height "+str(i + 1)+": "))
         except ValueError:
             print("Invalid Value")
-    while windowwidth<=0 and windowwidth>=wall1width or windowwidth>=wall2width:
+    while winwidth<=0 and winwidth>=wall1width or winwidth>=wall2width:
         try:
-            windowwidth=float(input("Enter window width "+str(i + 1)+": "))
+            winwidth=float(input("Enter window width "+str(i + 1)+": "))
         except ValueError:
             print("Invalid Value")
-    windowarea = windowheight * windowwidth
-    totalwindowarea = totalwindowarea + windowarea
-    windowwidth = -1.0
-    windowheight = -1.0
+    winarea = winheight * winwidth
+    totalwinarea = totalwinarea + winarea
+    winwidth = -1.0
+    winheight = -1.0
 #Area Calculations
 doorsarea = doorsnum * (2.4 * 0.4)
 wall1area = wall1width * wallsheight
@@ -66,7 +66,7 @@ wall2area = wall2width * wallsheight
 ceilingarea = wall1width * wall2width
 wallsarea = (wall1area + wall2area) * 2
 #Calculations for paint required and price of whole room
-totalpaint = (wallsarea + ceilingarea - (doorsarea + totalwindowarea))/11
+totalpaint = (wallsarea + ceilingarea - (doorsarea + totalwinarea))/11
 totalprice= totalpaint * 24.68
 #Outputting results
 print ("Total paint required (L): " + str(totalpaint))
