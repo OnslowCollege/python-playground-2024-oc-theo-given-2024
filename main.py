@@ -44,7 +44,7 @@ while winnum <=0 :
     except ValueError:
         print("Invalid Value")
 #Windows area and paint calculations
-winheight = wallsheight + 1
+winheight = wallsheight
 winwidth = wall1width + wall2width
 for i in range(winnum):
     while winheight <=0 and winheight >= wallsheight :
