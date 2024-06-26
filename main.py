@@ -33,7 +33,7 @@ while wallsheight <=0 :
     except ValueError:
         print("Invalid Value")
 #Asking for number of doors and windows
-while doorsnum <=0 :
+while doorsnum <=0 and wallsheight >= 2.4:
     try:
         doorsnum = int(input("Enter number of doors: "))
     except ValueError:
