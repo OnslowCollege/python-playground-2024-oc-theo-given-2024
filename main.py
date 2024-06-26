@@ -11,6 +11,8 @@ wall2width = -1.0
 wallsheight = -1.0
 windowwidth = -1.0
 windowheight = -1.0
+doorsnum = -1
+windowsnum = -1
 #Asking for width of Wall 1
 print("All values must be a number greater than zero.")
 while wall1width <=0 :
@@ -31,8 +33,16 @@ while wallsheight <=0 :
     except ValueError:
         print("Invalid Value")
 #Asking for number of doors and windows
-doorsnum = int(input("Enter number of doors: "))
-windowsnum = int(input("Enter number of windows: "))
+while doorsnum <=0 :
+    try:
+        doorsnum = int(input("Enter number of doors: "))
+    except ValueError:
+        print("Invalid Value")
+while windowsnum <=0 :
+    try:
+        windowsnum = int(input("Enter number of windows: "))
+    except ValueError:
+        print("Invalid Value")
 #Windows area and paint calculations
 for i in range(windowsnum):
     while windowheight <=0 :
