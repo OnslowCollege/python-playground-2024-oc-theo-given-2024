@@ -45,12 +45,12 @@ while windowsnum <=0 :
         print("Invalid Value")
 #Windows area and paint calculations
 for i in range(windowsnum):
-    while windowheight <=0 :
+    while windowheight <=0 and windowheight <= wallsheight :
         try:
             windowheight=float(input("Enter window height "+str(i + 1)+": "))
         except ValueError:
             print("Invalid Value")
-    while windowwidth <=0 :
+    while windowwidth <=0 and windowheight <= wall1width and windowwidth <= wall2width :  # noqa: E501
         try:
             windowwidth=float(input("Enter window width "+str(i + 1)+": "))
         except ValueError:
