@@ -51,14 +51,14 @@ for i in range(win_num):
             win_height=float(input("Enter window height "+str(i + 1)+": "))
         except ValueError:
             print("Invalid Value")
-    while win_\width<=0 or win_\width > (wall_1_width and wall_2_width):
+    while win_width<=0 or win_width > (wall_1_width and wall_2_width):
         try:
-            win_\width=float(input("Enter window width "+str(i + 1)+": "))
+            win_width=float(input("Enter window width "+str(i + 1)+": "))
         except ValueError:
             print("Invalid Value")
-    winarea = win_height * win_\width
+    winarea = win_height * win_width
     total_win_area = total_win_area + winarea
-    win_\width = -1.0
+    win_width = -1.0
     win_height = -1.0
 # Area Calculations.
 doorsarea = doors_num * (2.4 * 0.4)
