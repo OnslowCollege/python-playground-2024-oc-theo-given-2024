@@ -4,71 +4,63 @@ Main.
 Created by: Theo
 Date: 24 June 2024
 """
-# Setting variables.
-total_win_area = 0.0
-wall_1_width = -1.0
-wall_2_width = -1.0
-walls_height = -1.0
-win_width = -1.0
-win_height = -1.0
-doors_num = -1
-win_num = -1
-# Asking for width of Wall 1.
-print("All values must be a number greater than zero.")
-while wall_1_width <=0 :
-    try:
-        wall_1_width = float(input("Enter width of wall 1 (m): "))
-    except ValueError:
-        print ("Invalid Value")
-# Asking for width of Wall 2.
-while wall_2_width <=0 :
-    try:
-        wall_2_width = float(input("Enter width of wall 2 (m): "))
-    except ValueError:
-        print("Invalid Value")
-# Asking for height of all Walls.
-while walls_height <=0 :
-    try:
-        walls_height = float(input("Enter height of walls (m): "))
-    except ValueError:
-        print("Invalid Value")
-# Asking for number of doors and windows.
-while doors_num <=0 and walls_height >= 2.4:
-    try:
-        doors_num = int(input("Enter number of doors: "))
-    except ValueError:
-        print("Invalid Value")
-while win_num <=0 :
-    try:
-        win_num = int(input("Enter number of windows: "))
-    except ValueError:
-        print("Invalid Value")
-# Windows area and paint calculations.
-win_height = walls_height + 1
-for i in range(win_num):
-    while win_height <= 0 or win_height > walls_height:
-        try:
-            win_height=float(input("Enter window height "+str(i + 1)+": "))
-        except ValueError:
-            print("Invalid Value")
-    while win_width<=0 or win_width > (wall_1_width and wall_2_width):
-        try:
-            win_width=float(input("Enter window width "+str(i + 1)+": "))
-        except ValueError:
-            print("Invalid Value")
-    winarea = win_height * win_width
-    total_win_area = total_win_area + winarea
-    win_width = -1.0
-    win_height = -1.0
-# Area Calculations.
-doorsarea = doors_num * (2.4 * 0.4)
-wall1area = wall_1_width * walls_height
-wall2area = wall_2_width * walls_height
-ceilingarea = wall_1_width * wall_2_width
-wallsarea = (wall1area + wall2area) * 2
-# Calculations for paint required and price of whole room.
-totalpaint = (wallsarea + ceilingarea - (doorsarea + total_win_area)) / 11
-totalprice= totalpaint * 24.68
-# Outputting results.
-print ("Total paint required (L): " + str(totalpaint))
-print ("Total price: " + f"${totalprice:.2f}")
+def get_image_bits(width: int, height: int, depth: int = 32):
+    """
+    Calculate the required storage size of an uncompressed image.
+
+    Arguments:
+    ---------
+    - depth: The bit depth of the image, or the number of bits per pixel.
+    - width: The width of the image in pixels.
+    - height: The height of the image in pixels.
+
+    """
+    pixels = width * height
+    bit_count = pixels * depth
+    print(bit_count)
+
+
+get_image_bits(100, 200)
+
+
+def get_string_bytes(string: str):
+    """
+    Calculate the required storage size of a string.
+
+    Parameters
+    ----------
+    - string: The string whos size is being calculated
+
+    """
+    print(len(string) + 1)
+
+
+get_string_bytes("Hello!")
+
+
+def print_square(side_length: int):
+    underscore_count = side_length * 2
+    underscores = "_" * underscore_count
+    spaces = " " * underscore_count
+    print(f".{underscores}.")
+    for i in range(side_length):
+        print(f"|{spaces}|")
+    print(f".{underscores}.")
+
+
+def print_triangle():
+    print("")
+
+
+def print_rectangle(horis_side: int, verti_side: int):
+    underscore_count = horis_side * 2
+    underscores = "_" * underscore_count
+    spaces = " " * underscore_count
+    print(f".{underscores}.")
+    for i in range(verti_side):
+        print(f"|{spaces}|")
+    print(f".{underscores}.")
+
+
+print_square(5)
+print_rectangle(9,2)
