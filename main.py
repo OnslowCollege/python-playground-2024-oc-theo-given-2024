@@ -48,7 +48,7 @@ def print_square(side_length: int):
     print(f".{underscores}.")
 
 
-def print_triangle():
+def print_triangle(upside: bool):
     print("")
 
 
