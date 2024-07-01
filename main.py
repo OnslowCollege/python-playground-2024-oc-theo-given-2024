@@ -48,8 +48,16 @@ def print_square(side_length: int):
     print(f".{underscores}.")
 
 
-def print_triangle(upside: bool):
-    print("")
+def print_triangle(down: bool):
+    if down:
+        print("")
+        print("")
+        print("")
+    else:
+        print("")
+        print("")
+        print("")
+
 
 
 def print_rectangle(horis_side: int, verti_side: int):
