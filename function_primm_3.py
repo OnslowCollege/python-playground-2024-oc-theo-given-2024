@@ -1,4 +1,4 @@
-def alternate_case(text) -> str | None:
+def alternate_case(text: str) -> str | None:
     build_string: str = ""
     if isinstance(text, str):
         for i in range(0, len(text)):
@@ -13,5 +13,5 @@ def alternate_case(text) -> str | None:
         return None
 
 
-wibbly_wobbly = alternate_case("wait what whyyy")
+wibbly_wobbly = alternate_case("hello there")
 print(wibbly_wobbly)
