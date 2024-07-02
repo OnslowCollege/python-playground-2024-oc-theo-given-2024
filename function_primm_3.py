@@ -1,4 +1,12 @@
 def alternate_case(text: str) -> str | None:
+    """
+    Make a strings characters alternate between being uppercase and lowercase.
+
+    Arguments:
+    ---------
+        text: The text that is going wibbly wobbly
+
+    """
     build_string: str = ""
     if isinstance(text, str):
         for i in range(0, len(text)):
