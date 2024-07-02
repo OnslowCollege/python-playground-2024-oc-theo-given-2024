@@ -1,4 +1,4 @@
-def alternate_case(text: str):
+def alternate_case(text: str) -> str | None:
         build_string: str = ""
         for i in range(0, len(text)):
             new_char: str = ""
