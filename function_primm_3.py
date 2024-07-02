@@ -1,3 +1,4 @@
+"""WIBBLY WOBBLY."""
 def alternate_case(text: str) -> str | None:
     """
     Make a strings characters alternate between being uppercase and lowercase.
@@ -5,6 +6,8 @@ def alternate_case(text: str) -> str | None:
     Arguments:
     ---------
         text: The text that is going wibbly wobbly
+
+    Returns: The resulting wobbly text or "None" if that is not possible.
 
     """
     build_string: str = ""
@@ -17,9 +20,8 @@ def alternate_case(text: str) -> str | None:
                 new_char += text[i].lower()
             build_string = build_string + new_char
         return build_string
-    else:
-        return None
+    return None
 
 
-wibbly_wobbly = alternate_case("hello there")
+wibbly_wobbly = alternate_case("13435635463546")
 print(wibbly_wobbly)
