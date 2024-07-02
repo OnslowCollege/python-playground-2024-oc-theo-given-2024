@@ -1,6 +1,6 @@
 def alternate_case(text) -> str | None:
     build_string: str = ""
-    if text == isinstance(text, str):
+    if isinstance(text, str):
         for i in range(0, len(text)):
             new_char: str = ""
             if i % 2 == 0:
