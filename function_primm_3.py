@@ -31,8 +31,8 @@ def calculate_discounted_cost(op: float, dp: float, noi: int) -> float | None:
 
     Arguments:
     ---------
-        op: The text that is going wibbly wobbly
-        dp: 1
+        op: The original price of the items
+        dp: The discount percentage of the items
         noi: 2
 
     Returns: The resulting discounted price or "None" if that is not possible.
@@ -40,7 +40,7 @@ def calculate_discounted_cost(op: float, dp: float, noi: int) -> float | None:
     """
     if op < 0 or 1 < dp < 0 or noi <= 0:
         return (None)
-    return (op * dp * noi)
+    return (op * (1-dp) * noi)
 
-result_cost = (calculate_discounted_cost(5, 0.8, 10))
+result_cost = (calculate_discounted_cost(5, 0.25, 10))
 print (result_cost)
