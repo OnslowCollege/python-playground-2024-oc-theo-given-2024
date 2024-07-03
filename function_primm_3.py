@@ -102,6 +102,6 @@ def get_rectangle(horis_side: int, verti_side: int):
     return(rectangle + f"\n.{underscores}.")
 
 
-print(get_square(6))
-print(get_triangle(False))
+square = (get_square(6))
+triangle = (get_triangle(False))
 print(get_rectangle(9,7))
