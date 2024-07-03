@@ -65,9 +65,9 @@ def get_square(side_length: int) -> str:
         square = square + (f"\n|{spaces}|")
     return square + (f"\n.{underscores}.")
 
-def print_triangle(down: bool):
+def get_triangle(down: bool):
     """
-    Print a triangle, Parameter decides if this is facing downwards or not.
+    Return a triangle, Parameter decides if this is facing downwards or not.
 
     Arguments:
     ---------
@@ -75,12 +75,36 @@ def print_triangle(down: bool):
 
     """
     if down:
-        print(".____.")
-        print(r" \  / ")
-        print(r"  \/  ")
-    else:
-        print(r"  /\  ")
-        print(r" /  \ ")
-        print(".____.")
+        triangle = (".____.")
+        triangle = triangle + ("\n \\  / ")
+        return(triangle + ("\n  \\/  "))
+    triangle = (r"  /\  ")
+    triangle = triangle + ("\n /  \\ ")
+    return(triangle + ("\n.____."))
+
+def get_rectangle(horis_side: int, verti_side: int):
+    """
+    Return a rectangle where lengths of both sides are specified.
+
+    Arguments:
+    ---------
+        horis_side: length of the horizontal side of the rectangle
+        verti_side: length of the vertical side of the rectangle
+
+    """
+    underscore_count = horis_side * 2
+    underscores = "_" * underscore_count
+    spaces = " " * underscore_count
+    
+    rectangle = (f".{underscores}.")
+    for _i in range(verti_side):
+        rectangle = rectangle +(f"\n|{spaces}|")
+    return
+    
+    print(f".{underscores}.")
+    for _i in range(verti_side):
+        print(f"|{spaces}|")
+    print(f".{underscores}.")
 
 print(get_square(6))
+print(get_triangle(False))
