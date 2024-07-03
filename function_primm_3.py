@@ -25,5 +25,8 @@ def alternate_case(text: str) -> str | None:
 wibbly_wobbly = alternate_case("13435635463546")
 print(wibbly_wobbly)
 
-def calculate_discounted_cost(op: float, dp: float, noi: int):
-    print("")
+def calculate_discounted_cost(op: float, dp: float, noi: int) -> float | None:
+    if op < 0 or 1 < dp < 0 or noi <= 0:
+        return (None)
+    else:
+        return (80085)
