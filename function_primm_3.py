@@ -27,13 +27,13 @@ print(wibbly_wobbly)
 
 def calculate_discounted_cost(op: float, dp: float, noi: int) -> float | None:
     """
-    Calculate the price of items using the op, dp and noi. (F u line limit).
+    Calculate the price of items using the op, dp and noi.
 
     Arguments:
     ---------
         op: The original price of the items
         dp: The discount percentage of the items
-        noi: 2
+        noi: The number of items
 
     Returns: The resulting discounted price or "None" if that is not possible.
 
@@ -45,5 +45,3 @@ def calculate_discounted_cost(op: float, dp: float, noi: int) -> float | None:
 result_cost = (calculate_discounted_cost(5, 0.25, 10))
 print (result_cost)
 
-def get_square():
-    print()
