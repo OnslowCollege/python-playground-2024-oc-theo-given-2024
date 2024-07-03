@@ -35,6 +35,9 @@ def calculate_discounted_cost(op: float, dp: float, noi: int) -> float | None:
         dp: length of the vertical side of the rectangle
         noi: blah blah blah
 
+    Returns:
+    -------
+        The resulting cost in a float format
 
     """
     if op < 0 or 1 < dp < 0 or noi <= 0:
@@ -44,9 +47,9 @@ def calculate_discounted_cost(op: float, dp: float, noi: int) -> float | None:
 result_cost = (calculate_discounted_cost(5, 0.25, 10))
 print (result_cost)
 
-def print_square(side_length: int):
+def get_square(side_length: int) -> str:
     """
-    Print a square of specified side length.
+    Return a square of specified side length.
 
     Arguments:
     ---------
@@ -56,7 +59,28 @@ def print_square(side_length: int):
     underscore_count = side_length * 2
     underscores = "_" * underscore_count
     spaces = " " * underscore_count
-    print(f".{underscores}.")
+    
+    square: str = (f".{underscores}.")
     for _i in range(side_length):
-        print(f"|{spaces}|")
-    print(f".{underscores}.")
+        square = square + (f"\n|{spaces}|")
+    return square + (f"\n.{underscores}.")
+
+def print_triangle(down: bool):
+    """
+    Print a triangle, Parameter decides if this is facing downwards or not.
+
+    Arguments:
+    ---------
+        down: If this is true, the triangle is facing downwards
+
+    """
+    if down:
+        print(".____.")
+        print(r" \  / ")
+        print(r"  \/  ")
+    else:
+        print(r"  /\  ")
+        print(r" /  \ ")
+        print(".____.")
+
+print(get_square(6))
