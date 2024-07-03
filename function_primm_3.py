@@ -40,8 +40,7 @@ def calculate_discounted_cost(op: float, dp: float, noi: int) -> float | None:
     """
     if op < 0 or 1 < dp < 0 or noi <= 0:
         return (None)
-    result_cost = str(((op * dp) * noi))
-    return (result_cost)
-    
+    return (op * dp * noi)
 
-print (calculate_discounted_cost(5, 0.8, 10))
+result_cost = (calculate_discounted_cost(5, 0.8, 10))
+print (result_cost)
