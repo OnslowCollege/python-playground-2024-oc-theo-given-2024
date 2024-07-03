@@ -55,6 +55,10 @@ def get_square(side_length: int) -> str:
     ---------
         side_length: The length of all sides of the square
 
+    Returns:
+    -------
+        The entire square in a string format
+
     """
     underscore_count = side_length * 3
     underscores = "_" * underscore_count
@@ -73,6 +77,10 @@ def get_triangle(down: bool):
     ---------
         down: If this is true, the triangle is facing downwards
 
+    Returns:
+    -------
+        The entire triangle in a string format
+
     """
     if down:
         triangle = (".____.")
@@ -90,6 +98,10 @@ def get_rectangle(horis_side: int, verti_side: int):
     ---------
         horis_side: length of the horizontal side of the rectangle
         verti_side: length of the vertical side of the rectangle
+
+    Returns:
+    -------
+        The entire rectangle in a string format
 
     """
     underscore_count = horis_side * 3
