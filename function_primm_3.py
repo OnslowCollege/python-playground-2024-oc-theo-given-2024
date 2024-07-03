@@ -35,7 +35,6 @@ def calculate_discounted_cost(op: float, dp: float, noi: int) -> float | None:
         dp: length of the vertical side of the rectangle
         noi: blah blah blah
 
-    Returns: The resulting discounted price or "None" if that is not possible.
 
     """
     if op < 0 or 1 < dp < 0 or noi <= 0:
@@ -45,5 +44,19 @@ def calculate_discounted_cost(op: float, dp: float, noi: int) -> float | None:
 result_cost = (calculate_discounted_cost(5, 0.25, 10))
 print (result_cost)
 
+def print_square(side_length: int):
+    """
+    Print a square of specified side length.
 
+    Arguments:
+    ---------
+        side_length: The length of all sides of the square
 
+    """
+    underscore_count = side_length * 2
+    underscores = "_" * underscore_count
+    spaces = " " * underscore_count
+    print(f".{underscores}.")
+    for _i in range(side_length):
+        print(f"|{spaces}|")
+    print(f".{underscores}.")
