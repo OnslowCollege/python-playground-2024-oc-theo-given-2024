@@ -31,9 +31,9 @@ def calculate_discounted_cost(op: float, dp: float, noi: int) -> float | None:
 
     Arguments:
     ---------
-        op: The original price of the items
-        dp: The discount percentage of the items
-        noi: The number of items
+        op: length of the horizontal side of the rectangle
+        dp: length of the vertical side of the rectangle
+        noi: blah blah blah
 
     Returns: The resulting discounted price or "None" if that is not possible.
 
@@ -44,4 +44,6 @@ def calculate_discounted_cost(op: float, dp: float, noi: int) -> float | None:
 
 result_cost = (calculate_discounted_cost(5, 0.25, 10))
 print (result_cost)
+
+
 
