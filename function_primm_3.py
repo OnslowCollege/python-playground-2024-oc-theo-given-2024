@@ -104,4 +104,7 @@ def get_rectangle(horis_side: int, verti_side: int):
 
 square = (get_square(6))
 triangle = (get_triangle(False))
-print(get_rectangle(9,7))
+rectangle = (get_rectangle(16,3))
+print (square)
+print (triangle)
+print (rectangle)
