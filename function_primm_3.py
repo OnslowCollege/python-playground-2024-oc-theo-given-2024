@@ -44,3 +44,6 @@ def calculate_discounted_cost(op: float, dp: float, noi: int) -> float | None:
 
 result_cost = (calculate_discounted_cost(5, 0.25, 10))
 print (result_cost)
+
+def get_square():
+    print()

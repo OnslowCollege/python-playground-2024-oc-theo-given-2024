@@ -40,7 +40,7 @@ get_string_bytes("Hello!")
 
 def print_square(side_length: int):
     """
-    Calculate the required storage size of a string.
+    Print a square of specified side length.
 
     Arguments:
     ---------
@@ -58,7 +58,7 @@ def print_square(side_length: int):
 
 def print_triangle(down: bool):
     """
-    Calculate the required storage size of a string.
+    Print a triangle, Parameter decides if this is facing downwards or not.
 
     Arguments:
     ---------
@@ -78,7 +78,7 @@ def print_triangle(down: bool):
 
 def print_rectangle(horis_side: int, verti_side: int):
     """
-    Calculate the required storage size of a string.
+    Print a rectangle where lengths of both sides are specified.
 
     Arguments:
     ---------
