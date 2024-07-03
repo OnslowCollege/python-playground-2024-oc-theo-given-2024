@@ -2,7 +2,7 @@ user_input: str = input("What is your age? ")
 
 try:
     age: int = int(user_input)
-    if age <= 0 or age >= 122:
+    if age <= 0 and age >= 122:
         print("Age incorrect.")
     elif age <= 18:
         print("Too young.")
