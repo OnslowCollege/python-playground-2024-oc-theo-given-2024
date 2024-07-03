@@ -22,11 +22,25 @@ def alternate_case(text: str) -> str | None:
         return build_string
     return None
 
-wibbly_wobbly = alternate_case("13435635463546")
+wibbly_wobbly = alternate_case("oh. i see.")
 print(wibbly_wobbly)
 
 def calculate_discounted_cost(op: float, dp: float, noi: int) -> float | None:
+    """
+    Calculate the price of items using the op, dp and noi. (F u line limit).
+
+    Arguments:
+    ---------
+        op: The text that is going wibbly wobbly
+        dp: 1
+        noi: 2
+
+    Returns: The resulting discounted price or "None" if that is not possible.
+
+    """
     if op < 0 or 1 < dp < 0 or noi <= 0:
         return (None)
     else:
-        return (80085)
+        return ((op * dp) * noi)
+
+print (calculate_discounted_cost(5, 0.8, 10))
