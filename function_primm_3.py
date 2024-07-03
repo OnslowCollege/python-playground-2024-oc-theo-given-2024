@@ -99,12 +99,9 @@ def get_rectangle(horis_side: int, verti_side: int):
     rectangle = (f".{underscores}.")
     for _i in range(verti_side):
         rectangle = rectangle +(f"\n|{spaces}|")
-    return
-    
-    print(f".{underscores}.")
-    for _i in range(verti_side):
-        print(f"|{spaces}|")
-    print(f".{underscores}.")
+    return(rectangle + f"\n.{underscores}.")
+
 
 print(get_square(6))
 print(get_triangle(False))
+print(get_rectangle(6,3))
