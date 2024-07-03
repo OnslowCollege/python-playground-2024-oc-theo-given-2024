@@ -41,8 +41,7 @@ def calculate_discounted_cost(op: float, dp: float, noi: int) -> float | None:
     if op < 0 or 1 < dp < 0 or noi <= 0:
         return (None)
     result_cost = ((op * dp) * noi)
-    if isinstance(result_cost, float):
-        result_cost = 
+    return 
     
 
 print (calculate_discounted_cost(5, 0.8, 10))
