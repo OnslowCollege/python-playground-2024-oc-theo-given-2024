@@ -56,7 +56,7 @@ def get_square(side_length: int) -> str:
         side_length: The length of all sides of the square
 
     """
-    underscore_count = side_length * 2
+    underscore_count = side_length * 3
     underscores = "_" * underscore_count
     spaces = " " * underscore_count
     
@@ -92,7 +92,7 @@ def get_rectangle(horis_side: int, verti_side: int):
         verti_side: length of the vertical side of the rectangle
 
     """
-    underscore_count = horis_side * 2
+    underscore_count = horis_side * 3
     underscores = "_" * underscore_count
     spaces = " " * underscore_count
     
@@ -102,9 +102,9 @@ def get_rectangle(horis_side: int, verti_side: int):
     return(rectangle + f"\n.{underscores}.")
 
 
-square = (get_square(6))
+square = (get_square(3))
 triangle = (get_triangle(False))
-rectangle = (get_rectangle(16,3))
+rectangle = (get_rectangle(6,3))
 print (square)
 print (triangle)
 print (rectangle)
