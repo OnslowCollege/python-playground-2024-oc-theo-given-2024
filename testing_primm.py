@@ -1,7 +1,7 @@
 user_input: str = ("")
 age: int
-while user_input == "":
-    def ask_for_age():
+
+def ask_for_age():
         user_input = input("What is your age? ")
         #Using try in case of errors.
         try:
@@ -23,3 +23,5 @@ while user_input == "":
             user_input = ""
             return False
 
+while user_input == "":
+    ask_for_age()
