@@ -10,7 +10,6 @@ def ask_for_age():
             if age <= 0 or age >= 122:
                 print("Age incorrect.")
                 user_input = ""
-                return False
             if age < 18:
                 print("Too young.")
                 user_input = ""
@@ -21,7 +20,6 @@ def ask_for_age():
             #In case of the user not entering a number
             print("Please enter a number.")
             user_input = ""
-            return False
 
 while user_input == "":
     ask_for_age()
