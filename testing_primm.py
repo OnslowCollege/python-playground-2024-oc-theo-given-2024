@@ -4,6 +4,12 @@ user_input: str = ("")
 age: int
 
 def ask_for_age():
+    """
+    Return a Boolean that is whether the user's age is above or below 18.
+
+    Returns: False if age is below 18 and True if it is above 18.
+
+    """
     while not valid_age:
         user_input = input("What is your age? ")
         #Using try in case of errors.
@@ -13,7 +19,8 @@ def ask_for_age():
             if age <= 0 or age >= 122:
                 print("Age incorrect.")
             else:
-                return not age < 18
+                #Returning either false or true depending on age
+                return age >= 18
         except ValueError:
             #In case of the user not entering a number
             print("Please enter a number.")
