@@ -1,3 +1,4 @@
+"""a."""
 user_input: str = ("")
 age: int
 
@@ -22,5 +23,5 @@ def ask_for_age():
                 print("Please enter a number.")
                 user_input = ""
 
-while user_input == "":
-    ask_for_age()
+
+ask_for_age()
