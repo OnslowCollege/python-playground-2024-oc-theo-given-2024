@@ -11,11 +11,14 @@ def process_student_info(students: dict) -> None:
 
     """
     for name, info in students.items():
-        print(f"Student: {name}")
-        print(f"Age: {info['age']}")
-        print(f"Grades: {', '.join(map(str, info['grades']))}")
-        print(f"Average Grade: {calculate_average_grade(info['grades']):.2f}")
-        print()
+        if calculate_average_grade(info["grades"]) > 85:
+            print(f"Student: {name}")
+            print(f"Age: {info['age']}")
+            print(f"Grades: {', '.join(map(str, info['grades']))}")
+            print(
+                f"Average Grade: {calculate_average_grade(info['grades']):.2f}"
+            )
+            print()
 
 
 def calculate_average_grade(grades: list) -> float:
@@ -38,9 +41,9 @@ def calculate_average_grade(grades: list) -> float:
 
 # Example usage
 students_data = {
-    "Alice": {"age": 17, "grades": [132, 1, 50]},
-    "Bob": {"age": 18, "grades": [92, 88, 95]},
-    "Theo": {"age": 16, "grades": [86, 79, 12]}
+    "Alice": {"age": 17, "grades": [132, 99, 85]},
+    "Bob": {"age": 18, "grades": [92, 32, 95]},
+    "Theo": {"age": 16, "grades": [86, 79, 96]},
 }
 
 
