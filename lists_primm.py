@@ -17,3 +17,6 @@ print (favorite_items)
 
 for i in range (len(favorite_items)):
     print (favorite_items[i])
+
+classmate_ages: list[int] = [1, 2, 3, 4, 5]
+print (len(classmate_ages))
