@@ -11,3 +11,9 @@ print(len(fruits))
 colours: list[str] = ["red", "blue", "green"]
 print(f"{colours[-1]} {fruits[0]}")
 
+favorite_items: list[str] = ["banana", "purple", "N/A", "69"]
+
+print (favorite_items)
+
+for i in range (len(favorite_items)):
+    print (favorite_items[i])
