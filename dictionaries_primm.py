@@ -41,6 +41,7 @@ students_data = {
     "Alice": {"age": 17, "grades": [85, 90, 78]},
     "Bob": {"age": 18, "grades": [92, 88, 95]},
     "Charlie": {"age": 17, "grades": [75, 80, 85]},
+    "Theo": {"age": 16, "grades": [86, 79, 12]}
 }
 
 
