@@ -49,6 +49,8 @@ students_data = {
 
 library = {
     "Harry Potter and the Philosopher's Stone": {"author": "J. K. Rowling", "ISBN": 747532745},  # noqa: E501
-    "The Lightning Thief": {"author": "Rick Riordan". "ISBN": }
+    "The Lightning Thief": {"author": "Rick Riordan", "ISBN": 9781423121701}
 }
+
+
 
