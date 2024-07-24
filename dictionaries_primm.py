@@ -72,7 +72,7 @@ while not end:
     elif user_input == "2":
         user_input = input("Input the title of a book: ")
         for name, info in library.items():
-            if user_input == name:
+            if user_input.lower == name.lower:
                 print(f"Title: {name}")
                 print(f"Author: {info['author']}")
                 print(f"ISBN: {info['ISBN']}")
