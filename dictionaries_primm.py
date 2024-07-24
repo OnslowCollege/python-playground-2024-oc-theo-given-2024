@@ -53,8 +53,13 @@ library = {
 }
 
 valid_entry = False
-
+end = False
 print("Please enter a number.")
 print("1: Display all info")
 print("2: Display the info of a book of your choice.")
-print("3:Add a book to the library.")
+print("3: Add a book to the library.")
+user_input = input()
+while not end:
+    if user_input == 1:
+        for title, info in library:
+            print(f"Title: {title}")
