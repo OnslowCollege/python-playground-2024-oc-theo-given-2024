@@ -47,7 +47,7 @@ students_data = {
 }
 
 
-library = {
+library: dict[] = {
     "Harry Potter and the Philosopher's Stone": {"author": "J. K. Rowling", "ISBN": 747532745},  # noqa: E501
     "The Lightning Thief": {"author": "Rick Riordan", "ISBN": 9781423121701}
 }
