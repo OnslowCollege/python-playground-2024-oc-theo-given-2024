@@ -1,5 +1,8 @@
 """.o."""
 # Function to process student information
+from typing import Any
+
+
 def process_student_info(students: dict) -> None:
     """
     Process and display information about students.
@@ -47,7 +50,7 @@ students_data = {
 }
 
 
-library: dict[str, dict[str, any]] = {
+library: dict[str, dict[str, Any]] = {
     "Harry Potter and the Philosopher's Stone": {"author": "J. K. Rowling", "ISBN": 747532745},  # noqa: E501
     "The Lightning Thief": {"author": "Rick Riordan", "ISBN": 9781423121701}
 }
