@@ -44,9 +44,8 @@ def calculate_average_grade(grades: list) -> float:
 
 # Example usage
 students_data = {
-    "Alice": {"age": 17, "grades": [132, 99, 85]},
+    "Harry Potter and the Philosopher's Stone": {"age": 17, "ISBN": [132, 99, 85]},
     "Bob": {"age": 18, "grades": [92, 32, 95]},
-    "Theo": {"age": 16, "grades": [86, 79, 96]},
 }
 
 library = {
