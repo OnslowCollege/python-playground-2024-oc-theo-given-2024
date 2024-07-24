@@ -51,4 +51,4 @@ library = {
     "Harry Potter and the Philosopher's Stone": {"author": "J. K. Rowling", "ISBN": 747532745}  # noqa: E501
 }
 
-print(library("Harry Potter and the Philosopher's Stone"))
+print(library["Harry Potter and the Philosopher's Stone"])
