@@ -43,19 +43,12 @@ def calculate_average_grade(grades: list) -> float:
 
 
 # Example usage
-students_data = {
-    "Harry Potter and the Philosopher's Stone": {"age": 17, "ISBN": [132, 99, 85]},
-    "Bob": {"age": 18, "grades": [92, 32, 95]},
-}
-
 library = {
-    "Harry Potter and the Philosopher's Stone": {"author": "J. K. Rowling", "ISBN": 747532745},  # noqa: E501
-    "The Lightning Thief": {"author": "Rick Riordan", "ISBN": 9781423121701}
+    "Harry Potter and the Philosopher's Stone": {"author": "J. K. Rowling", "ISBN": 747532745},
+    "The Lightning Thief": {"author": "Rick Riordan", "ISBN": 9781423121701},
 }
 
-for name, info in students_data.items():
-    print(f"Student: {name}")
-    print(f"Age: {info['age']}")
+
 
 
 valid_entry = False
@@ -71,7 +64,10 @@ while not end:
     print("3: Add a book to the library.")
     user_input = input()
     if user_input == "1":
-        show_library(library)
+        for name, info in library.items():
+            print(f"Title: {name}")
+            print(f"Author: {info['author']}")
+            print(f"ISBN: {info['ISBN']}")
         end = True
     elif user_input == "2":
         user_input = input("Input the title of a book: ")
