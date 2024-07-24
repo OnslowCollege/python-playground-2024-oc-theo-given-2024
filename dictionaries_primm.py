@@ -66,4 +66,8 @@ while not end:
     if user_input == 1:
         for title, info in library.items:
             print(f"Title: {title} ({info['author']})")
-    end = True
+        end = True
+    elif user_input == 2:  # noqa: SIM114
+        end = True
+    elif user_input == 3:
+        end = True
