@@ -1,4 +1,4 @@
-""".-."""
+""".o."""
 # Function to process student information
 def process_student_info(students: dict) -> None:
     """
@@ -54,5 +54,7 @@ library = {
 
 valid_entry = False
 
-print("Please enter a number.\n1: Display all info\n2: Display the info of a book of your choice.\n3:Add a book to the library.")  # noqa: E501
-user_input = input()
+print("Please enter a number.")
+print("1: Display all info")
+print("2: Display the info of a book of your choice.")
+print("3:Add a book to the library.")
