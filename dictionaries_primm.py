@@ -64,6 +64,6 @@ print("3: Add a book to the library.")
 user_input = input()
 while not end:
     if user_input == 1:
-        for title, info in library:
+        for title, info in library.items:
             print(f"Title: {title} ({info['author']})")
     end = True
