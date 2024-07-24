@@ -58,12 +58,6 @@ for name, info in students_data.items():
     print(f"Student: {name}")
     print(f"Age: {info['age']}")
 
-for name, info in library:
-    print(f"Title: {name}")
-    print(f"Author: {info['author']}")
-    print(f"ISBN: {info['ISBN']}")
-
-
 
 valid_entry = False
 end = False
