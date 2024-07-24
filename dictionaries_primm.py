@@ -60,7 +60,7 @@ end = False
 
 def show_library(dictionary):
     for title, info in dictionary.items:
-        print(f"Title": {title} "Author": ({info['author']}) "ISBN": [{info['ISBN']}])
+        print(f"Title: {title} Author: ({info['author']}) ISBN: [{info['ISBN']}]")
 
 while not end:
     print("Please enter a number.")
