@@ -49,8 +49,11 @@ students_data = {
     "Theo": {"age": 16, "grades": [86, 79, 96]},
 }
 
+for name, info in students_data.items():
+    print(f"Student: {name}")
+    print(f"Age: {info['age']}")
 
-library: dict[str, dict[str, Any]] = {
+library = {
     "Harry Potter and the Philosopher's Stone": {"author": "J. K. Rowling", "ISBN": 747532745},  # noqa: E501
     "The Lightning Thief": {"author": "Rick Riordan", "ISBN": 9781423121701}
 }
@@ -58,9 +61,11 @@ library: dict[str, dict[str, Any]] = {
 valid_entry = False
 end = False
 
-def show_library(dictionary):
-    for title, info in dictionary.items:
-        print(f"Title: {title} Author: ({info['author']}) ISBN: [{info['ISBN']}]")
+def show_library(library):
+    for title, info in library.items:
+        print(f"Title: {title}")
+        print(f"Author: {info['author']}")
+        print(f"ISBN: {info['ISBN']}")
 
 while not end:
     print("Please enter a number.")
