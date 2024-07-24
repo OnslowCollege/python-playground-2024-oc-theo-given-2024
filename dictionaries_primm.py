@@ -48,5 +48,5 @@ students_data = {
 
 
 library = {
-    
+    "Harry Potter and the Philosopher's Stone": {"author": "J. K. Rowling"}
 }
