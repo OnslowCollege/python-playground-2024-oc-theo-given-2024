@@ -58,7 +58,7 @@ library: dict[str, dict[str, Any]] = {
 valid_entry = False
 end = False
 
-def show_library(dictionary: dict[str, dict[str, Any]]):
+def show_library(dictionary):
     for title, info in dictionary.items:
         print(f"Title: {title} Author: ({info['author']}) ISBN: [{info['ISBN']}]")
 
