@@ -54,5 +54,5 @@ library = {
 
 valid_entry = False
 
-while
-
+print("Please enter a number.\n1: Display all info\n2: Display the info of a book of your choice.\n3:Add a book to the library.")  # noqa: E501
+user_input = input()
