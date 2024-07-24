@@ -69,6 +69,7 @@ while not end:
             print(f"Title: {title} ({info['author']})")
         end = True
     elif user_input == 2:  # noqa: SIM114
+        user_input = input()
         end = True
     elif user_input == 3:
         end = True
