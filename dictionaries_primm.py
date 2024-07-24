@@ -58,8 +58,8 @@ library: dict[str, dict[str, Any]] = {
 valid_entry = False
 end = False
 
-def show_library():
-    for title, info in library.items:
+def show_library(dictionary: dict[str, dict[str, Any]]):
+    for title, info in dictionary.items:
         print(f"Title: {title} Author: ({info['author']}) ISBN: [{info['ISBN']}]")
 
 while not end:
@@ -69,7 +69,7 @@ while not end:
     print("3: Add a book to the library.")
     user_input = input()
     if user_input == "1":
-        show_library()
+        show_library(library)
         end = True
     elif user_input == "2":
         user_input = input("Input the title of a book: ")
