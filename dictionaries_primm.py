@@ -59,7 +59,7 @@ valid_entry = False
 end = False
 
 def show_library():
-    for title, info in library:
+    for title, info in library.items:
         print(f"Title: {title} Author: ({info['author']}) ISBN: [{info['ISBN']}]")
 
 while not end:
