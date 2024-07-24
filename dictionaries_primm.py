@@ -63,7 +63,7 @@ while not end:
     print("1: Display all info")
     print("2: Display the info of a book of your choice.")
     print("3: Add a book to the library.")
-    user_input = input()
+    user_input = int(input())
     if user_input == 1:
         for title, info in library:
             print(f"Title: {title} Author: ({info['author']}) ISBN: [{info['ISBN']}]")
