@@ -63,17 +63,17 @@ while not end:
     print("1: Display all info")
     print("2: Display the info of a book of your choice.")
     print("3: Add a book to the library.")
-    user_input = int(input())
-    if user_input == 1:
+    user_input = input()
+    if user_input == "1":
         for title, info in library:
             print(f"Title: {title} Author: ({info['author']}) ISBN: [{info['ISBN']}]")
         end = True
-    elif user_input == 2:
+    elif user_input == "2":
         user_input = input("Input the title of a book: ")
         for title, info in library:
             print (f"Title: {title} ({info['author']})")
         end = True
-    elif user_input == 3:
+    elif user_input == "3":
         end = True
     else:
         print("Invalid Option")
