@@ -1,6 +1,5 @@
 """.o."""
 # Function to process student information
-from typing import Any
 
 
 def process_student_info(students: dict) -> None:
