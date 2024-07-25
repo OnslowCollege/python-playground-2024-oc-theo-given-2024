@@ -41,7 +41,9 @@ def calculate_average_grade(grades: list) -> float:
     return sum(grades) / len(grades)
 
 
-# Example usage
+# Beginning of second task
+
+#Creating original dictionary
 library = {
     "Harry Potter and the Philosopher's Stone": {"author": "J. K. Rowling", "ISBN": 747532745},
     "The Lightning Thief": {"author": "Rick Riordan", "ISBN": 9781423121701},
@@ -49,11 +51,13 @@ library = {
 
 
 
-
+#Setting up values for while loops
 end = False
 user_isbn = 0
 
+#Uses 'while not end' so that I can end it specifically when I want to in the program
 while not end:
+    #Displaying Options
     print("Please enter a number.")
     print("1: Display all info")
     print("2: Display the info of a book of your choice.")
