@@ -62,6 +62,7 @@ while not end:
     user_input = input()
     if user_input == "1":
         for name, info in library.items():
+            print("")
             print(f"Title: {name}")
             print(f"Author: {info['author']}")
             print(f"ISBN: {info['ISBN']}")
@@ -70,9 +71,11 @@ while not end:
         user_input = input("Input the title of a book: ")
         for name, info in library.items():
             if user_input == name:
+                print("")
                 print(f"Title: {name}")
                 print(f"Author: {info['author']}")
                 print(f"ISBN: {info['ISBN']}")
+                print("")
     elif user_input == "3":
         user_title = input("Please input the title: ")
         user_author = input("Please input the author: ")
@@ -82,9 +85,11 @@ while not end:
             except ValueError:
                 print("Invalid Input.")
         library = {user_title: {"author": user_author, "ISBN": user_isbn}}
+        print("")
         print(f"Title: {user_title}")
         print(f"Author: {user_author}")
         print(f"ISBN: {user_isbn}")
+        print("")
         user_isbn = 0
     elif user_input == "4":
         end = True
