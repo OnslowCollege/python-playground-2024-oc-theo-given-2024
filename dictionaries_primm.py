@@ -50,7 +50,6 @@ library = {
 
 
 
-valid_entry = False
 end = False
 
 
@@ -61,13 +60,13 @@ while not end:
     print("1: Display all info")
     print("2: Display the info of a book of your choice.")
     print("3: Add a book to the library.")
+    print("4: Exit the program.")
     user_input = input()
     if user_input == "1":
         for name, info in library.items():
             print(f"Title: {name}")
             print(f"Author: {info['author']}")
             print(f"ISBN: {info['ISBN']}")
-        end = True
     elif user_input == "2":
         user_input = input("Input the title of a book: ")
         for name, info in library.items():
@@ -75,8 +74,9 @@ while not end:
                 print(f"Title: {name}")
                 print(f"Author: {info['author']}")
                 print(f"ISBN: {info['ISBN']}")
-        end = True
     elif user_input == "3":
+        print()
+    elif user_input == "4":
         end = True
     else:
         print("Invalid Option")
