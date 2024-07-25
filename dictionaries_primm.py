@@ -84,7 +84,7 @@ while not end:
                 user_isbn = int(input("Please input the ISBN: "))
             except ValueError:
                 print("Invalid Input.")
-        library = {user_title: {"author": user_author, "ISBN": user_isbn}}
+        library = [user_title]
         print("")
         print(f"Title: {user_title}")
         print(f"Author: {user_author}")
