@@ -75,7 +75,10 @@ while not end:
                 print(f"Author: {info['author']}")
                 print(f"ISBN: {info['ISBN']}")
     elif user_input == "3":
-        print()
+        user_input_title = input("Please input the title: ")
+        user_input_author = input("Please input the author: ")
+        user_input_isbn = int(input("Please input the ISBN: "))
+        library = {user_input_title: {"author": "Rick Riordan", "ISBN": 9781423121701}}
     elif user_input == "4":
         end = True
     else:
