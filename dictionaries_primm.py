@@ -51,9 +51,7 @@ library = {
 
 
 end = False
-
-
-
+user_isbn = ""
 
 while not end:
     print("Please enter a number.")
@@ -77,7 +75,11 @@ while not end:
     elif user_input == "3":
         user_title = input("Please input the title: ")
         user_author = input("Please input the author: ")
-        user_isbn = int(input("Please input the ISBN: "))
+        while user_isbn == "":
+            try:
+                user_isbn = int(input("Please input the ISBN: "))
+            except ValueError:
+                print("Invalid Input.")
         library = {user_title: {"author": user_author, "ISBN": user_isbn}}
     elif user_input == "4":
         end = True
