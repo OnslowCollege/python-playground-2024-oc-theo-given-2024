@@ -45,7 +45,7 @@ def calculate_average_grade(grades: list) -> float:
 
 #Creating original dictionary
 library = {
-    "Harry Potter and the Philosopher's Stone": {"author": "J. K. Rowling", "ISBN": 747532745},
+    "Harry Potter and the Philosopher's Stone": {"author": "J. K. Rowling", "ISBN": 747532745},  # noqa: E501
     "The Lightning Thief": {"author": "Rick Riordan", "ISBN": 9781423121701},
 }
 
@@ -55,9 +55,9 @@ library = {
 end = False
 user_isbn = 0
 
-#Uses 'while not end' so that I can end it specifically when I want to in the program
+#Uses 'while not end' so that it ends specifically when I want it to
 while not end:
-    #Displaying Options
+    #Displaying options before asking for user input.
     print("Please enter a number.")
     print("1: Display all info")
     print("2: Display the info of a book of your choice.")
@@ -65,7 +65,9 @@ while not end:
     print("4: Exit the program.")
     user_input = input()
     if user_input == "1":
+        #Goes through each dictionary entry and outputs all the info of each.
         for name, info in library.items():
+            #Empty print statements used to create lines between each book for easier readability  # noqa: E501
             print("")
             print(f"Title: {name}")
             print(f"Author: {info['author']}")
@@ -73,6 +75,7 @@ while not end:
             print("")
     elif user_input == "2":
         user_input = input("Input the title of a book: ")
+        #Checks each dictionary entry for the title entered and prints the info of any that have it  # noqa: E501
         for name, info in library.items():
             if user_input == name:
                 print("")
@@ -83,12 +86,15 @@ while not end:
     elif user_input == "3":
         user_title = input("Please input the title: ")
         user_author = input("Please input the author: ")
+        #While loop is used to prevent an error occurring.
         while user_isbn == 0:
             try:
                 user_isbn = int(input("Please input the ISBN: "))
             except ValueError:
                 print("Invalid Input.")
+        #Adding new dictionary entry
         library[user_title] = {"author": user_author, "ISBN": user_isbn}
+        #Prints the dictionary entry to show the user it has been made
         print("")
         print(f"Title: {user_title}")
         print(f"Author: {user_author}")
@@ -96,6 +102,8 @@ while not end:
         print("")
         user_isbn = 0
     elif user_input == "4":
+        #Ends the program
         end = True
     else:
+        #If anything other than one of the options is entered, it will print this  # noqa: E501
         print("Invalid Option")
