@@ -45,8 +45,12 @@ def calculate_average_grade(grades: list) -> float:
 
 #Creating original dictionary
 library = {
-    "Harry Potter and the Philosopher's Stone": {"author": "J. K. Rowling", "ISBN": 747532745},  # noqa: E501
-    "The Lightning Thief": {"author": "Rick Riordan", "ISBN": 9781423121701},
+    "Harry Potter and the Philosopher's Stone": {
+        "author": "J. K. Rowling", 
+        "ISBN": 747532745},
+    "The Lightning Thief": {
+        "author": "Rick Riordan",
+        "ISBN": 9781423121701},
 }
 
 
@@ -67,7 +71,7 @@ while not end:
     if user_input == "1":
         #Goes through each dictionary entry and outputs all the info of each.
         for name, info in library.items():
-            #Empty print statements used to create lines between each book for easier readability  # noqa: E501
+            #Empty print statements used for easier readability  # noqa: E501
             print("")
             print(f"Title: {name}")
             print(f"Author: {info['author']}")
