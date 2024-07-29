@@ -71,7 +71,7 @@ while not end:
     if user_input == "1":
         #Goes through each dictionary entry and outputs all the info of each.
         for name, info in library.items():
-            #Empty print statements used for easier readability  # noqa: E501
+            #Empty print statements used for easier readability
             print("")
             print(f"Title: {name}")
             print(f"Author: {info['author']}")
