@@ -109,5 +109,5 @@ while not end:
         #Ends the program
         end = True
     else:
-        #If anything other than one of the options is entered, it will print this  # noqa: E501
+        #If an invalid option is entered, it will print this
         print("Invalid Option")
