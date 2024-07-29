@@ -79,7 +79,7 @@ while not end:
             print("")
     elif user_input == "2":
         user_input = input("Input the title of a book: ")
-        #Checks each dictionary entry for the title entered and prints the info of any that have it  # noqa: E501
+        #Checks all dictionary entries and prints the book with a matching title
         for name, info in library.items():
             if user_input == name:
                 print("")
