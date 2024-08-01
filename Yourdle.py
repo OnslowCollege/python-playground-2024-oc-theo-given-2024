@@ -1,5 +1,6 @@
 """Yourdle is a Wordle clone where you can alter aspects of the game."""
-
+from letter_list_7 import word_list_7
+from letter_list_6 import word_list_6
 from letter_list_5 import word_list_5
 from letter_list_4 import word_list_4
 from letter_list_3 import word_list_3
