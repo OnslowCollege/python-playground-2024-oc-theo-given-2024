@@ -2,7 +2,7 @@
 
 from letter_list_5 import word_list_5
 from letter_list_4 import word_list_4
-
+from letter_list_3 import word_list_3
 
 
 #Setting Variables for while loops
