@@ -85,6 +85,8 @@ while user_tries != num_tries and not correct_guess:
         for i in range(word_length):
             if user_guess[i] == correct_answer [i]:
                 colored_guess = colored_guess + makegreen(user_guess[i])
+            else:
+                colored_guess = colored_guess + user_guess[i]
         previous_guesses = previous_guesses + colored_guess + "\n"
         print (previous_guesses)
         if num_tries-user_tries != 0:
