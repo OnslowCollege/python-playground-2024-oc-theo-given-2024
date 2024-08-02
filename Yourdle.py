@@ -17,8 +17,8 @@ word_lists = {
 #Setting Variables for while loops
 valid_tries = False
 valid_length = False
-
-
+correct_guess = False
+valid_guess = False
 
 #Lists of words of varying lengths
 
@@ -54,7 +54,19 @@ user_word_list = word_lists[word_length]
 
 word_index = random.randrange(0, len(user_word_list))
 
-print (user_word_list[word_index])
+while not correct_guess:
+    while not valid_guess:
+        try:
+            user_guess = str(input("Enter your guess: "))
+            if len(user_guess) == word_length:
+                valid_guess = True
+                print("")
+            else:
+                print("")
+                print("Invalid Input.")
+        except ValueError:
+            print("")
+            print("Invalid Input.")
 
 
 
