@@ -1,14 +1,16 @@
 """Yourdle is a Wordle clone where you can alter aspects of the game."""
-from letter_list_7 import word_list_7
-from letter_list_6 import word_list_6
-from letter_list_5 import word_list_5
-from letter_list_4 import word_list_4
-from letter_list_3 import word_list_3
-
 import random
-def prgreen(skk): print("\033[92m {}\033[00m" .format(skk))
-def prYellow(skk): print("\033[93m {}\033[00m" .format(skk))
-def prRed(skk): print("\033[91m {}\033[00m" .format(skk))
+
+from letter_list_3 import word_list_3
+from letter_list_4 import word_list_4
+from letter_list_5 import word_list_5
+from letter_list_6 import word_list_6
+from letter_list_7 import word_list_7
+
+
+def makegreen(skk) -> str: return("\033[92m {}\033[00m" .format(skk))
+def makeyellow(skk)-> str: return("\033[93m {}\033[00m" .format(skk))
+def makered(skk)-> str: return("\033[91m {}\033[00m" .format(skk))
 
 word_lists = {
     3:word_list_3,
