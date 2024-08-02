@@ -52,7 +52,9 @@ while not valid_length:
 
 user_word_list = word_lists[word_length]
 
-word_index = random()
+word_index = random.randrange(0, len(user_word_list))
+
+print (user_word_list[word_index])
 
 
 
