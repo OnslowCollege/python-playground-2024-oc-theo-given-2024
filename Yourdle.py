@@ -19,7 +19,7 @@ valid_tries = False
 valid_length = False
 correct_guess = False
 valid_guess = False
-user_tries = 0
+user_tries = 1
 #Lists of words of varying lengths
 
 #While loop that forces the user to select a number of guesses within a range.
@@ -55,7 +55,7 @@ user_word_list = word_lists[word_length]
 word_index = random.randrange(0, len(user_word_list))
 
 print(user_word_list[word_index])
-while not correct_guess or user_tries == num_tries:
+while not correct_guess or user_tries == 0:
     while not valid_guess:
         try:
             user_guess = str(input("Enter your guess: "))
