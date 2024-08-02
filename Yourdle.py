@@ -6,7 +6,7 @@ from letter_list_4 import word_list_4
 from letter_list_3 import word_list_3
 
 import random
-from colored import fg
+from colorama import Fore
 
 word_lists = {
     3:word_list_3,
