@@ -67,6 +67,11 @@ while not correct_guess:
         except ValueError:
             print("")
             print("Invalid Input.")
+    if user_guess == user_word_list[word_index]:
+        print ("You guessed correctly!")
+        correct_guess = True
+    else:
+        valid_guess = False
 
 
 
