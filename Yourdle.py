@@ -9,8 +9,8 @@ from letter_list_7 import word_list_7
 
 
 def makegreen(skk) -> str:
-    colored_character = ("\033[92m {}\033[00m" .format(skk))
-    str(colored_character)
+    colored_character = (f"\033[92m \033[00m {skk}")
+    colored_character = str(colored_character)
     return colored_character
 
 def makeyellow(skk)-> str: return("\033[93m {}\033[00m" .format(skk))
