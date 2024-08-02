@@ -88,6 +88,7 @@ while user_tries != num_tries and not correct_guess:
             else:
                 colored_guess = colored_guess + user_guess[i]
         previous_guesses = previous_guesses + colored_guess + "\n"
+        colored_guess = ""
         print (previous_guesses)
         if num_tries-user_tries != 0:
             print (f"Incorrect. You have {num_tries-user_tries} guesses left.")
