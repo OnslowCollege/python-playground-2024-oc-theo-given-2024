@@ -26,6 +26,7 @@ correct_guess = False
 valid_guess = False
 user_tries = 0
 previous_guesses = ""
+colored_guess = ""
 #Lists of words of varying lengths
 
 #While loop that forces the user to select a number of guesses within a range.
@@ -59,8 +60,9 @@ while not valid_length:
 user_word_list = word_lists[word_length]
 
 word_index = random.randrange(0, len(user_word_list))
+correct_answer = user_word_list[word_index]
 
-print(user_word_list[word_index])
+print(correct_answer)
 while user_tries != num_tries and not correct_guess:
     while not valid_guess:
         try:
@@ -74,18 +76,20 @@ while user_tries != num_tries and not correct_guess:
         except ValueError:
             print("")
             print("Invalid Input.")
-    if user_guess == user_word_list[word_index]:
+    if user_guess == correct_answer:
         print ("You guessed correctly!")
         correct_guess = True
     else:
         valid_guess = False
         user_tries = user_tries + 1
         for i in range(word_length):
-            if user_guess[i] 
+            if user_guess[i] == correct_answer [i]:
+                colored_guess = colored_guess + makegreen(user_guess[i])
+        previous_guesses = previous_guesses + colored_guess + "\n"
         if num_tries-user_tries != 0:
             print (f"Incorrect. You have {num_tries-user_tries} guesses left.")
 if user_tries == num_tries:
-    print(f"You ran out of guesses! The answer was: {user_word_list[word_index]}")
+    print(f"You ran out of guesses! The answer was: {correct_answer}")
 
 
 
