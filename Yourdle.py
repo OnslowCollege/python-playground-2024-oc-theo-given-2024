@@ -76,7 +76,7 @@ while user_tries != num_tries and not correct_guess:
         valid_guess = False
         user_tries = user_tries + 1
         for i in range(word_length):
-            
+            user_guess[i]
         if num_tries-user_tries != 0:
             print (f"Incorrect. You have {num_tries-user_tries} guesses left.")
 if user_tries == num_tries:
