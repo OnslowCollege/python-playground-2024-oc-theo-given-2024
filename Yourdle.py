@@ -5,6 +5,8 @@ from letter_list_5 import word_list_5
 from letter_list_4 import word_list_4
 from letter_list_3 import word_list_3
 
+import random
+
 word_lists = {
     3:word_list_3,
     4:word_list_4,
@@ -37,7 +39,7 @@ while not valid_tries:
 #While loop that forces the user to select a word length within a range.
 while not valid_length:
     try:
-        word_length = int(input("Enter the length of the word to guess (3-7): "))
+        word_length = int(input("Enter the length of the word you'll guess (3-7): "))
         if 3 <= word_length <= 7:
             valid_length = True
             print("")
@@ -50,7 +52,7 @@ while not valid_length:
 
 user_word_list = word_lists[word_length]
 
-print (user_word_list)
+word_index = random()
 
 
 
