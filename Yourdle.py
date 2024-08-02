@@ -6,7 +6,9 @@ from letter_list_4 import word_list_4
 from letter_list_3 import word_list_3
 
 import random
-from colored import fg
+def prgreen(skk): print("\033[92m {}\033[00m" .format(skk))
+def prYellow(skk): print("\033[93m {}\033[00m" .format(skk))
+def prRed(skk): print("\033[91m {}\033[00m" .format(skk))
 
 word_lists = {
     3:word_list_3,
