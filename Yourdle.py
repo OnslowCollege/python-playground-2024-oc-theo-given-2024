@@ -54,6 +54,7 @@ user_word_list = word_lists[word_length]
 
 word_index = random.randrange(0, len(user_word_list))
 
+print(user_word_list[word_index])
 while not correct_guess:
     while not valid_guess:
         try:
