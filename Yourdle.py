@@ -88,7 +88,7 @@ while user_tries != num_tries and not correct_guess:
         user_tries = user_tries + 1
         for i in range(word_length):
             if user_guess[i] == correct_answer [i]:
-                colored_guess = colored_guess + makegreen(user_guess[i]).strip
+                colored_guess = colored_guess + makegreen(user_guess[i])
             else:
                 colored_guess = colored_guess + user_guess[i]
         previous_guesses = previous_guesses + colored_guess + "\n"
