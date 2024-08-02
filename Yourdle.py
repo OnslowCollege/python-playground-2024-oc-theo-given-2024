@@ -11,7 +11,7 @@ from letter_list_7 import word_list_7
 def makegreen(skk) -> str:
     colored_character = ("\033[92m {}\033[00m" .format(skk))
     str(colored_character)
-    return colored_character.strip
+    return colored_character
 
 def makeyellow(skk)-> str: return("\033[93m {}\033[00m" .format(skk))
 def makered(skk)-> str: return("\033[91m {}\033[00m" .format(skk))
@@ -88,7 +88,7 @@ while user_tries != num_tries and not correct_guess:
         user_tries = user_tries + 1
         for i in range(word_length):
             if user_guess[i] == correct_answer [i]:
-                colored_guess = colored_guess + makegreen(user_guess[i])
+                colored_guess = colored_guess + makegreen(user_guess[i]).strip
             else:
                 colored_guess = colored_guess + user_guess[i]
         previous_guesses = previous_guesses + colored_guess + "\n"
