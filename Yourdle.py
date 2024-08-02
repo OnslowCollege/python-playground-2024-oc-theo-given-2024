@@ -5,6 +5,12 @@ from letter_list_5 import word_list_5
 from letter_list_4 import word_list_4
 from letter_list_3 import word_list_3
 
+word_lists = {
+    3:word_list_3,
+    4:word_list_4,
+    5:word_list_5,
+    6:word_list_6,
+    7:word_list_7}
 
 #Setting Variables for while loops
 valid_tries = False
@@ -42,7 +48,9 @@ while not valid_length:
         print("")
         print("Invalid Input.")
 
+user_word_list = word_lists[word_length]
 
+print (user_word_list)
 
 
 
