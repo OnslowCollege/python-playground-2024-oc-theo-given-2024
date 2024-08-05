@@ -104,7 +104,7 @@ while user_tries != num_tries and not correct_guess:
             else:
                 check_1 = check_1 + user_guess[i]
         
-        print (check_1)
+        
         
         
         
@@ -121,6 +121,7 @@ while user_tries != num_tries and not correct_guess:
             
         previous_guesses = previous_guesses + colored_guess + "\n"
         colored_guess = ""
+        print (check_1)
         check_1 = ""
         print (previous_guesses)
         # Tells the user how many tries they have left
