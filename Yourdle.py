@@ -92,6 +92,7 @@ while user_tries != num_tries and not correct_guess:
     else:
         valid_guess = False
         user_tries = user_tries + 1
+        #Colors and prints their guess along with all previous guesses
         for i in range(word_length):
             if user_guess[i] == correct_answer [i]:
                 colored_guess = colored_guess + makegreen(user_guess[i])
@@ -100,6 +101,7 @@ while user_tries != num_tries and not correct_guess:
         previous_guesses = previous_guesses + colored_guess + "\n"
         colored_guess = ""
         print (previous_guesses)
+        # Tells the user how many tries they have left
         if num_tries-user_tries != 0:
             print (f"Incorrect. You have {num_tries-user_tries} guesses left.")
 if user_tries == num_tries:
