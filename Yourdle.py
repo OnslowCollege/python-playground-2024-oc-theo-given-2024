@@ -9,7 +9,7 @@ from letter_list_7 import word_list_7
 
 
 def makegreen(skk) -> str: return (f"\033[0;42m{skk}\033[0;30m")
-def makeblack (skk) -> str: return (f"\033[0;40m{skk}\033[0;30m")
+def makeblack (skk) -> str: return (f"\033[0;37;40m{skk}\033[0;30m")
 def makeyellow(skk)-> str: return(f"\033[0;43m{skk}\033[0;30m")
 def makered(skk)-> str: return(f"\033[0;41m{skk}\033[0;30m")
 
