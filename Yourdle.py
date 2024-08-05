@@ -31,6 +31,7 @@ valid_guess = False
 user_tries = 0
 previous_guesses = ""
 colored_guess = ""
+check_1 = ""
 num_repeats = 0
 
 #While loop that forces the user to select a number of guesses within a range.
@@ -99,6 +100,19 @@ while user_tries != num_tries and not correct_guess:
         #Colors and prints their guess along with all previous guesses
         for i in range(word_length):
             if user_guess[i] == correct_answer[i]:
+                check_1 = check_1 + "-"
+            else:
+                check_1 = check_1 + user_guess[i]
+        
+        print (check_1)
+        
+        
+        
+        
+        
+        
+        for i in range(word_length):
+            if user_guess[i] == correct_answer[i]:
                 colored_guess = colored_guess + makegreen(user_guess[i])
             elif user_guess[i] in correct_answer:
                 colored_guess = colored_guess + makeyellow(user_guess[i])
@@ -107,6 +121,7 @@ while user_tries != num_tries and not correct_guess:
             
         previous_guesses = previous_guesses + colored_guess + "\n"
         colored_guess = ""
+        check_1 = ""
         print (previous_guesses)
         # Tells the user how many tries they have left
         if num_tries-user_tries != 0:
