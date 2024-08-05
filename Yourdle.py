@@ -71,7 +71,8 @@ correct_answer = user_word_list[word_index]
 #Seeing how many repeated letters there are in the word.
 for i in range(word_length):
     for j in range(word_length):
-        
+        if correct_answer[i] == correct_answer[j]:
+            num_repeats = num_repeats + 1
 
 #Getting the game to tell me the answer (For testing purposes)
 print(correct_answer)
