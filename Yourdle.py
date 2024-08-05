@@ -23,7 +23,7 @@ word_lists = {
     6:word_list_6,
     7:word_list_7}
 
-#Setting Variables for while loops
+#Setting Variables
 valid_tries = False
 valid_length = False
 correct_guess = False
@@ -31,6 +31,7 @@ valid_guess = False
 user_tries = 0
 previous_guesses = ""
 colored_guess = ""
+num_repeats = 0
 
 #While loop that forces the user to select a number of guesses within a range.
 while not valid_tries:
@@ -93,11 +94,14 @@ while user_tries != num_tries and not correct_guess:
         user_tries = user_tries + 1
         #Colors and prints their guess along with all previous guesses
         for i in range(word_length):
-            if user_guess[i] == correct_answer [i]:
+            if user_guess[i] == correct_answer[i]:
                 colored_guess = colored_guess + makegreen(user_guess[i])
             else:
+                for j in range(word_length):
+                    if user_guess[i] == correct_answer[j]:
+                        num_repeats = num_repeats + 1
                 colored_guess = colored_guess + makeyellow(user_guess[i])
-                
+
             else:
                 colored_guess = colored_guess + makered(user_guess[i])
         previous_guesses = previous_guesses + colored_guess + "\n"
