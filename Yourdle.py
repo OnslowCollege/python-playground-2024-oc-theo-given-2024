@@ -100,6 +100,7 @@ while user_tries != num_tries and not correct_guess:
                 for j in range(word_length):
                     if user_guess[i] == correct_answer[j]:
                         num_repeats = num_repeats + 1
+                num_repeats = 0
                 colored_guess = colored_guess + makeyellow(user_guess[i])
 
             else:
