@@ -1,6 +1,8 @@
 """Yourdle is a Wordle clone where you can alter aspects of the game."""
+#Importing the random module for random selection of words.
 import random
 
+#Importing the lists of words
 from letter_list_3 import word_list_3
 from letter_list_4 import word_list_4
 from letter_list_5 import word_list_5
@@ -8,11 +10,13 @@ from letter_list_6 import word_list_6
 from letter_list_7 import word_list_7
 
 
+#Functions for easily changing color of text.
 def makegreen(skk) -> str: return (f"\033[0;37;42m{skk}\033[0;30m")
 def makeblack (skk) -> str: return (f"\033[0;37;40m{skk}\033[0;30m")
 def makeyellow(skk)-> str: return(f"\033[0;43m{skk}\033[0;30m")
 def makered(skk)-> str: return(f"\033[0;41m{skk}\033[0;30m")
 
+#Dictionary containing all the word lists for easy access
 word_lists = {
     3:word_list_3,
     4:word_list_4,
@@ -28,7 +32,6 @@ valid_guess = False
 user_tries = 0
 previous_guesses = ""
 colored_guess = ""
-#Lists of words of varying lengths
 
 #While loop that forces the user to select a number of guesses within a range.
 while not valid_tries:
@@ -60,6 +63,7 @@ while not valid_length:
 
 user_word_list = word_lists[word_length]
 
+#Randomly selecting a word to be the answer.
 word_index = random.randrange(0, len(user_word_list))
 correct_answer = user_word_list[word_index]
 
