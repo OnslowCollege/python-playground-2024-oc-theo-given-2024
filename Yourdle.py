@@ -79,7 +79,6 @@ while user_tries != num_tries and not correct_guess:
             print("Invalid Input.")
     if user_guess == correct_answer:
         print ("You guessed correctly!")
-        correct_guess = True
         
     else:
         valid_guess = False
