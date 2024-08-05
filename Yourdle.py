@@ -69,6 +69,9 @@ word_index = random.randrange(0, len(user_word_list))
 correct_answer = user_word_list[word_index]
 
 #Seeing how many repeated letters there are in the word.
+for i in range(word_length):
+    for j in range(word_length):
+        
 
 #Getting the game to tell me the answer (For testing purposes)
 print(correct_answer)
