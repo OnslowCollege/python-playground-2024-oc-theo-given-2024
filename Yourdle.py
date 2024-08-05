@@ -9,7 +9,7 @@ from letter_list_7 import word_list_7
 
 
 def makegreen(skk) -> str:
-    colored_character = (f"\033[1;32m {skk}")
+    colored_character = (f"\033[0;32m{skk}\033[0;30m")
     colored_character = str(colored_character)
     return colored_character
 
