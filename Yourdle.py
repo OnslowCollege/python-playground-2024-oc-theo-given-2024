@@ -68,11 +68,6 @@ user_word_list = word_lists[word_length]
 word_index = random.randrange(0, len(user_word_list))
 correct_answer = user_word_list[word_index]
 
-#Seeing how many repeated letters there are in the word.
-for i in range(word_length):
-    for j in range(word_length):
-        if correct_answer[i] == correct_answer[j]:
-            num_repeats = num_repeats + 1
 
 #Getting the game to tell me the answer (For testing purposes)
 print(correct_answer)
@@ -105,6 +100,15 @@ while user_tries != num_tries and not correct_guess:
         for i in range(word_length):
             if user_guess[i] == correct_answer[i]:
                 colored_guess = colored_guess + makegreen(user_guess[i])
+            else:
+                for j in range:
+                    user_guess[i] = correct_answer[j]
+                    num_repeats = num_repeats + 1
+                    if num_repeats > 1:
+                        
+                num_repeats = 0
+            
+            
             else:
                 colored_guess = colored_guess + makered(user_guess[i])
             
