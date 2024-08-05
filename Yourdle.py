@@ -78,8 +78,12 @@ while user_tries != num_tries and not correct_guess:
             print("")
             print("Invalid Input.")
     if user_guess == correct_answer:
+        correct_guess = True
+        for i in range(word_length):
+            colored_guess = colored_guess + makegreen(user_guess[i])
+        previous_guesses = previous_guesses + colored_guess + "\n"
+        print (previous_guesses)
         print ("You guessed correctly!")
-        
     else:
         valid_guess = False
         user_tries = user_tries + 1
