@@ -61,9 +61,10 @@ while not valid_length:
         print("")
         print("Invalid Input.")
 
+#Selecting the word list of the users choice.
 user_word_list = word_lists[word_length]
 
-#Randomly selecting a word to be the answer.
+#Randomly selecting a word from the aforementioned list to be the answer.
 word_index = random.randrange(0, len(user_word_list))
 correct_answer = user_word_list[word_index]
 
