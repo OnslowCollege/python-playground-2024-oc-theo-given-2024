@@ -101,11 +101,14 @@ while user_tries != num_tries and not correct_guess:
             if user_guess[i] == correct_answer[i]:
                 colored_guess = colored_guess + makegreen(user_guess[i])
             else:
-                for j in range:
-                    user_guess[i] = correct_answer[j]
-                    num_repeats = num_repeats + 1
-                    if num_repeats > 1:
-                        
+                for j in range(word_length):
+                    if user_guess[i] == correct_answer[j]:
+                        num_repeats = num_repeats + 1
+                        if num_repeats > 1:
+                            
+            num_repeats = 0
+
+
                 num_repeats = 0
             
             
