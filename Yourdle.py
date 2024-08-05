@@ -10,8 +10,8 @@ from letter_list_7 import word_list_7
 
 def makegreen(skk) -> str: return (f"\033[0;30;42m{skk}\033[0;30m")
 
-def makeyellow(skk)-> str: return("\033[93m {}\033[00m" .format(skk))
-def makered(skk)-> str: return("\033[91m {}\033[00m" .format(skk))
+def makeyellow(skk)-> str: return(f"\033[0;33m{skk}\033[0;30m")
+def makered(skk)-> str: return(f"\033[0;31m{skk}\033[0;30m")
 
 word_lists = {
     3:word_list_3,
