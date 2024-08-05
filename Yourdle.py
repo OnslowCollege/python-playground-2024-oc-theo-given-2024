@@ -8,10 +8,10 @@ from letter_list_6 import word_list_6
 from letter_list_7 import word_list_7
 
 
-def makegreen(skk) -> str: return (f"\033[0;32;40m{skk}\033[0;30m")
-
-def makeyellow(skk)-> str: return(f"\033[0;33m{skk}\033[0;30m")
-def makered(skk)-> str: return(f"\033[0;31m{skk}\033[0;30m")
+def makegreen(skk) -> str: return (f"\033[0;42m{skk}\033[0;30m")
+def makeblack (skk) -> str: return (f"\033[0;40m{skk}\033[0;30m")
+def makeyellow(skk)-> str: return(f"\033[0;43m{skk}\033[0;30m")
+def makered(skk)-> str: return(f"\033[0;41m{skk}\033[0;30m")
 
 word_lists = {
     3:word_list_3,
@@ -87,7 +87,7 @@ while user_tries != num_tries and not correct_guess:
             if user_guess[i] == correct_answer [i]:
                 colored_guess = colored_guess + makegreen(user_guess[i])
             else:
-                colored_guess = colored_guess + user_guess[i]
+                colored_guess = colored_guess + makeblack(user_guess[i])
         previous_guesses = previous_guesses + colored_guess + "\n"
         colored_guess = ""
         print (previous_guesses)
