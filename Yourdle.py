@@ -100,13 +100,18 @@ while user_tries != num_tries and not correct_guess:
         valid_guess = False
         user_tries = user_tries + 1
         #Colors and prints their guess along with all previous guesses
+        
+        #This section works
         for i in range(word_length):
             if user_guess[i] == correct_answer[i]:
                 check_1 = check_1 + "-"
             else:
                 check_1 = check_1 + user_guess[i]
+        
         print(check_1)
         print("")
+        
+        #This doesn't yet
         for i in range(word_length):
             for j in range(word_length):
                 if i == j:
