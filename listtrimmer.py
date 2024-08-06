@@ -1,4 +1,4 @@
-the_list = input("Enter the list: ")
+the_list: list[str] = list(input("Enter the list: "))
 the_better_list = ""
 for i in range(len(the_list)):
     print (the_list[i])
