@@ -72,7 +72,7 @@ word_index = random.randrange(0, len(user_word_list))
 correct_answer = user_word_list[word_index]
 
 #Getting the game to tell me the answer (For testing purposes)
-print(correct_answer)
+
 
 #Runs while the user still has guesses and they haven't yet guessed correctly
 while user_tries != num_tries and not correct_guess:
