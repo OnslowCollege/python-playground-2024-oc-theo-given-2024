@@ -71,7 +71,6 @@ user_word_list = word_lists[word_length]
 word_index = random.randrange(0, len(user_word_list))
 correct_answer = user_word_list[word_index]
 
-
 #Getting the game to tell me the answer (For testing purposes)
 print(correct_answer)
 
