@@ -110,14 +110,14 @@ while user_tries != num_tries and not correct_guess:
         for i in range(word_length):
             for j in range(word_length):
                 if i == j:
-                    check_2 = check_2 + "-"
+                    check_2 = check_2 + "_"
                 else:
                     check_2 = check_2 + check_1[j]
             print (check_2)
             if check_1[i] in check_2:
                 check_3 = check_3 + check_1[i]
             else:
-                check_3 = check_3 + "-"
+                check_3 = check_3 + "_"
             check_2 = ""
         
         
