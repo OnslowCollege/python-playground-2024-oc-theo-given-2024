@@ -33,6 +33,7 @@ previous_guesses = ""
 colored_guess = ""
 check_1 = ""
 check_2 = ""
+check_3 = ""
 num_repeats = 0
 
 #While loop that forces the user to select a number of guesses within a range.
@@ -102,14 +103,16 @@ while user_tries != num_tries and not correct_guess:
         for i in range(word_length):
             if user_guess[i] == correct_answer[i]:
                 check_1 = check_1 + "-"
+                check_2 = check_2 + user_guess[i]
             else:
                 check_1 = check_1 + user_guess[i]
+                check_2 = check_2 + "-"
         
         for i in range(word_length):
             if check_1[i] in correct_answer:
-                check_2 = check_2 + check_1[i]
+                check_3 = check_3 + check_1[i]
             else:
-                check_2 = check_2 + "-"
+                check_3 = check_3 + "-"
         
         
         
@@ -128,8 +131,10 @@ while user_tries != num_tries and not correct_guess:
         colored_guess = ""
         print (check_1)
         print (check_2)
+        print (check_3)
         check_1 = ""
         check_2 = ""
+        check_3 = ""
         print (previous_guesses)
         # Tells the user how many tries they have left
         if num_tries-user_tries != 0:
