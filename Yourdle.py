@@ -89,15 +89,20 @@ while user_tries != num_tries and not correct_guess:
         except ValueError:
             print("")
             print("Invalid Input.")
+    #Runs if the user guesses the correct word.
     if user_guess == correct_answer:
         correct_guess = True
+        #Printing the user's last guess
         for i in range(word_length):
             colored_guess = colored_guess + makegreen(user_guess[i])
         previous_guesses = previous_guesses + colored_guess + "\n"
         print (previous_guesses)
         print ("You guessed correctly!")
+    #Runs if the user guesses an incorrect word
     else:
+        #Resets the valid guess boolean for the next guess
         valid_guess = False
+        #Increases the number of attempts the user has had by 1
         user_tries = user_tries + 1
         
         #Removes correct letters from the answer and user guess for later comparison
