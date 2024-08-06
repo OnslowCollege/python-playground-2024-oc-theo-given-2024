@@ -130,14 +130,17 @@ while user_tries != num_tries and not correct_guess:
             else:
                 colored_guess = colored_guess + makered(user_guess[i])
         previous_guesses = previous_guesses + colored_guess + "\n"
+        #Resetting variables for the next guess
         colored_guess = ""
         check_1 = ""
         check_2 = ""
         check_3 = ""
+        #Shows the user's last guess and all other guesses
         print (previous_guesses)
-        # Tells the user how many tries they have left
+        #Tells the user how many tries they have left
         if num_tries-user_tries != 0:
             print (f"Incorrect. You have {num_tries-user_tries} guesses left.")
+#Runs if the user runs out of guesses
 if user_tries == num_tries:
     print(f"You ran out of guesses! The answer was: {correct_answer}")
 
