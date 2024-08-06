@@ -99,9 +99,8 @@ while user_tries != num_tries and not correct_guess:
     else:
         valid_guess = False
         user_tries = user_tries + 1
-        #Colors and prints their guess along with all previous guesses
         
-        #This section works
+        #Removes correct letters from the answer and user guess for later comparison
         for i in range(word_length):
             if user_guess[i] == correct_answer[i]:
                 check_1 = check_1 + "-"
@@ -110,12 +109,14 @@ while user_tries != num_tries and not correct_guess:
                 check_1 = check_1 + user_guess[i]
                 check_2 = check_2 + correct_answer[i]
         
+        #looks for each character of the trimmed user input 
         for i in range(word_length):
             if check_1[i] in check_2:
                 check_3 = check_3 + check_1[i]
             else:
                 check_3 = check_3 + "-"
         
+        #Colors and prints their guess along with all previous guesses
         for i in range(word_length):
             if user_guess[i] == correct_answer[i]:
                 colored_guess = colored_guess + makegreen(user_guess[i])
@@ -123,7 +124,6 @@ while user_tries != num_tries and not correct_guess:
                 colored_guess = colored_guess + makeyellow(user_guess[i])
             else:
                 colored_guess = colored_guess + makered(user_guess[i])
-            
         previous_guesses = previous_guesses + colored_guess + "\n"
         colored_guess = ""
         check_1 = ""
