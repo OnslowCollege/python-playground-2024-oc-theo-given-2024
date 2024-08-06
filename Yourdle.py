@@ -114,9 +114,9 @@ while user_tries != num_tries and not correct_guess:
         print(check_2)
         print("")
         
-        for i in range(word_index):
-            if check_1[i] in check_2:
-                check_3 = check_3 + check_1[i]
+        for j in range(word_index):
+            if check_1[j] in check_2:
+                check_3 = check_3 + check_1[j]
             else:
                 check_3 = check_3 + "-"
         print (check_3)
