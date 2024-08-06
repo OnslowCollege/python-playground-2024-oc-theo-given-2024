@@ -75,8 +75,9 @@ correct_answer = user_word_list[word_index]
 #Getting the game to tell me the answer (For testing purposes)
 print(correct_answer)
 
-#The actual game part
+#Runs while the user still has guesses and they haven't yet guessed correctly
 while user_tries != num_tries and not correct_guess:
+    #Runs until the user inputs a guess that is valid
     while not valid_guess:
         try:
             user_guess = str(input("Enter your guess: "))
