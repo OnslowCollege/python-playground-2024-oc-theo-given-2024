@@ -110,20 +110,11 @@ while user_tries != num_tries and not correct_guess:
                 check_1 = check_1 + user_guess[i]
                 check_2 = check_2 + correct_answer[i]
         
-        print(check_1)
-        print(check_2)
-        print("")
-        
         for i in range(word_length):
             if check_1[i] in check_2:
                 check_3 = check_3 + check_1[i]
             else:
                 check_3 = check_3 + "-"
-        print (check_3)
-        
-        
-        
-        
         
         for i in range(word_length):
             if user_guess[i] == correct_answer[i]:
@@ -135,7 +126,6 @@ while user_tries != num_tries and not correct_guess:
             
         previous_guesses = previous_guesses + colored_guess + "\n"
         colored_guess = ""
-        print (check_3)
         check_1 = ""
         check_2 = ""
         check_3 = ""
