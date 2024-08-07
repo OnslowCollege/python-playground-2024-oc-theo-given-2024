@@ -74,7 +74,7 @@ correct_answer = user_word_list[word_index]
 #Getting the game to tell me the answer (For testing purposes)
 print(correct_answer)
 
-#Puts each character of the correct answer into a dictionary with the value being how many of that character are in the answer
+#Puts each character of the correct answer into a dictionary
 correct_chars: dict[str, int] = {}
 for i in range(word_length):
     correct_chars.setdefault(correct_answer[i], 0)
