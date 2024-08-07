@@ -74,12 +74,12 @@ correct_answer = user_word_list[word_index]
 #Getting the game to tell me the answer (For testing purposes)
 print(correct_answer)
 
-correct_characters: dict[str, int] = {}
+correct_chars: dict[str, int] = {}
 for i in range(word_length):
-    correct_characters.setdefault(correct_answer[i], 0)
+    correct_chars.setdefault(correct_answer[i], 0)
 for i in range(word_length):
-    correct_characters[correct_answer[i]] = correct_characters[correct_answer[i]] + 1
-print (correct_characters)
+    correct_chars[correct_answer[i]] = correct_chars[correct_answer[i]] + 1
+print (correct_chars)
 
 
 
@@ -128,12 +128,12 @@ while user_tries != num_tries and not correct_guess:
                 check_2 = check_2 + correct_answer[i]
         
         #looks for each character of the trimmed user input
-        characters: dict[str, int] = {}
+        chars: dict[str, int] = {}
         for i in range(word_length):
-            characters.setdefault(check_1[i], 0)
+            chars.setdefault(check_1[i], 0)
         for i in range(word_length):
-            characters[check_1[i]] = characters[check_1[i]] + 1
-        print (characters)
+            chars[check_1[i]] = chars[check_1[i]] + 1
+        print (chars)
         
         for i in range(word_length):
             if check_1[i] in check_2:
@@ -142,16 +142,16 @@ while user_tries != num_tries and not correct_guess:
                 check_3 = check_3 + "-"
         
         #Colors and prints their guess along with all previous guesses
-        guessed_characters: dict[str, int] = {}
+        guess_chars: dict[str, int] = {}
         for i in range(word_length):
-            guessed_characters.setdefault(check_3[i], 0)
-        print (guessed_characters)
+            guess_chars.setdefault(check_3[i], 0)
+        print (guess_chars)
 
         for i in range(word_length):
             if user_guess[i] == correct_answer[i]:
                 colored_guess = colored_guess + makegreen(user_guess[i])
             elif user_guess[i] == check_3[i]:
-                guessed_characters[check_3[i]] = guessed_characters[check_3[i]] + 1
+                guess_chars[check_3[i]] = guess_chars[check_3[i]] + 1
                 
                 colored_guess = colored_guess + makeyellow(user_guess[i])
             else:
