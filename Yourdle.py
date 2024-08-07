@@ -114,7 +114,13 @@ while user_tries != num_tries and not correct_guess:
                 check_1 = check_1 + user_guess[i]
                 check_2 = check_2 + correct_answer[i]
         
-        #looks for each character of the trimmed user input 
+        #looks for each character of the trimmed user input
+        characters: dict[str, int] = {}
+        for i in range(word_length):
+            characters.setdefault()
+        
+        
+        
         for i in range(word_length):
             if check_1[i] in check_2:
                 check_3 = check_3 + check_1[i]
