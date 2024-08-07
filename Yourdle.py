@@ -192,10 +192,3 @@ while user_tries != num_tries and not correct_guess:
 #Runs if the user runs out of guesses
 if user_tries == num_tries:
     print(f"You ran out of guesses! The answer was: {correct_answer}")
-
-
-
-
-
-
-

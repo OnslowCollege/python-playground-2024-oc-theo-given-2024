@@ -1,3 +1,4 @@
+"""Allows the user to remove parts of a list."""
 the_list = input("Enter the list: ")
 the_better_list = ""
 the_best_list = ""
