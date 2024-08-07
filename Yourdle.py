@@ -66,9 +66,9 @@ valid_guess = False
 user_tries = 0
 previous_guesses = ""
 colored_guess = ""
-check_1 = ""
-check_2 = ""
-check_3 = ""
+user_check = ""
+correct_check = ""
+fin_check = ""
 num_repeats = 0
 
 #While loop that forces the user to select a number of guesses within a range.
@@ -149,30 +149,30 @@ while user_tries != num_tries and not correct_guess:
         #Removes correct letters from the answer and user guess for comparison
         for i in range(word_length):
             if user_guess[i] == correct_answer[i]:
-                check_1 = check_1 + "-"
-                check_2 = check_2 + "_"
+                user_check = user_check + "-"
+                correct_check = correct_check + "_"
             else:
-                check_1 = check_1 + user_guess[i]
-                check_2 = check_2 + correct_answer[i]
+                user_check = user_check + user_guess[i]
+                correct_check = correct_check + correct_answer[i]
         
-        #looks for each character of the trimmed user input
+        #Looks for each character of the trimmed user input
         for i in range(word_length):
-            if check_1[i] in check_2:
-                check_3 = check_3 + check_1[i]
+            if user_check[i] in correct_check:
+                fin_check = fin_check + user_check[i]
             else:
-                check_3 = check_3 + "-"
+                fin_check = fin_check + "-"
         
-        #Creates a dictionary with each character in check_3
+        #Creates a dictionary with each character in yellow_check
         guess_chars: dict[str, int] = {}
         for i in range(word_length):
-            guess_chars.setdefault(check_3[i], 0)
+            guess_chars.setdefault(fin_check[i], 0)
         #Colors and prints their guess along with all previous guesses
         for i in range(word_length):
             if user_guess[i] == correct_answer[i]:
                 colored_guess = colored_guess + makegreen(user_guess[i])
-            elif user_guess[i] == check_3[i]:
-                guess_chars[check_3[i]] = guess_chars[check_3[i]] + 1
-                if guess_chars[check_3[i]] <= correct_chars[check_3[i]]:
+            elif user_guess[i] == fin_check[i]:
+                guess_chars[fin_check[i]] = guess_chars[fin_check[i]] + 1
+                if guess_chars[fin_check[i]] <= correct_chars[fin_check[i]]:
                     colored_guess = colored_guess + makeyellow(user_guess[i])
                 else:
                     colored_guess = colored_guess + makered(user_guess[i])
@@ -181,9 +181,9 @@ while user_tries != num_tries and not correct_guess:
         previous_guesses = previous_guesses + colored_guess + "\n"
         #Resetting variables for the next guess
         colored_guess = ""
-        check_1 = ""
-        check_2 = ""
-        check_3 = ""
+        user_check = ""
+        correct_check = ""
+        fin_check = ""
         #Shows the user's last guess and all other guesses
         print (previous_guesses)
         #Tells the user how many tries they have left
