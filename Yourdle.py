@@ -11,9 +11,44 @@ from letter_list_7 import word_list_7
 
 
 #Functions for easily changing color of text.
-def makegreen(skk) -> str: return (f"\033[0;37;42m{skk}\033[0;30m")
-def makeyellow(skk)-> str: return(f"\033[0;43m{skk}\033[0;30m")
-def makered(skk)-> str: return(f"\033[0;41m{skk}\033[0;30m")
+def makegreen(skk) -> str:
+    """
+    Make the string entered have a green background.
+
+    Arguments:
+    ---------
+        skk: The text that is getting a green background.
+
+    Returns: The resulting text with a green background.
+
+    """
+    return (f"\033[0;37;42m{skk}\033[0;30m")
+
+def makeyellow(skk)-> str:
+    """
+    Make the string entered have a yellow background.
+
+    Arguments:
+    ---------
+        skk: The text that is getting a yellow background.
+
+    Returns: The resulting text with a yellow background.
+
+    """
+    return(f"\033[0;43m{skk}\033[0;30m")
+
+def makered(skk)-> str:
+    """
+    Make the string entered have a red background.
+
+    Arguments:
+    ---------
+        skk: The text that is getting a red background.
+
+    Returns: The resulting text with a red background.
+
+    """
+    return(f"\033[0;41m{skk}\033[0;30m")
 
 #Dictionary containing all the word lists for easy access
 word_lists = {
