@@ -80,13 +80,6 @@ for i in range(word_length):
     correct_chars.setdefault(correct_answer[i], 0)
 for i in range(word_length):
     correct_chars[correct_answer[i]] = correct_chars[correct_answer[i]] + 1
-print (correct_chars)
-
-
-
-
-
-
 
 #Runs while the user still has guesses and they haven't yet guessed correctly
 while user_tries != num_tries and not correct_guess:
@@ -127,14 +120,6 @@ while user_tries != num_tries and not correct_guess:
             else:
                 check_1 = check_1 + user_guess[i]
                 check_2 = check_2 + correct_answer[i]
-        
-        #Creates a dictionary
-        chars: dict[str, int] = {}
-        for i in range(word_length):
-            chars.setdefault(check_1[i], 0)
-        for i in range(word_length):
-            chars[check_1[i]] = chars[check_1[i]] + 1
-        print (chars)
         
         #looks for each character of the trimmed user input
         for i in range(word_length):
