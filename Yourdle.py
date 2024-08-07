@@ -152,7 +152,7 @@ while user_tries != num_tries and not correct_guess:
                 colored_guess = colored_guess + makegreen(user_guess[i])
             elif user_guess[i] == check_3[i]:
                 guess_chars[check_3[i]] = guess_chars[check_3[i]] + 1
-                
+                if guess_chars[check_3[i]] <= correct_chars[check_3[i]]
                 colored_guess = colored_guess + makeyellow(user_guess[i])
             else:
                 colored_guess = colored_guess + makered(user_guess[i])
