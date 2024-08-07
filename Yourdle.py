@@ -127,9 +127,11 @@ while user_tries != num_tries and not correct_guess:
             else:
                 print("")
                 print("Invalid Input.")
+                print("")
         except ValueError:
             print("")
             print("Invalid Input.")
+            print("")
     #Runs if the user guesses the correct word.
     if user_guess == correct_answer:
         correct_guess = True
