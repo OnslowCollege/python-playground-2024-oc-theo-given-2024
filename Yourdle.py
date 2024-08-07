@@ -125,11 +125,9 @@ while user_tries != num_tries and not correct_guess:
                 valid_guess = True
                 print("")
             else:
-                print("")
                 print("Invalid Input.")
                 print("")
         except ValueError:
-            print("")
             print("Invalid Input.")
             print("")
     #Runs if the user guesses the correct word.
@@ -190,7 +188,7 @@ while user_tries != num_tries and not correct_guess:
         print (previous_guesses)
         #Tells the user how many tries they have left
         if num_tries-user_tries != 0:
-            print (f"Incorrect. You have {num_tries-user_tries} guesses left.")
+            print (f"You have {num_tries-user_tries} guesses left.")
 #Runs if the user runs out of guesses
 if user_tries == num_tries:
     print(f"You ran out of guesses! The answer was: {correct_answer}")
