@@ -162,7 +162,7 @@ while user_tries != num_tries and not correct_guess:
             else:
                 fin_check = fin_check + "-"
         
-        #Creates a dictionary with each character in yellow_check
+        #Creates a dictionary with each character in fin_check
         guess_chars: dict[str, int] = {}
         for i in range(word_length):
             guess_chars.setdefault(fin_check[i], 0)
