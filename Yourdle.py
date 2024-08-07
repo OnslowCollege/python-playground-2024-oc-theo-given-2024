@@ -53,7 +53,7 @@ while not valid_tries:
 #While loop that forces the user to select a word length within a range.
 while not valid_length:
     try:
-        word_length = int(input("Enter the length of the word you'll guess (3-7): "))
+        word_length = int(input("Enter length of word you'll guess (3-7): "))
         if 3 <= word_length <= 7:
             valid_length = True
             print("")
@@ -112,7 +112,7 @@ while user_tries != num_tries and not correct_guess:
         #Increases the number of attempts the user has had by 1
         user_tries = user_tries + 1
         
-        #Removes correct letters from the answer and user guess for later comparison
+        #Removes correct letters from the answer and user guess for comparison
         for i in range(word_length):
             if user_guess[i] == correct_answer[i]:
                 check_1 = check_1 + "-"
