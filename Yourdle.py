@@ -142,10 +142,17 @@ while user_tries != num_tries and not correct_guess:
                 check_3 = check_3 + "-"
         
         #Colors and prints their guess along with all previous guesses
+        guessed_characters: dict[str, int] = {}
+        for i in range(word_length):
+            guessed_characters.setdefault(check_3[i], 0)
+        print (guessed_characters)
+
         for i in range(word_length):
             if user_guess[i] == correct_answer[i]:
                 colored_guess = colored_guess + makegreen(user_guess[i])
             elif user_guess[i] == check_3[i]:
+                
+
                 colored_guess = colored_guess + makeyellow(user_guess[i])
             else:
                 colored_guess = colored_guess + makered(user_guess[i])
