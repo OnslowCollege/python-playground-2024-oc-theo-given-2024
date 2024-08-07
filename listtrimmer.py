@@ -12,3 +12,5 @@ for i in range(0,len(the_list),4):
         the_best_list = the_best_list + the_better_list[i:i+4] + " "
 print("Here is the trimmed list:")
 print(the_best_list.split())
+
+"dick, fuck"
