@@ -117,9 +117,10 @@ while user_tries != num_tries and not correct_guess:
         #looks for each character of the trimmed user input
         characters: dict[str, int] = {}
         for i in range(word_length):
-            characters.setdefault()
-        
-        
+            characters.setdefault(check_1[i], 0)
+        for i in range(word_length):
+            characters[check_1[i]] = characters[check_1[i]] + 1
+        print (characters)
         
         for i in range(word_length):
             if check_1[i] in check_2:
