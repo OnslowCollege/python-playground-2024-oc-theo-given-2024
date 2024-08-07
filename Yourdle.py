@@ -74,6 +74,19 @@ correct_answer = user_word_list[word_index]
 #Getting the game to tell me the answer (For testing purposes)
 print(correct_answer)
 
+correct_characters: dict[str, int] = {}
+for i in range(word_length):
+    correct_characters.setdefault(correct_answer[i], 0)
+for i in range(word_length):
+    correct_characters[correct_answer[i]] = correct_characters[correct_answer[i]] + 1
+print (correct_characters)
+
+
+
+
+
+
+
 #Runs while the user still has guesses and they haven't yet guessed correctly
 while user_tries != num_tries and not correct_guess:
     #Runs until the user inputs a guess that is valid
