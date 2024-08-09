@@ -69,7 +69,7 @@ colored_guess = ""
 user_check = ""
 correct_check = ""
 fin_check = ""
-wrong_chars = ""
+wrong_chars: list[str] = []
 num_repeats = 0
 
 #While loop that forces the user to select a number of guesses within a range.
