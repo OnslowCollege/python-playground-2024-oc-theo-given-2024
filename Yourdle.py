@@ -69,7 +69,7 @@ colored_guess = ""
 user_check = ""
 correct_check = ""
 fin_check = ""
-wrong_chars: list[str] = []
+wrong_chars_list: list[str] = []
 num_repeats = 0
 
 #While loop that forces the user to select a number of guesses within a range.
@@ -177,10 +177,12 @@ while user_tries != num_tries and not correct_guess:
                     colored_guess = colored_guess + makeyellow(user_guess[i])
                 else:
                     colored_guess = colored_guess + makered(user_guess[i])
-                    wrong_chars.append(makered(user_guess[i]))
+                    wrong_chars_list.append(makered(user_guess[i]))
             else:
                 colored_guess = colored_guess + makered(user_guess[i])
-                wrong_chars.append(makered(user_guess[i]))
+                wrong_chars_list.append(makered(user_guess[i]))
+                if wrong_chars_list.count(user_guess[i]) >= 2:
+                    wrong_chars_list.remove(user_guess[i])
         previous_guesses = previous_guesses + colored_guess + "\n"
         #Resetting variables for the next guess
         colored_guess = ""
@@ -191,7 +193,7 @@ while user_tries != num_tries and not correct_guess:
         print (previous_guesses)
         #Shows all incorrect characters the user has found so far
         print("")
-        print(wrong_chars)
+        print(wrong_chars_list)
         #Tells the user how many tries they have left
         if num_tries-user_tries != 0:
             print (f"You have {num_tries-user_tries} guesses left.")
