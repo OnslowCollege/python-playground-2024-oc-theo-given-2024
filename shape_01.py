@@ -1,0 +1,21 @@
+def print_square():
+    print(".________.")
+    print("|        |")
+    print("|        |")
+    print("|        |")
+    print("|        |")
+    print(".________.")
+def print_triangle():
+    print("  /\  ")
+    print(" /  \ ")
+    print(".____.")
+def print_rectangle():
+    print(".________.")
+    print("|        |")
+    print(".________.")
+print_triangle()
+print_square()
+print_triangle()
+print_rectangle()
+print_triangle()
+print_square()
