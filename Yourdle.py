@@ -69,6 +69,7 @@ colored_guess = ""
 user_check = ""
 correct_check = ""
 fin_check = ""
+wrong_chars = ""
 wrong_chars_list: list[str] = []
 num_repeats = 0
 
@@ -168,6 +169,7 @@ while user_tries != num_tries and not correct_guess:
         for i in range(word_length):
             guess_chars.setdefault(fin_check[i], 0)
         #Colors their guess and adds it to a string with all previous guesses
+        #Also, adds all characters absent from the answer into a list.
         for i in range(word_length):
             if user_guess[i] == correct_answer[i]:
                 colored_guess = colored_guess + makegreen(user_guess[i])
@@ -193,7 +195,9 @@ while user_tries != num_tries and not correct_guess:
         print (previous_guesses)
         #Shows all incorrect characters the user has found so far
         print("")
-        print(wrong_chars_list)
+        for i in range(len(wrong_chars_list)):
+            wrong_chars = wrong_chars + wrong_chars_list[i] + " "
+        print (wrong_chars)
         #Tells the user how many tries they have left
         if num_tries-user_tries != 0:
             print (f"You have {num_tries-user_tries} guesses left.")
