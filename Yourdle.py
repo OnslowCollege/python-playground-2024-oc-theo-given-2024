@@ -217,7 +217,10 @@ while user_tries != num_tries and not correct_guess:
         wrong_chars = ""
         #Tells the user how many tries they have left
         if num_tries-user_tries != 0:
-            print (f"You have {num_tries-user_tries} guesses left.")
+            if num_tries-user_tries == 1:
+                print ("You have 1 guess left.")
+            else:
+                print (f"You have {num_tries-user_tries} guesses left.")
 #Runs if the user runs out of guesses
 if user_tries == num_tries:
     print(f"No more guesses left! The answer was: {makegreen(correct_answer)}")
