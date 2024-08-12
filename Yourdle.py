@@ -123,6 +123,7 @@ while user_tries != num_tries and not correct_guess:
     while not valid_guess:
         try:
             user_guess = str(input("Enter your guess: "))
+            user_guess.lower()
             if len(user_guess) == word_length:
                 valid_guess = True
                 print("")
