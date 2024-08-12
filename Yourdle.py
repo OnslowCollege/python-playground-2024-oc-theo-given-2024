@@ -73,7 +73,6 @@ correct_check = ""
 fin_check = ""
 wrong_chars = ""
 wrong_chars_list: list[str] = []
-num_repeats = 0
 
 #While loop that forces the user to select a number of guesses within a range.
 while not valid_tries:
