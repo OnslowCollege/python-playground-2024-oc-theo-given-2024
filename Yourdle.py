@@ -190,6 +190,7 @@ while user_tries != num_tries and not correct_guess:
         print (previous_guesses)
         #Shows all incorrect characters the user has found so far
         print("")
+        wrong_chars_list.sort()
         for i in range(len(wrong_chars_list)):
             wrong_chars = wrong_chars + wrong_chars_list[i] + " "
         print (wrong_chars)
