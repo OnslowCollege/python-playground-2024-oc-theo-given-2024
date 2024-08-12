@@ -64,6 +64,7 @@ valid_tries = False
 valid_length = False
 correct_guess = False
 valid_guess = False
+valid_letter = False
 user_tries = 0
 previous_guesses = ""
 colored_guess = ""
