@@ -125,6 +125,9 @@ while user_tries != num_tries and not correct_guess:
             user_guess = str(input("Enter your guess: "))
             user_guess = user_guess.lower()
             if len(user_guess) == word_length:
+                for i in range(word_length):
+                    if user_guess[i] == "1" or "2" or "3" or "4" or "5" or "6" or "7" or "8" or "9" or "0":
+                        valid_guess = False
                 valid_guess = True
                 print("")
             else:
