@@ -129,9 +129,13 @@ while user_tries != num_tries and not correct_guess:
             if len(user_guess) == word_length:
                 valid_guess = True
                 for i in range(word_length):
+                    valid_letter = False
                     for j in range(len(letter_list)):
-                        if user_guess[i] != letter_list[j]:
-                            valid_guess = False
+                        if user_guess[i] == letter_list[j]:
+                            valid_letter = True
+                    if not valid_letter:
+                        valid_guess = False
+                    valid_letter = False
                 if not valid_guess:
                     print("Invalid Input.")
                 print("")
