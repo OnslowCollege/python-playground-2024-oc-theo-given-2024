@@ -127,8 +127,9 @@ while user_tries != num_tries and not correct_guess:
             user_guess = user_guess.lower()
             if len(user_guess) == word_length:
                 for i in range(word_length):
-                    if user_guess[i] not in number_list:
-                        valid_guess = True
+                    for j in range(len(number_list)):
+                        if user_guess[i] != number_list[j]:
+                            valid_guess = True
                 if not valid_guess:
                     print("Invalid Input.")
                 print("")
