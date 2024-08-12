@@ -59,7 +59,7 @@ word_lists = {
     7:word_list_7}
 
 #Setting Variables
-number_list: list[str] = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]
+letter_list = "qwertyuiopasdfghjklzxcvbnm"
 valid_tries = False
 valid_length = False
 correct_guess = False
@@ -128,8 +128,8 @@ while user_tries != num_tries and not correct_guess:
             if len(user_guess) == word_length:
                 valid_guess = True
                 for i in range(word_length):
-                    for j in range(len(number_list)):
-                        if user_guess[i] == number_list[j]:
+                    for j in range(len(letter_list)):
+                        if user_guess[i] != letter_list[j]:
                             valid_guess = False
                 if not valid_guess:
                     print("Invalid Input.")
