@@ -128,6 +128,7 @@ while user_tries != num_tries and not correct_guess:
             user_guess = user_guess.lower()
             if len(user_guess) == word_length:
                 valid_guess = True
+                #Makes sure all characters in the answer are letters
                 for i in range(word_length):
                     valid_letter = False
                     for j in range(len(letter_list)):
