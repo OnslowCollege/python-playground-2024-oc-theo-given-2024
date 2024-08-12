@@ -126,10 +126,11 @@ while user_tries != num_tries and not correct_guess:
             user_guess = str(input("Enter your guess: "))
             user_guess = user_guess.lower()
             if len(user_guess) == word_length:
+                valid_guess = True
                 for i in range(word_length):
                     for j in range(len(number_list)):
-                        if user_guess[i] != number_list[j]:
-                            valid_guess = True
+                        if user_guess[i] == number_list[j]:
+                            valid_guess = False
                 if not valid_guess:
                     print("Invalid Input.")
                 print("")
