@@ -59,6 +59,7 @@ word_lists = {
     7:word_list_7}
 
 #Setting Variables
+number_list: list[str] = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]
 valid_tries = False
 valid_length = False
 correct_guess = False
@@ -126,9 +127,10 @@ while user_tries != num_tries and not correct_guess:
             user_guess = user_guess.lower()
             if len(user_guess) == word_length:
                 for i in range(word_length):
-                    if user_guess[i] == "1" or "2" or "3" or "4" or "5" or "6" or "7" or "8" or "9" or "0":
-                        valid_guess = False
-                valid_guess = True
+                    if user_guess[i] not in number_list:
+                        valid_guess = True
+                if not valid_guess:
+                    print("Invalid Input.")
                 print("")
             else:
                 print("Invalid Input.")
