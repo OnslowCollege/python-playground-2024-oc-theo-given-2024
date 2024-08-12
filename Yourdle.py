@@ -191,7 +191,7 @@ while user_tries != num_tries and not correct_guess:
         print("")
         wrong_chars_list.sort()
         for i in range(len(wrong_chars_list)):
-            if i > len(wrong_chars_list)-i:
+            if i < len(wrong_chars_list)-1:
                 wrong_chars = wrong_chars + wrong_chars_list[i] + makered(" ")
             else:
                 wrong_chars = wrong_chars + wrong_chars_list[i]
