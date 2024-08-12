@@ -179,7 +179,6 @@ while user_tries != num_tries and not correct_guess:
                     colored_guess = colored_guess + makeyellow(user_guess[i])
                 else:
                     colored_guess = colored_guess + makered(user_guess[i])
-                    wrong_chars_list.append(makered(user_guess[i]))
             else:
                 colored_guess = colored_guess + makered(user_guess[i])
                 wrong_chars_list.append(makered(user_guess[i]))
