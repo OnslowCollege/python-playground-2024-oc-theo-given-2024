@@ -192,7 +192,7 @@ while user_tries != num_tries and not correct_guess:
         wrong_chars_list.sort()
         for i in range(len(wrong_chars_list)):
             wrong_chars = wrong_chars + wrong_chars_list[i] + makered(" ")
-        print (wrong_chars[:-1])
+        print (wrong_chars[:-21])
         #Resetting variables for the next guess
         colored_guess = ""
         user_check = ""
