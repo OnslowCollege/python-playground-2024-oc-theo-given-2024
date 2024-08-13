@@ -110,7 +110,7 @@ word_index = random.randrange(0, len(user_word_list))
 correct_answer = user_word_list[word_index]
 correct_answer = correct_answer.lower()
 #Getting the game to tell me the answer (For testing purposes)
-print(correct_answer)
+
 #Puts each character of the correct answer into a dictionary
 correct_chars: dict[str, int] = {}
 for i in range(word_length):
