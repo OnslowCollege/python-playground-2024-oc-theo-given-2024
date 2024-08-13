@@ -69,7 +69,7 @@ user_tries = 0
 previous_guesses = ""
 colored_guess = ""
 user_check = ""
-correct_check = ""
+answer_check = ""
 fin_check = ""
 wrong_chars = ""
 wrong_chars_list: list[str] = []
@@ -160,24 +160,24 @@ while user_tries != num_tries and not correct_guess:
         for i in range(word_length):
             if user_guess[i] == correct_answer[i]:
                 user_check = user_check + "-"
-                correct_check = correct_check + "_"
+                answer_check = answer_check + "_"
             else:
                 user_check = user_check + user_guess[i]
-                correct_check = correct_check + correct_answer[i]
+                answer_check = answer_check + correct_answer[i]
         
         #Looks for each character of the trimmed user input
         for i in range(word_length):
-            if user_check[i] in correct_check:
+            if user_check[i] in answer_check:
                 fin_check = fin_check + user_check[i]
             else:
                 fin_check = fin_check + "-"
         
-        #Puts each character of the correct_check into a dictionary
+        #Puts each character of the answer_check into a dictionary
         correct_chars: dict[str, int] = {}
         for i in range(word_length):
-            correct_chars.setdefault(correct_check[i], 0)
+            correct_chars.setdefault(answer_check[i], 0)
         for i in range(word_length):
-            correct_chars[correct_check[i]] = correct_chars[correct_check[i]] + 1
+            correct_chars[answer_check[i]] = correct_chars[answer_check[i]] + 1
         #Creates a dictionary with each character in fin_check
         guess_chars: dict[str, int] = {}
         for i in range(word_length):
@@ -213,7 +213,7 @@ while user_tries != num_tries and not correct_guess:
         #Resetting variables for the next guess
         colored_guess = ""
         user_check = ""
-        correct_check = ""
+        answer_check = ""
         fin_check = ""
         wrong_chars = ""
         #Tells the user how many tries they have left
