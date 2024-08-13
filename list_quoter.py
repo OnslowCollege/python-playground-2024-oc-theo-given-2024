@@ -1,2 +1,4 @@
 """Takes a list and puts all entries in double quotes."""
-print ((input("Enter the list: ")).replace("'", '"'))
+the_list = input("Enter the list: ")
+the_list = list(the_list)
+print(the_list)
