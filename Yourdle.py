@@ -194,7 +194,8 @@ while user_tries != num_tries and not correct_guess:
                     colored_guess = colored_guess + makered(user_guess[i])
             else:
                 colored_guess = colored_guess + makered(user_guess[i])
-                wrong_chars_list.append(makered(user_guess[i]))
+                if user_guess[i] not in correct_answer:
+                    wrong_chars_list.append(makered(user_guess[i]))
                 if wrong_chars_list.count(makered(user_guess[i])) >= 2:
                     wrong_chars_list.remove(makered(user_guess[i]))
         previous_guesses = previous_guesses + colored_guess + "\n"
