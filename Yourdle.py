@@ -172,7 +172,7 @@ while user_tries != num_tries and not correct_guess:
             else:
                 fin_check = fin_check + "-"
         
-        #Puts each character of the answer_check into a dictionary
+        #Puts each character of the answer check into a dictionary
         correct_chars: dict[str, int] = {}
         for i in range(word_length):
             correct_chars.setdefault(answer_check[i], 0)
