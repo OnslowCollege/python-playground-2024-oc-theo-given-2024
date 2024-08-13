@@ -111,7 +111,6 @@ correct_answer = user_word_list[word_index]
 correct_answer = correct_answer.lower()
 
 #Choosing the answer (For testing purposes)
-correct_answer = input("Enter the answer: ")
 
 #Runs while the user still has guesses and they haven't yet guessed correctly
 while user_tries != num_tries and not correct_guess:
