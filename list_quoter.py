@@ -1,3 +1,5 @@
 """Takes a list and puts all entries in double quotes."""
 the_list = input("Enter the list: ")
-print (the_list.replace("'", '"'))
+print("")
+print("Here is the list:")
+print(the_list.replace("'", '"'))
