@@ -110,7 +110,7 @@ word_index = random.randrange(0, len(user_word_list))
 correct_answer = user_word_list[word_index]
 correct_answer = correct_answer.lower()
 
-#Chossing the answer (For testing purposes)
+#Choosing the answer (For testing purposes)
 correct_answer = input("Enter the answer: ")
 
 #Runs while the user still has guesses and they haven't yet guessed correctly
