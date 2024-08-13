@@ -109,16 +109,8 @@ user_word_list = word_lists[word_length]
 word_index = random.randrange(0, len(user_word_list))
 correct_answer = user_word_list[word_index]
 correct_answer = correct_answer.lower()
-#Getting the game to tell me the answer (For testing purposes)
-
-#Puts each character of the correct answer into a dictionary
-correct_chars: dict[str, int] = {}
-for i in range(word_length):
-    correct_chars.setdefault(correct_answer[i], 0)
-for i in range(word_length):
-    correct_chars[correct_answer[i]] = correct_chars[correct_answer[i]] + 1
-
-print(correct_chars)
+#Chossing the answer (For testing purposes)
+correct_answer = input("Enter the answer: ")
 
 #Runs while the user still has guesses and they haven't yet guessed correctly
 while user_tries != num_tries and not correct_guess:
@@ -179,6 +171,12 @@ while user_tries != num_tries and not correct_guess:
             else:
                 fin_check = fin_check + "-"
         
+        #Puts each character of the correct_check into a dictionary
+        correct_chars: dict[str, int] = {}
+        for i in range(word_length):
+            correct_chars.setdefault(correct_check[i], 0)
+        for i in range(word_length):
+            correct_chars[correct_check[i]] = correct_chars[correct_check[i]] + 1
         #Creates a dictionary with each character in fin_check
         guess_chars: dict[str, int] = {}
         for i in range(word_length):
