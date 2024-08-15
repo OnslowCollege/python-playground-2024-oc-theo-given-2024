@@ -106,12 +106,14 @@ while not valid_length:
 user_word_list = word_lists[word_length]
 
 #Randomly selecting a word from the aforementioned list to be the answer.
-word_index = random.randrange(0, len(user_word_list))
-correct_answer = user_word_list[word_index]
-correct_answer = correct_answer.lower()
+
 
 #Choosing the answer (For testing purposes)
 correct_answer = input("Enter the answer: ")
+if correct_answer == (""):
+    word_index = random.randrange(0, len(user_word_list))
+    correct_answer = user_word_list[word_index]
+    correct_answer = correct_answer.lower()
 
 #Runs while the user still has guesses and they haven't yet guessed correctly
 while user_tries != num_tries and not correct_guess:
