@@ -120,7 +120,10 @@ while user_tries != num_tries and not correct_guess:
     #Runs until the user inputs a guess that is valid
     while not valid_guess:
         try:
-            user_guess = str(input("Enter your guess: "))
+            if num_tries-user_tries == 1:
+                user_guess = str(input("Enter your final guess: "))
+            else:
+                user_guess = str(input("Enter your guess: "))
             user_guess = user_guess.lower()
             if len(user_guess) == word_length:
                 valid_guess = True
