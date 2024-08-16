@@ -1,6 +1,6 @@
 """expewiments."""
 from textual.app import App, ComposeResult
-from textual.widgets import Footer, Header
+from textual.widgets import Header, Footer
 
 
 class StopwatchApp(App):
@@ -14,7 +14,7 @@ class StopwatchApp(App):
         yield Footer()
 
     def action_toggle_dark(self) -> None:
-        """Toggles dark mode."""
+        """An action to toggle dark mode."""
         self.dark = not self.dark
 
 
