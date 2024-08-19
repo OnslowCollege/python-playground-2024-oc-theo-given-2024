@@ -32,13 +32,13 @@ class TimeDisplay(Static):
         self.start_time = monotonic()
         self.update_timer.resume()
 
-    def stop(self) -> None:
+    def stop(self):
         """Method to stop the time display updating."""
         self.update_timer.pause()
         self.total += monotonic() - self.start_time
         self.time = self.total
 
-    def reset(self) -> None:
+    def reset(self):
         """Method to reset the time display to zero."""
         self.total = 0
         self.time = 0
@@ -71,14 +71,31 @@ class Stopwatch(Static):
 class StopwatchApp(App):
     """A Textual app to manage stopwatches."""
 
-    CSS_PATH = "stopwatch04.tcss"
-    BINDINGS = [("d", "toggle_dark", "Toggle dark mode")]
+    CSS_PATH = "stopwatch.tcss"
+
+    BINDINGS = [
+        ("d", "toggle_dark", "Toggle dark mode"),
+        ("a", "add_stopwatch", "Add"),
+        ("r", "remove_stopwatch", "Remove"),
+    ]
 
     def compose(self) -> ComposeResult:
         """Called to add widgets to the app."""
         yield Header()
         yield Footer()
-        yield ScrollableContainer(Stopwatch(), Stopwatch(), Stopwatch())
+        yield ScrollableContainer(Stopwatch(), Stopwatch(), Stopwatch(), id="timers")
+
+    def action_add_stopwatch(self) -> None:
+        """An action to add a timer."""
+        new_stopwatch = Stopwatch()
+        self.query_one("#timers").mount(new_stopwatch)
+        new_stopwatch.scroll_visible()
+
+    def action_remove_stopwatch(self) -> None:
+        """Called to remove a timer."""
+        timers = self.query("Stopwatch")
+        if timers:
+            timers.last().remove()
 
     def action_toggle_dark(self) -> None:
         """An action to toggle dark mode."""
