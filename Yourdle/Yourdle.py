@@ -11,7 +11,8 @@ from letter_list_7 import word_list_7
 
 #Importing Textual modules
 from textual.app import App, ComposeResult
-
+from textual.containers import Horizontal, Vertical, ScrollableContainer
+from textual.widgets import Static
 
 #Functions for easily changing color of text.
 def makegreen(skk) -> str:
