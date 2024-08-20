@@ -14,14 +14,16 @@ from textual.app import App, ComposeResult
 from textual.containers import Horizontal, ScrollableContainer, Vertical
 from textual.widgets import Static
 
+
 #TEXTUAL
 class LetterGuess(Static):
-    """"""
+    def compose(self) -> ComposeResult:
+        yield Static("E")
 class WordGuess(Static):
     def compose(self) -> ComposeResult:
-        yield LetterGuess("T")
-        yield LetterGuess("I")
-        yield LetterGuess("E")
+        yield LetterGuess("W")
+        yield LetterGuess("H")
+        yield LetterGuess("Y")
 
 class Yourdle(App):
     CSS_PATH = "Yourdle.tcss"
