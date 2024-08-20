@@ -9,6 +9,9 @@ from letter_list_5 import word_list_5
 from letter_list_6 import word_list_6
 from letter_list_7 import word_list_7
 
+#Importing Textual modules
+from textual.app import App, ComposeResult
+
 
 #Functions for easily changing color of text.
 def makegreen(skk) -> str:
