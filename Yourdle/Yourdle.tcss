@@ -2,6 +2,7 @@ Screen {layout: vertical;}
 
 WordGuess {
     layout: horizontal;
+    background: 
     width: 100%;
     content-align: center top;
 }
