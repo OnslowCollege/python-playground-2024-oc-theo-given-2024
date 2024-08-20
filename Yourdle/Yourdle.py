@@ -231,3 +231,7 @@ while user_tries != num_tries and not correct_guess:
 #Runs if the user runs out of guesses
 if user_tries == num_tries:
     print(f"No more guesses left! The answer was: {makegreen(correct_answer)}")
+
+
+
+#TEXTUAL
