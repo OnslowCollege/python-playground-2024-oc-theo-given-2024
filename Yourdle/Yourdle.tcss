@@ -6,6 +6,7 @@ WordGuess {
 
 LetterGuess{
     height: 1;
-    width: 1;
+    width: 3;
     border: solid green;
+    color:
 }
