@@ -17,8 +17,7 @@ from textual.widgets import Static
 
 #TEXTUAL
 class LetterGuess(Static):
-    def compose(self) -> ComposeResult:
-        yield Static("E")
+    """"""
 class WordGuess(Static):
     def compose(self) -> ComposeResult:
         yield LetterGuess("W")

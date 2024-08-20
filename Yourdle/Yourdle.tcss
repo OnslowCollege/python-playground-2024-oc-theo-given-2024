@@ -5,8 +5,7 @@ WordGuess {
 }
 
 LetterGuess{
-    height: 1;
-    width: 3;
+    height: 3;
+    width: 4.5;
     border: solid green;
-    color:
 }
