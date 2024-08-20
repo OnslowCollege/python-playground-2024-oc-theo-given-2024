@@ -2,7 +2,7 @@ Screen {layout: vertical;}
 
 WordGuess {
     layout: horizontal;
-    background: 
+    background: ansi_bright_black;
     width: 100%;
     content-align: center top;
 }
@@ -10,5 +10,6 @@ WordGuess {
 LetterGuess{
     height: 3;
     width: 4.5;
+    background: lime;
     border: solid green;
 }
