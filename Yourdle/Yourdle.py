@@ -16,8 +16,10 @@ from textual.widgets import Static
 
 #TEXTUAL
 class LetterGuess(Static):
-    
-
+    """"""
+class WordGuess(Static):
+    def compose(self) -> ComposeResult:
+        yield Horizontal(LetterGuess())
 #Functions for easily changing color of text.
 def makegreen(skk) -> str:
     """
