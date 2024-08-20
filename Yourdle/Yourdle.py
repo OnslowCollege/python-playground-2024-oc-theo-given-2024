@@ -15,7 +15,8 @@ from textual.containers import Horizontal, ScrollableContainer, Vertical
 from textual.widgets import Static
 
 #TEXTUAL
-class 
+class LetterGuess(Static):
+    
 
 #Functions for easily changing color of text.
 def makegreen(skk) -> str:
