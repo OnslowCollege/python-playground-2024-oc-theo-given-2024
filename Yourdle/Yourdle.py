@@ -19,7 +19,18 @@ class LetterGuess(Static):
     """"""
 class WordGuess(Static):
     def compose(self) -> ComposeResult:
-        yield Horizontal(LetterGuess())
+        yield Horizontal(LetterGuess("T"), LetterGuess("I"), LetterGuess("E"))
+
+class Yourdle(App):
+    CSS_PATH = "Yourdle.tcss"
+
+    def compose(self) -> ComposeResult:
+        yield WordGuess()
+
+if __name__ == "__main__":
+    app = Yourdle()
+    app.run()
+
 #Functions for easily changing color of text.
 def makegreen(skk) -> str:
     """
