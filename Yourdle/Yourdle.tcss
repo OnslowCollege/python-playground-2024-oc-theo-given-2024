@@ -1,1 +1,6 @@
 Screen {layout: vertical;}
+
+LetterGuess{
+    height: 1;
+    border: solid green;
+}

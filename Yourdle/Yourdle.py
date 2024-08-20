@@ -19,7 +19,9 @@ class LetterGuess(Static):
     """"""
 class WordGuess(Static):
     def compose(self) -> ComposeResult:
-        yield Horizontal(LetterGuess("T"), LetterGuess("I"), LetterGuess("E"))
+        yield LetterGuess("T")
+        yield LetterGuess("I")
+        yield LetterGuess("E")
 
 class Yourdle(App):
     CSS_PATH = "Yourdle.tcss"
