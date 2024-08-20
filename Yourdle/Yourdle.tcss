@@ -2,6 +2,8 @@ Screen {layout: vertical;}
 
 WordGuess {
     layout: horizontal;
+    width: 100%;
+    content-align: center top;
 }
 
 LetterGuess{
