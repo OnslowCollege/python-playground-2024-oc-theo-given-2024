@@ -15,7 +15,7 @@ WordGuess {
     margin: 1;
     background: ansi_green;
     border: solid green;
-    content-align: center middle
+    content-align: center middle;
 }
 
 InputContainer{
