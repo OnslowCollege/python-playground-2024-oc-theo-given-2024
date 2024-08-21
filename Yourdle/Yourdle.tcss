@@ -12,6 +12,15 @@ WordGuess {
 .letterguess{
     height: 3;
     width: 4;
+    margin: 1;
     background: lime;
     border: solid green;
+}
+
+InputContainer{
+    dock: bottom;
+    background: $boost;
+    layout: vertical;
+    margin: 1;
+    padding: 1;
 }

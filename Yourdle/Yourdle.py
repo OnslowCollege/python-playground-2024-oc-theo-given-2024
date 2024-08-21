@@ -12,7 +12,7 @@ from letter_list_7 import word_list_7
 #Importing Textual modules
 from textual.app import App, ComposeResult
 from textual.containers import Horizontal, ScrollableContainer, Vertical
-from textual.widgets import Static
+from textual.widgets import Static, Button
 
 
 #TEXTUAL
@@ -27,6 +27,10 @@ class Yourdle(App):
 
     def compose(self) -> ComposeResult:
         yield WordGuess()
+
+class InputContainer(Static):
+    def compose(self) -> ComposeResult:
+        yield Button("e")
 
 if __name__ == "__main__":
     app = Yourdle()
