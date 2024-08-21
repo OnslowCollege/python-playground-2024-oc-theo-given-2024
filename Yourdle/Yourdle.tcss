@@ -1,9 +1,12 @@
-Screen {layout: vertical;}
+Screen {
+    layout: vertical;
+}
 
 WordGuess {
     layout: horizontal;
     background: $boost;
-    height: 5;
+    height: 5fr;
+    width: 100%;
     margin: 1;
     padding: 1;
     align: center middle;
