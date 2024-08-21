@@ -13,8 +13,8 @@ WordGuess {
     height: 100%;
     width: 3;
     margin: 1;
-    background: ansi_green;
-    border: red;
+    background: green;
+    border: forestgreen;
     content-align: center middle;
 }
 
