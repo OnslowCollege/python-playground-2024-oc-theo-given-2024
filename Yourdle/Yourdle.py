@@ -111,7 +111,7 @@ while not valid_length:
 class WordGuess(Static):
     def compose(self) -> ComposeResult:
         for i in range(word_length):
-            yield Static("E", classes = "correct" "letterguess")
+            yield Static("E", classes = "letterguess")
 
 class Yourdle(App):
     CSS_PATH = "Yourdle.tcss"
