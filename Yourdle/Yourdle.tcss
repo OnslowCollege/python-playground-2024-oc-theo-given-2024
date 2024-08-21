@@ -5,7 +5,7 @@ Screen {
 WordGuess {
     layout: horizontal;
     background: $boost;
-    height: 5fr;
+    height: 5;
     width: 100%;
     margin: 1;
     padding: 1;
