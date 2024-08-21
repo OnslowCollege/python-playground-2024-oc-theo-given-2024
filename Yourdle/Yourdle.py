@@ -12,7 +12,7 @@ from letter_list_7 import word_list_7
 #Importing Textual modules
 from textual.app import App, ComposeResult
 from textual.containers import Horizontal, ScrollableContainer, Vertical
-from textual.widgets import Static, Button
+from textual.widgets import Button, Static
 
 
 #TEXTUAL
