@@ -33,6 +33,7 @@ class Yourdle(App):
 
 class InputContainer(Static):
     def compose(self) -> ComposeResult:
+        self.widget.styles.height = "auto"
         yield Button("Q")
         yield Button("W")
         yield Button("E")
