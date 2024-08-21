@@ -7,9 +7,9 @@ WordGuess {
     content-align: center top;
 }
 
-#letterguess{
+.letterguess{
     height: 3;
-    width: 4.5;
+    width: 4;
     background: lime;
     border: solid green;
 }
