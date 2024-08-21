@@ -16,14 +16,14 @@ WordGuess {
     height: 100%;
     width: 9;
     margin: 0;
-    background: rgb(0, 0, 0);
+    background: green;
     border: tall rgb(44, 169, 44);
     content-align: center middle;
 }
 
 .correct{
     background: green;
-    border: tall rgb(44, 169, 44);
+    border: tall rgb(44, 169, 44)
 }
 InputContainer{
     background: $boost;
