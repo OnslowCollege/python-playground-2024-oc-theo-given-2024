@@ -15,7 +15,7 @@ WordGuess {
     width: 4;
     margin: 1;
     background: ansi_green;
-    border: solid green;
+    border: red;
     content-align: center middle;
 }
 
