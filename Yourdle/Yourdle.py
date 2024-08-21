@@ -29,10 +29,12 @@ class Yourdle(App):
 
     def compose(self) -> ComposeResult:
         yield WordGuess()
+        yield InputContainer()
 
 class InputContainer(Static):
     def compose(self) -> ComposeResult:
-        yield Button("e")
+        yield Button("Q", classes="input")
+        yield Button("W", classes="input")
 
 if __name__ == "__main__":
     app = Yourdle()

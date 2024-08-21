@@ -22,7 +22,12 @@ WordGuess {
 InputContainer{
     dock: bottom;
     background: $boost;
-    layout: vertical;
+    layout: horizontal;
     margin: 1;
     padding: 1;
+}
+
+.input{
+    width: 4;
+    height: 4;
 }
