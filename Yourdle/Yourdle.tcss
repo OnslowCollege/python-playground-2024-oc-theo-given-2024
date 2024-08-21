@@ -13,8 +13,9 @@ WordGuess {
     height: 3;
     width: 4;
     margin: 1;
-    background: lime;
+    background: ansi_green;
     border: solid green;
+    content-align: center middle
 }
 
 InputContainer{
