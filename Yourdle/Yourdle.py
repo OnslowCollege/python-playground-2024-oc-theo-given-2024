@@ -28,12 +28,19 @@ class Yourdle(App):
     CSS_PATH = "Yourdle.tcss"
 
     def compose(self) -> ComposeResult:
-        yield WordGuess()
+        yield GuessContainer()
         yield InputContainer()
+
+class GuessContainer(Static):
+    def compose(self) -> ComposeResult:
+        yield WordGuess()
+        yield WordGuess()
+        yield WordGuess()
+        yield WordGuess()
+        yield WordGuess()
 
 class InputContainer(Static):
     def compose(self) -> ComposeResult:
-        self.widget.styles.height = "auto"
         yield Button("Q")
         yield Button("W")
         yield Button("E")

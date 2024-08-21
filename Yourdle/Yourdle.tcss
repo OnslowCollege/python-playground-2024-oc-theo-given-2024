@@ -19,7 +19,6 @@ WordGuess {
 }
 
 InputContainer{
-    dock: bottom;
     background: $boost;
     layout: horizontal;
     margin: 1;
