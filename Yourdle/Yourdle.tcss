@@ -2,9 +2,11 @@ Screen {layout: vertical;}
 
 WordGuess {
     layout: horizontal;
-    background: ansi_bright_black;
-    width: 100%;
-    content-align: center top;
+    background: $boost;
+    min-width: 50;
+    height: 5;
+    margin: 1;
+    padding: 1;
 }
 
 .letterguess{
