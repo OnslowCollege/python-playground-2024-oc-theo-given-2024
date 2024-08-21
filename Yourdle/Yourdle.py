@@ -33,8 +33,8 @@ class Yourdle(App):
 
 class InputContainer(Static):
     def compose(self) -> ComposeResult:
-        yield Button("Q", classes="input")
-        yield Button("W", classes="input")
+        yield Button("Q")
+        yield Button("W")
 
 if __name__ == "__main__":
     app = Yourdle()
