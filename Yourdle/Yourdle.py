@@ -16,14 +16,11 @@ from textual.widgets import Static
 
 
 #TEXTUAL
-class LetterGuess(Static):
-    def compose(self) -> ComposeResult:
-        yield Static(variant = $success)
 class WordGuess(Static):
     def compose(self) -> ComposeResult:
-        yield LetterGuess("W")
-        yield LetterGuess("H")
-        yield LetterGuess("Y")
+        yield Static("W", id = "letterguess")
+        yield Static("H", id = "letterguess")
+        yield Static("Y", id = "letterguess")
 
 class Yourdle(App):
     CSS_PATH = "Yourdle.tcss"
