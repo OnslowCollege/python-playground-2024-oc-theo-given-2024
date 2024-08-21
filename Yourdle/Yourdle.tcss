@@ -4,16 +4,17 @@ WordGuess {
     layout: horizontal;
     background: $boost;
     min-width: 50;
-    height: 5;
+    height: 7;
     margin: 1;
     padding: 1;
     content-align: center middle;
 }
 
 .letterguess{
-    height: 3;
-    width: 4;
+    height: 100%;
+    width: 14;
     margin: 1;
+    padding: 1;
     background: ansi_green;
     border: red;
     content-align: center middle;
