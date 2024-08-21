@@ -23,7 +23,7 @@ WordGuess {
 
 InputContainer{
     background: $boost;
-    layout: grid;
+    layout: vetical;
     margin: 1;
     max-width: 100%;
     padding: 1;

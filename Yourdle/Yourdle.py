@@ -15,63 +15,6 @@ from textual.containers import Horizontal, ScrollableContainer, Vertical
 from textual.widgets import Button, Static
 
 
-#TEXTUAL
-class WordGuess(Static):
-    def compose(self) -> ComposeResult:
-        yield Static("C", classes = "letterguess")
-        yield Static("R", classes = "letterguess")
-        yield Static("A", classes = "letterguess")
-        yield Static("N", classes = "letterguess")
-        yield Static("E", classes = "letterguess")
-
-class Yourdle(App):
-    CSS_PATH = "Yourdle.tcss"
-
-    def compose(self) -> ComposeResult:
-        yield GuessContainer()
-        yield InputContainer()
-
-class GuessContainer(Static):
-    def compose(self) -> ComposeResult:
-        yield WordGuess()
-        yield WordGuess()
-        yield WordGuess()
-        yield WordGuess()
-        yield WordGuess()
-
-class InputContainer(Static):
-    def compose(self) -> ComposeResult:
-        yield Button("Q")
-        yield Button("W")
-        yield Button("E")
-        yield Button("R")
-        yield Button("T")
-        yield Button("Y")
-        yield Button("U")
-        yield Button("I")
-        yield Button("O")
-        yield Button("P")
-        yield Button("A")
-        yield Button("S")
-        yield Button("D")
-        yield Button("F")
-        yield Button("G")
-        yield Button("H")
-        yield Button("J")
-        yield Button("K")
-        yield Button("L")
-        yield Button("Z")
-        yield Button("X")
-        yield Button("C")
-        yield Button("V")
-        yield Button("B")
-        yield Button("N")
-        yield Button("M")
-
-if __name__ == "__main__":
-    app = Yourdle()
-    app.run()
-
 #Functions for easily changing color of text.
 def makegreen(skk) -> str:
     """
@@ -163,6 +106,65 @@ while not valid_length:
     except ValueError:
         print("")
         print("Invalid Input.")
+
+#TEXTUAL
+class WordGuess(Static):
+    def compose(self) -> ComposeResult:
+        yield Static("C", classes = "letterguess")
+        yield Static("R", classes = "letterguess")
+        yield Static("A", classes = "letterguess")
+        yield Static("N", classes = "letterguess")
+        yield Static("E", classes = "letterguess")
+
+class Yourdle(App):
+    CSS_PATH = "Yourdle.tcss"
+
+    def compose(self) -> ComposeResult:
+        yield GuessContainer()
+        yield InputContainer()
+
+class GuessContainer(Static):
+    def compose(self) -> ComposeResult:
+        yield WordGuess()
+        yield WordGuess()
+        yield WordGuess()
+        yield WordGuess()
+        yield WordGuess()
+
+class InputContainer(Static):
+    def compose(self) -> ComposeResult:
+        yield Button("Q")
+        yield Button("W")
+        yield Button("E")
+        yield Button("R")
+        yield Button("T")
+        yield Button("Y")
+        yield Button("U")
+        yield Button("I")
+        yield Button("O")
+        yield Button("P")
+        yield Button("A")
+        yield Button("S")
+        yield Button("D")
+        yield Button("F")
+        yield Button("G")
+        yield Button("H")
+        yield Button("J")
+        yield Button("K")
+        yield Button("L")
+        yield Button("Z")
+        yield Button("X")
+        yield Button("C")
+        yield Button("V")
+        yield Button("B")
+        yield Button("N")
+        yield Button("M")
+
+if __name__ == "__main__":
+    app = Yourdle()
+    app.run()
+
+
 
 #Selecting the word list of the users choice.
 user_word_list = word_lists[word_length]
