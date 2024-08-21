@@ -18,9 +18,11 @@ from textual.widgets import Static, Button
 #TEXTUAL
 class WordGuess(Static):
     def compose(self) -> ComposeResult:
-        yield Static("W", classes = "letterguess")
-        yield Static("H", classes = "letterguess")
-        yield Static("Y", classes = "letterguess")
+        yield Static("C", classes = "letterguess")
+        yield Static("R", classes = "letterguess")
+        yield Static("A", classes = "letterguess")
+        yield Static("N", classes = "letterguess")
+        yield Static("E", classes = "letterguess")
 
 class Yourdle(App):
     CSS_PATH = "Yourdle.tcss"
