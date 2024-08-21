@@ -21,6 +21,10 @@ WordGuess {
     content-align: center middle;
 }
 
+.correct{
+    background: green;
+    border: tall rgb(44, 169, 44);
+}
 InputContainer{
     background: $boost;
     layout: grid;
