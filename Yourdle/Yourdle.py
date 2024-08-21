@@ -108,10 +108,17 @@ while not valid_length:
         print("Invalid Input.")
 
 #TEXTUAL
+
+
+class LetterGuess(Static):
+    def compose(self) -> ComposeResult:
+        self.add_class("letterguess")
+        yield Static()
 class WordGuess(Static):
     def compose(self) -> ComposeResult:
         for i in range(word_length):
-            yield Static("E", classes = "letterguess")
+            yield LetterGuess("E", classes = "letterguess")
+            LetterGuess.add_class("correct")
 
 class Yourdle(App):
     CSS_PATH = "Yourdle.tcss"
