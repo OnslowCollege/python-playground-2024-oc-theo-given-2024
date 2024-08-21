@@ -7,6 +7,7 @@ WordGuess {
     height: 5;
     margin: 1;
     padding: 1;
+    content-align: center middle;
 }
 
 .letterguess{
