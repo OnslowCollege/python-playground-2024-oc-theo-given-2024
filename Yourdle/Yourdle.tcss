@@ -25,8 +25,7 @@ InputContainer{
     margin: 1;
     max-width: 90%;
     padding: 1;
-    height: 10;
-    
+    height: auto;
 }
 
 Button{
