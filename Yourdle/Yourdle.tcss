@@ -28,6 +28,7 @@ InputContainer{
     max-width: 100%;
     padding: 1;
     height: 12fr;
+    overflow-x:auto;
 }
 
 Button{
