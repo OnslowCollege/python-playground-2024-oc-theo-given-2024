@@ -129,7 +129,7 @@ class Yourdle(App):
         yield InputContainer()
 
     def on_key(self, event: events.Key) -> None:
-        add_class
+        LetterGuess.add_class("correct")
 
 
 class GuessContainer(Static):
