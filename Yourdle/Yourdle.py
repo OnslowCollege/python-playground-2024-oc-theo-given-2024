@@ -119,6 +119,9 @@ class LetterGuess(Static):
     def on_leave(self):
         self.remove_class("correct")
 class WordGuess(Static):
+    def on_key(self, key):
+        if key == "enter":
+            
     def compose(self) -> ComposeResult:
         for i in range(word_length):
             yield LetterGuess("E")
