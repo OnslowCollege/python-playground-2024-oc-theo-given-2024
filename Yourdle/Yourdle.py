@@ -132,7 +132,9 @@ class Yourdle(App):
         yield InputContainer()
         yield RichLog()
     def on_key(self, event: events.Key) -> None:
-        self.query(LetterGuess).add_class("correct")
+        
+        if key == "enter":
+            self.query(LetterGuess).add_class("correct")
         self.query_one(RichLog).write(event)
 
 
