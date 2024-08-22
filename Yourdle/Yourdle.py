@@ -127,6 +127,9 @@ class Yourdle(App):
         yield GuessContainer()
         yield InputContainer()
 
+    def on_key(self, event: events.Key):
+        
+
 class GuessContainer(Static):
     def compose(self) -> ComposeResult:
         for i in range(num_tries):
