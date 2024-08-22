@@ -132,9 +132,8 @@ class Yourdle(App):
     def compose(self) -> ComposeResult:
         yield GuessContainer()
         yield InputContainer()
-        yield RichLog()
     def on_key(self, event: events.Key) -> None:
-        self.query_one(RichLog).write(event)
+        self.query(LetterGuess).add_class("correct")
 
 
 
