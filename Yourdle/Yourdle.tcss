@@ -18,8 +18,8 @@ LetterGuess{
     margin: 0;
     background: rgb(50, 50, 50);
     border: tall rgb(100, 100, 100);
-    align: center middle;
-    
+    text-align: center;
+
 }
 
 .letterguess{
