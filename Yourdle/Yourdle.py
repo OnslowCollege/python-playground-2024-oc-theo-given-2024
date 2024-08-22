@@ -137,7 +137,7 @@ class Yourdle(App):
 class GuessContainer(Static):
     def compose(self) -> ComposeResult:
         for i in range(num_tries):
-            yield WordGuess()
+            yield WordGuess(classes=(str(i)))
 
 class InputContainer(Static):
     def compose(self) -> ComposeResult:
