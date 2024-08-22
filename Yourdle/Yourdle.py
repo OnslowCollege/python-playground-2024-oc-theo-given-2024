@@ -120,8 +120,7 @@ class LetterGuess(Static):
         self.remove_class("correct")
 class WordGuess(Static):
     def on_key(self, key):
-        if key == "enter":
-            self.add_class("correct")
+        self.add_class("correct")
     def compose(self) -> ComposeResult:
         for i in range(word_length):
             yield LetterGuess("E")
