@@ -12,7 +12,7 @@ from letter_list_7 import word_list_7
 #Importing Textual modules
 from textual.app import App, ComposeResult
 from textual.containers import Horizontal, ScrollableContainer, Vertical
-from textual.widgets import Button, Static
+from textual.widgets import Button, Static, RichLog
 from textual import events
 
 
@@ -132,6 +132,9 @@ class Yourdle(App):
     def compose(self) -> ComposeResult:
         yield GuessContainer()
         yield InputContainer()
+        yield RichLog()
+    def on_key(self, event: events.Key) -> None:
+        self.query_one(RichLog).write(event)
 
 
 
