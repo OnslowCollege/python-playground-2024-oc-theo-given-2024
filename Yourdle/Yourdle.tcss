@@ -23,8 +23,13 @@ LetterGuess{
 }
 
 .letterguess{
+    height: 100%;
+    width: 9;
+    margin: 0;
     background: rgb(50, 50, 50);
     border: tall rgb(100, 100, 100);
+    text-align: center;
+    content-align: center middle;
 }
 
 .correct{
