@@ -117,7 +117,7 @@ class LetterGuess(Static):
 class WordGuess(Static):
     def compose(self) -> ComposeResult:
         for i in range(word_length):
-            yield LetterGuess()
+            yield Static("E", classes="letterguess")
 
 
 class Yourdle(App):
