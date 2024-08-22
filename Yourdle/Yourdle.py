@@ -113,7 +113,7 @@ while not valid_length:
 class LetterGuess(Static):
     def compose(self) -> ComposeResult:
         
-        yield Static("E")
+        yield Static("E", classes="letterguess")
 class WordGuess(Static):
     def compose(self) -> ComposeResult:
         for i in range(word_length):
