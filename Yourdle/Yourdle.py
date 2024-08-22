@@ -112,7 +112,7 @@ while not valid_length:
 
 class LetterGuess(Static):
     def compose(self) -> ComposeResult:
-        self.add_class("letterguess")
+        
         yield Static("E")
 class WordGuess(Static):
     def compose(self) -> ComposeResult:
