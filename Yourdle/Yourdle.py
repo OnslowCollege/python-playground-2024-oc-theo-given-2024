@@ -113,8 +113,9 @@ while not valid_length:
 
 class LetterGuess(Static):
     def compose(self) -> ComposeResult:
-        
         yield Static("E", classes="letterguess")
+    def on_key(self, event: events.Key) -> None:
+        self.add_class("correct")
 class WordGuess(Static):
     def compose(self) -> ComposeResult:
         for i in range(word_length):
@@ -128,8 +129,7 @@ class Yourdle(App):
         yield GuessContainer()
         yield InputContainer()
 
-    def on_key(self, event: events.Key) -> None:
-        LetterGuess.add_class("correct")
+
 
 
 class GuessContainer(Static):
