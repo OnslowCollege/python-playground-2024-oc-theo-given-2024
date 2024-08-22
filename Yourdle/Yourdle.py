@@ -114,7 +114,7 @@ while not valid_length:
 class LetterGuess(Static):
     def on_load(self):
         self.add_class("letterguess")
-    def on_key(self, event: events.Key) -> None:
+    def on_enter(self):
         self.add_class("correct")
 class WordGuess(Static):
     def compose(self) -> ComposeResult:
