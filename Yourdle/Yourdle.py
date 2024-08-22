@@ -121,7 +121,7 @@ class LetterGuess(Static):
 class WordGuess(Static):
     def on_key(self, key):
         if key == "enter":
-            
+            self.add_class("correct")
     def compose(self) -> ComposeResult:
         for i in range(word_length):
             yield LetterGuess("E")
@@ -140,7 +140,7 @@ class Yourdle(App):
 class GuessContainer(Static):
     def compose(self) -> ComposeResult:
         for i in range(num_tries):
-            yield WordGuess(classes=(str(i)))
+            yield WordGuess(classes=("c" + str(i)))
 
 class InputContainer(Static):
     def compose(self) -> ComposeResult:
