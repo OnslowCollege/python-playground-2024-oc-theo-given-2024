@@ -116,6 +116,8 @@ class LetterGuess(Static):
         self.add_class("letterguess")
     def on_enter(self):
         self.add_class("correct")
+    def on_leave(self):
+        self.remove_class("correct")
 class WordGuess(Static):
     def compose(self) -> ComposeResult:
         for i in range(word_length):
