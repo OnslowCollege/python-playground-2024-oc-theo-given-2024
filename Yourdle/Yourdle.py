@@ -127,7 +127,7 @@ class Yourdle(App):
         yield GuessContainer()
         yield InputContainer()
 
-    def on_key():
+    def on_key(self, event: events.Key) -> None:
 
 
 class GuessContainer(Static):
