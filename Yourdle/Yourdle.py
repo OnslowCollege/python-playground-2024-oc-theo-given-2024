@@ -14,7 +14,7 @@ from textual.app import App, ComposeResult
 from textual.containers import Horizontal, ScrollableContainer, Vertical
 from textual.widgets import Button, Static, RichLog
 from textual import events
-
+from textual.reactive import reactive
 
 #Functions for easily changing color of text.
 def makegreen(skk) -> str:
@@ -121,7 +121,7 @@ class LetterGuess(Static):
 class WordGuess(Static):
     def compose(self) -> ComposeResult:
         for i in range(word_length):
-            yield LetterGuess("E")
+            yield LetterGuess("E", id = )
 
 
 class Yourdle(App):
