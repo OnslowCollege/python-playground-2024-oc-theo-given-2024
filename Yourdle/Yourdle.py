@@ -136,8 +136,6 @@ class Yourdle(App):
         self.query_one(RichLog).write(event)
 
 
-
-
 class GuessContainer(Static):
     def compose(self) -> ComposeResult:
         for i in range(num_tries):
