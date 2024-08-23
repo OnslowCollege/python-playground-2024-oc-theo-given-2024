@@ -72,6 +72,7 @@ correct_guess = False
 valid_guess = False
 valid_letter = False
 user_tries = 0
+current_letter = 1
 previous_guesses = ""
 colored_guess = ""
 user_check = ""
@@ -121,7 +122,7 @@ class LetterGuess(Static):
 class WordGuess(Static):
     def compose(self) -> ComposeResult:
         for i in range(word_length):
-            yield LetterGuess("E", id = )
+            yield LetterGuess("E", id = ("l" + str(i+1)))
 
 
 class Yourdle(App):
