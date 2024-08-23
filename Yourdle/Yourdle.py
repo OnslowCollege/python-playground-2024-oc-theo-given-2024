@@ -120,8 +120,8 @@ class LetterGuess(Static, can_focus = True):
     def on_leave(self):
         self.remove_class("correct")
     letter = reactive(" ")
-    def on_key(self, key) -> None:
-        letter = key(key)
+    def on_key(self, event) -> None:
+        letter = event()
         self.update(letter)
 
 class WordGuess(Static):
