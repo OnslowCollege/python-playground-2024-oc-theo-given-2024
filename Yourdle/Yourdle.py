@@ -122,11 +122,12 @@ class LetterGuess(Static):
     letter = reactive(" ")
     def key_enter(self, key) -> None:
         letter = key
+        self.update(letter)
 
 class WordGuess(Static):
     def compose(self) -> ComposeResult:
         for i in range(word_length):
-            yield LetterGuess(letter, id = ("l" + str(i+1)))
+            yield LetterGuess(" ", id = ("l" + str(i+1)))
 
 
 class Yourdle(App):
