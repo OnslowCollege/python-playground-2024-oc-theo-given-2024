@@ -12,7 +12,7 @@ from letter_list_7 import word_list_7
 #Importing Textual modules
 from textual.app import App, ComposeResult
 from textual.containers import Horizontal, ScrollableContainer, Vertical
-from textual.widgets import Button, Static, RichLog
+from textual.widgets import Button, Static
 from textual import events
 from textual.reactive import reactive
 
@@ -120,7 +120,8 @@ class LetterGuess(Static):
     def on_leave(self):
         self.remove_class("correct")
     letter = reactive(" ")
-    def 
+    def on_key(self) -> None:
+
 class WordGuess(Static):
     def compose(self) -> ComposeResult:
         for i in range(word_length):
@@ -133,10 +134,8 @@ class Yourdle(App):
     def compose(self) -> ComposeResult:
         yield GuessContainer()
         yield InputContainer()
-        yield RichLog()
     def on_key(self, event: events.Key) -> None:
         self.query(LetterGuess).add_class("correct")
-        self.query_one(RichLog).write(event)
 
 
 class GuessContainer(Static):
