@@ -120,12 +120,13 @@ class LetterGuess(Static):
     def on_leave(self):
         self.remove_class("correct")
     letter = reactive(" ")
-    def on_key(self) -> None:
+    def key_enter(self, key) -> None:
+        letter = key
 
 class WordGuess(Static):
     def compose(self) -> ComposeResult:
         for i in range(word_length):
-            yield LetterGuess(" ", id = ("l" + str(i+1)))
+            yield LetterGuess(letter, id = ("l" + str(i+1)))
 
 
 class Yourdle(App):
