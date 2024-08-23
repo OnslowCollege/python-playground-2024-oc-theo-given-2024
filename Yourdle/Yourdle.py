@@ -112,7 +112,7 @@ while not valid_length:
 #TEXTUAL
 
 
-class LetterGuess(Static):
+class LetterGuess(Static, can_focus = True):
     def on_load(self):
         self.add_class("letterguess")
     def on_enter(self):
