@@ -111,9 +111,8 @@ while not valid_length:
 
 #TEXTUAL
 currentid: str = ""
-letter: str = ""
+letter: reactive[str] = reactive("")
 class LetterGuess(Static, can_focus = True):
-    letter = reactive("")
     def on_load(self):
         self.add_class("letterguess")
     def on_focus(self):
