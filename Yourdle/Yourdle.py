@@ -65,7 +65,7 @@ word_lists = {
     7:word_list_7}
 
 #Setting Variables
-letter_list = "qwertyuiopasdfghjklzxcvbnm"
+letter_list = "QWERTYUIOPASDFGHJKLZXCVBNM"
 valid_tries = False
 valid_length = False
 correct_guess = False
