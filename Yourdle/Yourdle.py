@@ -2,7 +2,8 @@
 #Importing the random module for random selection of words.
 import random
 
-#Importing the lists of words
+#Importing the lists of words/letters
+from letter_list import letter_list
 from letter_list_3 import word_list_3
 from letter_list_4 import word_list_4
 from letter_list_5 import word_list_5
@@ -10,11 +11,12 @@ from letter_list_6 import word_list_6
 from letter_list_7 import word_list_7
 
 #Importing Textual modules
+from textual import events
 from textual.app import App, ComposeResult
 from textual.containers import Horizontal, ScrollableContainer, Vertical
-from textual.widgets import Button, Static
-from textual import events
 from textual.reactive import reactive
+from textual.widgets import Button, Static
+
 
 #Functions for easily changing color of text.
 def makegreen(skk) -> str:
@@ -65,7 +67,7 @@ word_lists = {
     7:word_list_7}
 
 #Setting Variables
-letter_list = "QWERTYUIOPASDFGHJKLZXCVBNM"
+
 valid_tries = False
 valid_length = False
 correct_guess = False
