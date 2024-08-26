@@ -129,6 +129,7 @@ class WordGuess(Static):
         for i in range(word_length):
             yield LetterGuess(" ", id = ("l" + str(i+1)))
     def on_key(self) -> None:
+        currentid = #ID of focused widget
         self.query_one(".l" + currentid).focus()
 
 
