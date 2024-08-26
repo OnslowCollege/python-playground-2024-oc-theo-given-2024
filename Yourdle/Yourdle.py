@@ -112,13 +112,13 @@ while not valid_length:
 #TEXTUAL
 currentid: str = ""
 class LetterGuess(Static, can_focus = True):
+    letter = reactive("")
     def on_load(self):
         self.add_class("letterguess")
-    def on_enter(self):
+    def on_focus(self):
         self.add_class("correct")
-    def on_leave(self):
+    def on_blur(self):
         self.remove_class("correct")
-    letter = reactive(" ")
     def on_key(self, event) -> None:
         letter = event.key
         if letter != "backspace":
@@ -143,8 +143,6 @@ class Yourdle(App):
     def compose(self) -> ComposeResult:
         yield GuessContainer()
         yield InputContainer()
-    def on_key(self, event: events.Key) -> None:
-        self.query(LetterGuess).add_class("correct")
 
 
 class GuessContainer(Static):
