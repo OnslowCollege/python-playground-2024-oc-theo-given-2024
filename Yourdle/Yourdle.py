@@ -145,6 +145,7 @@ class Yourdle(App):
     def on_key(self, event) -> None:
         global letter
         letter = event.key
+        letter = letter.upper
 
 
 class GuessContainer(Static):
