@@ -124,7 +124,7 @@ class LetterGuess(Static, can_focus = True):
         letter = event.key
         self.update(letter)
         currentid = str(self.id)
-        currentid = int(currentid[1])
+        currentid = int(currentid[1]) + 1
         nextwidget = LetterGuess(id = ("l" + str(currentid)))
         nextwidget.focus()
 
