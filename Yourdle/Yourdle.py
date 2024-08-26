@@ -123,13 +123,14 @@ class LetterGuess(Static, can_focus = True):
     def on_key(self, event) -> None:
         letter = event.key
         self.update(letter)
+        self
 
 class WordGuess(Static):
     def compose(self) -> ComposeResult:
         for i in range(word_length):
             yield LetterGuess(" ", id = ("l" + str(i+1)))
     def on_key(self) -> None:
-        currentid = #ID of focused widget
+        
         self.query_one(".l" + currentid).focus()
 
 
