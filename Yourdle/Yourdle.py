@@ -121,10 +121,11 @@ class LetterGuess(Static, can_focus = True):
     letter = reactive(" ")
     def on_key(self, event) -> None:
         letter = event.key
-        self.update(letter)
-        global currentid
-        currentid = str(self.id)
-        currentid = currentid[1]
+        if letter != "backspace":
+            self.update(letter)
+            global currentid
+            currentid = str(self.id)
+            currentid = currentid[1]
 
 class WordGuess(Static):
     def compose(self) -> ComposeResult:
