@@ -126,6 +126,7 @@ class LetterGuess(Static, can_focus = True):
             global currentid
             currentid = str(self.id)
             currentid = currentid[1]
+            currentid = int(currentid) + 1
 
 class WordGuess(Static):
     def compose(self) -> ComposeResult:
