@@ -129,7 +129,7 @@ class WordGuess(Static):
         for i in range(word_length):
             yield LetterGuess(" ", id = ("l" + str(i+1)))
     def on_key(self) -> None:
-        WordGuess.query_one(self, selector= ("l" + currentid)).focus()
+        self.query_one(".l" + currentid).focus()
 
 
 class Yourdle(App):
