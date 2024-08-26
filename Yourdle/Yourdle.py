@@ -111,7 +111,6 @@ while not valid_length:
 
 #TEXTUAL
 currentid: str = ""
-letter: str = ""
 class LetterGuess(Static, can_focus = True):
     def on_load(self):
         self.add_class("letterguess")
@@ -120,7 +119,7 @@ class LetterGuess(Static, can_focus = True):
     def on_blur(self):
         self.remove_class("correct")
     def on_key(self, event) -> None:
-        print (letter)
+        letter = event.key
         if letter in letter_list:
             self.update(letter)
             global currentid
@@ -133,6 +132,7 @@ class WordGuess(Static):
         for i in range(word_length):
             yield LetterGuess(" ", id = ("l" + str(i+1)))
     def on_key(self, event) -> None:
+        letter = event.key
         if letter in letter_list and int(currentid) != word_length + 1:
             self.query_one("#l" + str(currentid)).focus()
 
@@ -143,10 +143,6 @@ class Yourdle(App):
     def compose(self) -> ComposeResult:
         yield GuessContainer()
         yield InputContainer()
-    def on_key(self, event) -> None:
-        global letter
-        letter = event.key
-        letter = letter.upper
 
 
 class GuessContainer(Static):
