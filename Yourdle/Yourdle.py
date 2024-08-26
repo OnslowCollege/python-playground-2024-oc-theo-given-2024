@@ -123,7 +123,7 @@ class LetterGuess(Static, can_focus = True):
     def on_key(self, event) -> None:
         letter = event.key
         self.update(letter)
-        query.focus()
+        WordGuess.query_one("l" + self.id[1]).focus()
 
 class WordGuess(Static):
     def compose(self) -> ComposeResult:
