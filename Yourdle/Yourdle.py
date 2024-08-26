@@ -110,8 +110,7 @@ while not valid_length:
         print("Invalid Input.")
 
 #TEXTUAL
-
-currentid = ""
+currentid: str | None = ""
 class LetterGuess(Static, can_focus = True):
     def on_load(self):
         self.add_class("letterguess")
@@ -123,14 +122,16 @@ class LetterGuess(Static, can_focus = True):
     def on_key(self, event) -> None:
         letter = event.key
         self.update(letter)
-        currentid = self.id
+        global currentid
+        currentid = str(self.id)
+        currentid = currentid[1]
 
 class WordGuess(Static):
     def compose(self) -> ComposeResult:
         for i in range(word_length):
             yield LetterGuess(" ", id = ("l" + str(i+1)))
     def on_key(self) -> None:
-        self.query_one(".l" + currentid).focus()
+        self.query_one(".l" + str(currentid)).focus()
 
 
 class Yourdle(App):
