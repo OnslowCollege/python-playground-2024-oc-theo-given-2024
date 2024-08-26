@@ -133,9 +133,8 @@ class WordGuess(Static):
         for i in range(word_length):
             yield LetterGuess(" ", id = ("l" + str(i+1)))
     def on_key(self, event) -> None:
-        if event.key != "backspace":
-            if int(currentid) != word_length + 1:
-                self.query_one("#l" + str(currentid)).focus()
+        if event.key != "backspace" and int(currentid) != word_length + 1:
+            self.query_one("#l" + str(currentid)).focus()
 
 
 class Yourdle(App):
