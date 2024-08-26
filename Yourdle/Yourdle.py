@@ -144,6 +144,9 @@ class Yourdle(App):
     def compose(self) -> ComposeResult:
         yield GuessContainer()
         yield InputContainer()
+    def on_key(self, event) -> None:
+        global letter
+        letter = event.key
 
 
 class GuessContainer(Static):
