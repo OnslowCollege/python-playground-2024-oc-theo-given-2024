@@ -121,7 +121,7 @@ class LetterGuess(Static, can_focus = True):
         self.remove_class("correct")
     def on_key(self, event) -> None:
         letter = event.key
-        if letter not in letter_list:
+        if letter in letter_list:
             self.update(letter)
             global currentid
             currentid = str(self.id)
