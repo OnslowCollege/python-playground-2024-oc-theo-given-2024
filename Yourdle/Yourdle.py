@@ -125,8 +125,8 @@ class LetterGuess(Static, can_focus = True):
         self.update(letter)
         currentid = str(self.id)
         currentid = currentid[1]
-        print (WordGuess.query_one(selector= ("l" + currentid)))
-        WordGuess.query_one(selector= ("l" + currentid)).focus()
+        print (WordGuess.query_one(self, selector= ("l" + currentid)))
+        WordGuess.query_one(self, selector= ("l" + currentid)).focus()
 
 class WordGuess(Static):
     def compose(self) -> ComposeResult:
