@@ -120,6 +120,7 @@ class LetterGuess(Static, can_focus = True):
     def on_blur(self):
         self.remove_class("correct")
     def on_key(self, event) -> None:
+        print (letter)
         if letter in letter_list:
             self.update(letter)
             global currentid
