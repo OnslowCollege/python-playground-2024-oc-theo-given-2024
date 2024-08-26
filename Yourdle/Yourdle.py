@@ -191,7 +191,7 @@ correct_answer = input("Enter the answer: ")
 if correct_answer == (""):
     word_index = random.randrange(0, len(user_word_list))
     correct_answer = user_word_list[word_index]
-    correct_answer = correct_answer.lower()
+    correct_answer = correct_answer.upper()
 
 #Runs while the user still has guesses and they haven't yet guessed correctly
 while user_tries != num_tries and not correct_guess:
@@ -202,7 +202,7 @@ while user_tries != num_tries and not correct_guess:
                 user_guess = str(input("Enter your final guess: "))
             else:
                 user_guess = str(input("Enter your guess: "))
-            user_guess = user_guess.lower()
+            user_guess = user_guess.upper()
             if len(user_guess) == word_length:
                 valid_guess = True
                 #Makes sure all characters in the answer are letters
