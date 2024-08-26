@@ -111,6 +111,7 @@ while not valid_length:
 
 #TEXTUAL
 currentid: str = ""
+letter: str = ""
 class LetterGuess(Static, can_focus = True):
     letter = reactive("")
     def on_load(self):
@@ -120,7 +121,6 @@ class LetterGuess(Static, can_focus = True):
     def on_blur(self):
         self.remove_class("correct")
     def on_key(self, event) -> None:
-        letter = event.key
         if letter in letter_list:
             self.update(letter)
             global currentid
@@ -133,7 +133,6 @@ class WordGuess(Static):
         for i in range(word_length):
             yield LetterGuess(" ", id = ("l" + str(i+1)))
     def on_key(self, event) -> None:
-        letter = event.key
         if letter in letter_list and int(currentid) != word_length + 1:
             self.query_one("#l" + str(currentid)).focus()
 
