@@ -123,13 +123,8 @@ class LetterGuess(Static, can_focus = True):
     def on_key(self, event) -> None:
         letter = event.key
         letter = letter.upper()
-        print(letter)
-        for i in range(len(letter_list)):
-            if letter == letter_list[i].lower:
-                letter = letter_list[i]
         if letter in letter_list:
             self.update(letter)
-            print (type(event.key))
             global currentid
             currentid = str(self.id)
             currentid = currentid[1]
