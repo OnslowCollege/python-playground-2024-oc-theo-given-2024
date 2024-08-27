@@ -128,7 +128,7 @@ class LetterGuess(Static, can_focus = True):
                 uletter = letter_list[i]
         if uletter in letter_list:
             self.update(uletter)
-            self.update(type(event.key))
+            print (type(event.key))
             global currentid
             currentid = str(self.id)
             currentid = currentid[1]
