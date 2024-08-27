@@ -123,9 +123,9 @@ class LetterGuess(Static, can_focus = True):
     def on_load(self):
         self.add_class("letterguess")
     def on_focus(self):
-        self.add_class("correct")
+        self.add_class("focus")
     def on_blur(self):
-        self.remove_class("correct")
+        self.remove_class("focus")
     def on_key(self, event) -> None:
         letter = event.key.upper()
         global currentid
