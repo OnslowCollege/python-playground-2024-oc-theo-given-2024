@@ -144,7 +144,7 @@ class WordGuess(Static):
         global currentid
         if letter in letter_list and int(currentid) != word_length + 1:
             self.query_one("#l" + str(currentid)).focus()
-        if letter == "BACKSPACE" and int(currentid) != word_length - 1:
+        if letter == "BACKSPACE" and int(currentid) != 0:
             self.query_one("#l" + str(currentid)).focus()
 
 
