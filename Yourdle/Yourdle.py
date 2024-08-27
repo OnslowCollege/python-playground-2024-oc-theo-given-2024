@@ -122,7 +122,7 @@ class LetterGuess(Static, can_focus = True):
         self.remove_class("correct")
     def on_key(self, event) -> None:
         letter = event.key
-        letter.upper()
+        letter = letter.upper()
         print(letter)
         for i in range(len(letter_list)):
             if letter == letter_list[i].lower:
