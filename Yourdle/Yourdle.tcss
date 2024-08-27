@@ -25,6 +25,8 @@ LetterGuess{
 
 UserQuery{
     layer: top;
+    dock: top;
+    opacity: 10%;
     height: 100%;
     width: 100%;
     background: rgb(150, 150, 150);
