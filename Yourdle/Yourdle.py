@@ -141,8 +141,9 @@ class WordGuess(Static):
             yield LetterGuess(" ", id = ("l" + str(i+1)))
     def on_key(self, event) -> None:
         letter = event.key
-        if letter in letter_list and int(currentid) != word_length + 1:
-            self.query_one("#l" + str(currentid)).focus()
+        if letter in letter_list:
+            if int(currentid) != word_length + 1:
+                self.query_one("#l" + str(currentid)).focus()
 
 
 class Yourdle(App):
