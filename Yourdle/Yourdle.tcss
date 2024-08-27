@@ -25,6 +25,7 @@ LetterGuess{
 
 UserQuery{
     layer: above;
+    background: ;
 }
 
 LetterGuess.focus{
