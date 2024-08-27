@@ -23,13 +23,13 @@ LetterGuess{
     content-align: center middle;
 }
 
-UserQuery{
+UserQueryBackground{
     layer: top;
     dock: top;
-    opacity: 10%;
     height: 100%;
     width: 100%;
     background: rgb(150, 150, 150);
+    border: tall rgb(200, 200, 200);
 }
 
 LetterGuess.focus{

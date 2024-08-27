@@ -114,11 +114,15 @@ while not valid_length:
 #TEXTUAL
 currentid: str = ""
 
-class UserQuery(Static, can_focus = True):
-    """e."""
+class UserQueryBackground(Static):
+    def compose(self):
+        yield UserQuery()
+
+class UserQuery(Static):
 
 
-
+class UserQueryInput(Static, can_focus = True):
+    
 
 
 class LetterGuess(Static, can_focus = True):
