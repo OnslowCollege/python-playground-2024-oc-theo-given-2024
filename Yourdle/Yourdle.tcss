@@ -24,8 +24,10 @@ LetterGuess{
 }
 
 UserQuery{
-    layer: above;
-    background: ;
+    layer: top;
+    height: 100%;
+    width: 100%;
+    background: rgb(150, 150, 150);
 }
 
 LetterGuess.focus{

@@ -115,7 +115,7 @@ while not valid_length:
 currentid: str = ""
 
 class UserQuery(Static, can_focus = True):
-    
+    """e."""
 
 
 
