@@ -124,7 +124,8 @@ class UserQuery(Static):
             yield UserQueryInput(str(i+3), id="b"+str(i+3))
 
 class UserQueryInput(Button):
-    """blah."""
+    def on_button_pressed():
+        
 
 
 class LetterGuess(Static, can_focus = True):
