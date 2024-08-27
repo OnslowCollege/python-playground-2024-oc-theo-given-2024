@@ -122,12 +122,12 @@ class LetterGuess(Static, can_focus = True):
         self.remove_class("correct")
     def on_key(self, event) -> None:
         letter = event.key
-        uletter = letter
+        letter = letter.upper
         for i in range(len(letter_list)):
             if letter == letter_list[i].lower:
-                uletter = letter_list[i]
-        if uletter in letter_list:
-            self.update(uletter)
+                letter = letter_list[i]
+        if letter in letter_list:
+            self.update(letter)
             print (type(event.key))
             global currentid
             currentid = str(self.id)
