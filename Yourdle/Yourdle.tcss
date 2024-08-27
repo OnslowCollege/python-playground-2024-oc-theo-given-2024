@@ -28,8 +28,22 @@ UserQueryBackground{
     dock: top;
     height: 100%;
     width: 100%;
-    background: rgb(150, 150, 150);
-    border: tall rgb(200, 200, 200);
+    background: rgb(50, 50, 50);
+    align: center middle;
+}
+
+UserQuery{
+    layer: top;
+    width: 80%;
+    height: 70%;
+    layout: horizontal;
+    align: center middle;
+    background: rgb(75, 75, 75);
+    border: tall rgb(100, 100, 100);
+}
+
+UserQueryInput{
+
 }
 
 LetterGuess.focus{

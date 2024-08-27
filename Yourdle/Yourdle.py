@@ -166,7 +166,7 @@ class Yourdle(App):
     CSS_PATH = "Yourdle.tcss"
 
     def compose(self) -> ComposeResult:
-        yield UserQuery()
+        yield UserQueryBackground()
         yield GuessContainer()
         yield InputContainer()
 
