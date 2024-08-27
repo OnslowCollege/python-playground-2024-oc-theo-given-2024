@@ -119,9 +119,11 @@ class UserQueryBackground(Static):
         yield UserQuery()
 
 class UserQuery(Static):
+    def compose(self):
+        for i in range(8):
+            yield UserQueryInput()
 
-
-class UserQueryInput(Static, can_focus = True):
+class UserQueryInput(Button):
     
 
 
