@@ -33,8 +33,12 @@ LetterGuess{
     content-align: center middle;
 }
 
-.focus{
-    border: thick;
+.focus.letterguess{
+    border: thick rgb(100, 100, 100);
+}
+
+.focus.correct{
+    border: thick rgb(44, 169, 44);
 }
 
 .correct{
