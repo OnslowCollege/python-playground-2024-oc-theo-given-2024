@@ -1,5 +1,6 @@
 Screen {
     layout: vertical;
+    layers: bottom, top;
 }
 
 WordGuess {
