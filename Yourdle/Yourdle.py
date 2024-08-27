@@ -114,6 +114,8 @@ while not valid_length:
 #TEXTUAL
 currentid: str = ""
 
+class UserQuery(Static, can_focus = True):
+    
 
 
 
@@ -140,7 +142,6 @@ class LetterGuess(Static, can_focus = True):
             currentid = str(self.id)
             currentid = currentid[1]
             currentid = int(currentid) - 1
-        self.add_class("correct")
 
 class WordGuess(Static):
     def compose(self) -> ComposeResult:
@@ -159,6 +160,7 @@ class Yourdle(App):
     CSS_PATH = "Yourdle.tcss"
 
     def compose(self) -> ComposeResult:
+        yield UserQuery()
         yield GuessContainer()
         yield InputContainer()
 
