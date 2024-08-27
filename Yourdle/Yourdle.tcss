@@ -33,6 +33,10 @@ LetterGuess{
     content-align: center middle;
 }
 
+.focus{
+    border: thick;
+}
+
 .correct{
     background: green;
     border: tall rgb(44, 169, 44);
