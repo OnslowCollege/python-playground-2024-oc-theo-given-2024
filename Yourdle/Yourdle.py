@@ -117,15 +117,17 @@ currentid: str = ""
 class UserQueryBackground(Static):
     def compose(self):
         yield UserQuery()
+    def on_button_pressed(self, button):
+        
 
 class UserQuery(Static):
     def compose(self):
         for i in range(8):
-            yield UserQueryInput(str(i+3), id="b"+str(i+3))
+            yield UserQueryInput(str(i+3), id="b"+str(i+3), classes = "1")
 
 class UserQueryInput(Button):
-    def on_button_pressed():
-        
+    """what."""
+
 
 
 class LetterGuess(Static, can_focus = True):
