@@ -122,15 +122,15 @@ class LetterGuess(Static, can_focus = True):
         self.remove_class("correct")
     def on_key(self, event) -> None:
         letter = event.key.upper()
+        global currentid
+        print(letter)
         if letter in letter_list:
             self.update(letter)
-            global currentid
             currentid = str(self.id)
             currentid = currentid[1]
             currentid = int(currentid) + 1
         if letter == "BACKSPACE":
             self.update("")
-            global currentid
             currentid = str(self.id)
             currentid = currentid[1]
             currentid = int(currentid) - 1
@@ -142,6 +142,7 @@ class WordGuess(Static):
     def on_key(self, event) -> None:
         letter = event.key.upper()
         if letter in letter_list:
+            global currentid
             if int(currentid) != word_length + 1:
                 self.query_one("#l" + str(currentid)).focus()
 
