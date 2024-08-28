@@ -130,13 +130,10 @@ class UserQuery(Static):
         for i in range(3, 10):
             yield UserQueryInput(str(i), id ="b1"+str(i), classes = "b1")
         for i in range(3, 8):
-            yield UserQueryInput(str(i), id ="b2"+str(i), classes = "b2")
+            yield UserQueryInput(str(i), id ="b2"+str(i), classes = "b2" "hide")
 
 class UserQueryInput(Button):
-    def on_load(self):
-        print (self.classes)
-        if self.classes == "b2":
-            self.add_class("hide")
+    """fuck u."""
 
 
 
