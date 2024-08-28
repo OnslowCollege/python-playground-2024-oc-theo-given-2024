@@ -83,33 +83,7 @@ fin_check = ""
 wrong_chars = ""
 wrong_chars_list: list[str] = []
 
-#While loop that forces the user to select a number of guesses within a range.
-while not valid_tries:
-    try:
-        num_tries = int(input("Enter the number of guesses you want (3-10): "))
-        if 3 <= num_tries <= 10:
-            valid_tries = True
-            print("")
-        else:
-            print("")
-            print("Invalid Input.")
-    except ValueError:
-        print("")
-        print("Invalid Input.")
 
-#While loop that forces the user to select a word length within a range.
-while not valid_length:
-    try:
-        word_length = int(input("Enter length of word you'll guess (3-7): "))
-        if 3 <= word_length <= 7:
-            valid_length = True
-            print("")
-        else:
-            print("")
-            print("Invalid Input.")
-    except ValueError:
-        print("")
-        print("Invalid Input.")
 
 #TEXTUAL
 currentid: str = ""
@@ -128,6 +102,8 @@ class UserQueryBackground(Static):
         if button.id[1] == "2":
             word_length = int(button.id[2])
             self.add_class("hide")
+            yield GuessContainer()
+            yield InputContainer()
 class UserQuery(Static):
     def compose(self):
         for i in range(3, 11):
@@ -182,8 +158,7 @@ class Yourdle(App):
 
     def compose(self) -> ComposeResult:
         yield UserQueryBackground()
-        yield GuessContainer()
-        yield InputContainer()
+
 
 
 class GuessContainer(Static):
