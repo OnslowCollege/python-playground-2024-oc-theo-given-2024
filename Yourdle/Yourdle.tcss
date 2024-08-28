@@ -3,8 +3,16 @@ Screen {
     layers: bottom top;
 }
 
-.hide{
+.b2{
     display: none;
+}
+
+.show{
+    display: block;
+}
+
+.hide{
+    display:none;
 }
 
 WordGuess {

@@ -124,13 +124,16 @@ class UserQueryBackground(Static):
         if button.id[1] == "1":
             num_tries = int(button.id[2])
             self.query(".b1").add_class("hide")
-            self.query(".b2").remove_class("hide")
+            self.query(".b2").add_class("show")
+        if button.id[1] == "2":
+            word_length = int(button.id[2])
+            self.add_class("hide")
 class UserQuery(Static):
     def compose(self):
         for i in range(3, 11):
-            yield UserQueryInput(str(i), id ="b1"+str(i), classes = "hide" "b1")
+            yield UserQueryInput(str(i), id ="b1"+str(i), classes = "b1")
         for i in range(3, 8):
-            yield UserQueryInput(str(i),id ="b2"+str(i),classes = "hide" "b2")
+            yield UserQueryInput(str(i),id ="b2"+str(i),classes = "b2")
 #WHY IS IT NOT HIDING!?!?!?!?!?
 class UserQueryInput(Button):
     def on_button_pressed(self):
