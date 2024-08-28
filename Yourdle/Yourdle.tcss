@@ -47,7 +47,7 @@ UserQueryInput{
 }
 
 .hide{
-    display: None;
+    display: none;
 }
 
 LetterGuess.focus{
