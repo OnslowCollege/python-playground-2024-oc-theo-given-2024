@@ -46,6 +46,10 @@ UserQueryInput{
 
 }
 
+.hide{
+    display: None;
+}
+
 LetterGuess.focus{
     border: thick rgb(100, 100, 100);
 }
