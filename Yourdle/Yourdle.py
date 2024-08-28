@@ -124,7 +124,7 @@ class UserQueryBackground(Static):
         if button.id[1] == "1":
             num_tries = int(button.id[2])
             self.query(".b1").add_class("hide")
-            self.query(".b2")
+            self.query(".b2").remove_class("hide")
 class UserQuery(Static):
     def compose(self):
         for i in range(3, 10):
