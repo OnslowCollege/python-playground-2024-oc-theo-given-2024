@@ -3,6 +3,10 @@ Screen {
     layers: bottom top;
 }
 
+.hide{
+    display: none;
+}
+
 WordGuess {
     layout: horizontal;
     background: $boost;
@@ -44,10 +48,6 @@ UserQuery{
 
 UserQueryInput{
 
-}
-
-.hide{
-    display: none;
 }
 
 LetterGuess.focus{

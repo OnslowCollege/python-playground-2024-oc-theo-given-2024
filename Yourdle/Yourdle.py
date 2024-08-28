@@ -131,7 +131,7 @@ class UserQuery(Static):
             yield UserQueryInput(str(i), id ="b1"+str(i), classes = "b1")
         for i in range(3, 8):
             yield UserQueryInput(str(i),id ="b2"+str(i),classes = "hide" "b2")
-
+#WHY IS IT NOT HIDING!?!?!?!?!?
 class UserQueryInput(Button):
     """fuck u."""
 
