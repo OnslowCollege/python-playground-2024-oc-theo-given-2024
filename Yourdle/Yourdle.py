@@ -133,7 +133,7 @@ class UserQuery(Static):
             yield UserQueryInput(str(i), id ="b2"+str(i), classes = "b2")
 
 class UserQueryInput(Button):
-    def compose(self):
+    def (self):
         if self.classes == "b2":
             self.add_class("hide")
 
