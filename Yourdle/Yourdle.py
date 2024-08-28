@@ -128,7 +128,7 @@ class UserQueryBackground(Static):
 class UserQuery(Static):
     def compose(self):
         for i in range(3, 11):
-            yield UserQueryInput(str(i), id ="b1"+str(i), classes = "b1")
+            yield UserQueryInput(str(i), id ="b1"+str(i), classes = "hide" "b1")
         for i in range(3, 8):
             yield UserQueryInput(str(i),id ="b2"+str(i),classes = "hide" "b2")
 #WHY IS IT NOT HIDING!?!?!?!?!?
