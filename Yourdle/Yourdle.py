@@ -128,7 +128,9 @@ class UserQueryBackground(Static):
         if button.id[1] == "2":
             word_length = int(button.id[2])
             self.add_class("hide")
-            yield GuessContainer()
+class UserQuery(Static):
+    def compose(self):
+        for i in range(3, 11):
             yield UserQueryInput(str(i), id ="b1"+str(i), classes = "b1")
         for i in range(3, 8):
             yield UserQueryInput(str(i),id ="b2"+str(i),classes = "b2")
