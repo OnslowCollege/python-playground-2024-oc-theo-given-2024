@@ -130,7 +130,7 @@ class UserQuery(Static):
         for i in range(3, 10):
             yield UserQueryInput(str(i), id ="b1"+str(i), classes = "b1")
         for i in range(3, 8):
-            yield UserQueryInput(str(i), id ="b2"+str(i), classes = "b2" "hide")
+            yield UserQueryInput(str(i), id ="b2"+str(i), classes = "hide" "b2")  # noqa: E501
 
 class UserQueryInput(Button):
     """fuck u."""
