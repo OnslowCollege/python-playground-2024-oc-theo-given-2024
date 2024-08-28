@@ -124,7 +124,7 @@ class UserQueryBackground(Static):
 class UserQuery(Static):
     def compose(self):
         for i in range(8):
-            yield UserQueryInput(str(i+3), id="b"+str(i+3), classes = "b1")
+            yield UserQueryInput(str(i+3), id=("b"+str(i+3)), classes = "b1")
             print (self.query_one("#b"+str(i+3)).id)
 
 class UserQueryInput(Button):
