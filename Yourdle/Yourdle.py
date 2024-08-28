@@ -134,6 +134,7 @@ class UserQuery(Static):
 
 class UserQueryInput(Button):
     def on_load(self):
+        print (self.classes)
         if self.classes == "b2":
             self.add_class("hide")
 
