@@ -118,6 +118,8 @@ class UserQueryBackground(Static):
     def compose(self):
         yield UserQuery()
     def on_button_pressed(self, button):
+        for i in range(8):
+            print (self.query_one("#b"+str(i+3)).id)
         global num_tries
         num_tries = button.id
         self.query(".b1").add_class("hide")
@@ -125,8 +127,6 @@ class UserQuery(Static):
     def compose(self):
         for i in range(8):
             yield UserQueryInput(str(i+3), id ="b"+str(i+3), classes = "b1")
-        for i in range(8):
-            print (self.query_one("#b"+str(i+3)).id)
 
 class UserQueryInput(Button):
     """what."""
