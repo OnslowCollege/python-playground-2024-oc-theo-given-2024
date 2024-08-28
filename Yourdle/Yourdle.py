@@ -117,9 +117,8 @@ currentid: str = ""
 class UserQueryBackground(Static):
     def compose(self):
         yield UserQuery()
-    def on_button_pressed(self, button):
-        for i in range(8):
-            print (self.query_one("#b"+str(i+3)).id)
+    def on_button_pressed(self, event):
+        button = event.button
         global num_tries
         num_tries = button.id
         self.query(".b1").add_class("hide")
