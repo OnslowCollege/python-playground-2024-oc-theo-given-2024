@@ -119,7 +119,7 @@ class UserQueryBackground(Static):
         yield UserQuery()
     def on_button_pressed(self, button):
         global num_tries
-        num_tries = int(button.id[1])
+        num_tries = button.id
         self.query(".b1").add_class("hide")
 class UserQuery(Static):
     def compose(self):
