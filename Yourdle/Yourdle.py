@@ -133,7 +133,7 @@ class UserQuery(Static):
             yield UserQueryInput(str(i),id ="b2"+str(i),classes = "hide" "b2")
 #WHY IS IT NOT HIDING!?!?!?!?!?
 class UserQueryInput(Button):
-    def on_load(self):
+    def on_button_pressed(self):
         print(self)
 
 
