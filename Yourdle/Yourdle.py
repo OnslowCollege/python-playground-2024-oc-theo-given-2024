@@ -127,13 +127,14 @@ class UserQueryBackground(Static):
             self.query(".b2").remove_class("hide")
 class UserQuery(Static):
     def compose(self):
-        for i in range(3, 10):
+        for i in range(3, 11):
             yield UserQueryInput(str(i), id ="b1"+str(i), classes = "b1")
         for i in range(3, 8):
             yield UserQueryInput(str(i),id ="b2"+str(i),classes = "hide" "b2")
 #WHY IS IT NOT HIDING!?!?!?!?!?
 class UserQueryInput(Button):
-    """fuck u."""
+    def on_load(self):
+        print(self)
 
 
 
