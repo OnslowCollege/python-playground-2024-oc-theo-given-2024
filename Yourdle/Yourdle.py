@@ -133,6 +133,7 @@ class UserQueryBackground(Static):
         if button.id[1] == "2":
             word_length = int(button.id[2])
             self.add_class("hide")
+            self.add_class("bottomlayer")
             self.post_message(Create())
 class UserQuery(Static):
     def compose(self):

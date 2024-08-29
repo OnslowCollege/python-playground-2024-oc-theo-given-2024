@@ -62,6 +62,10 @@ LetterGuess.focus{
     border: thick rgb(100, 100, 100);
 }
 
+.bottomlayer{
+    layer: bottom;
+}
+
 .correct{
     background: green;
     border: tall rgb(44, 169, 44);
