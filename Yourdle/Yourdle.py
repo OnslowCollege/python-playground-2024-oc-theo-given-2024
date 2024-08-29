@@ -141,8 +141,8 @@ class UserQueryInput(Button):
         print(self)
 
 
-class Create(Callback):
-    """"""
+class Create(Message):
+    pass
 
 class LetterGuess(Static, can_focus = True):
     """"""
@@ -169,7 +169,7 @@ class LetterGuess(Static, can_focus = True):
             currentid = str(self.id)
             currentid = currentid[1]
             currentid = int(currentid) - 1
-            Create()
+            self.post_message(Create())
 
 class WordGuess(Static):
     def compose(self) -> ComposeResult:
@@ -189,6 +189,9 @@ class Yourdle(App):
 
     def compose(self) -> ComposeResult:
         yield UserQueryBackground()
+    def on_create(self) -> ComposeResult:
+        yield GuessContainer()
+        yield InputContainer()
         
 
 
