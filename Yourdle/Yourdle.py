@@ -140,10 +140,12 @@ class UserQueryInput(Button):
         print(self)
 
 
-class Create(Message):
-    """"""
+
 
 class LetterGuess(Static, can_focus = True):
+    class Create(Message):
+        """Message sent when inputs are ready to be created."""
+    
     def on_load(self):
         self.add_class("letterguess")
     def on_focus(self):
@@ -164,7 +166,7 @@ class LetterGuess(Static, can_focus = True):
             currentid = str(self.id)
             currentid = currentid[1]
             currentid = int(currentid) - 1
-            self.post_message(self.Create)
+            self.post_message(Create)
 
 class WordGuess(Static):
     def compose(self) -> ComposeResult:
