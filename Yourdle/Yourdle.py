@@ -141,8 +141,7 @@ class UserQuery(Static):
         for i in range(3, 8):
             yield UserQueryInput(str(i),id ="b2"+str(i),classes = "b2")
 class UserQueryInput(Button):
-    def on_button_pressed(self):
-        print(self)
+    pass
 
 
 class Create(Message):
