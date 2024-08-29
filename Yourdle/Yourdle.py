@@ -190,6 +190,7 @@ class Yourdle(App):
     def compose(self) -> ComposeResult:
         yield UserQueryBackground()
     def on_create(self) -> ComposeResult:
+        print ("u workin?")
         yield GuessContainer()
         yield InputContainer()
         
