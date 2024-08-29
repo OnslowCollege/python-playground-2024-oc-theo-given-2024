@@ -17,6 +17,7 @@ from textual.containers import Horizontal, ScrollableContainer, Vertical
 from textual.reactive import reactive
 from textual.widgets import Button, Static
 from textual.message import Message
+from textual.events import Callback
 
 
 #Functions for easily changing color of text.
@@ -140,9 +141,11 @@ class UserQueryInput(Button):
         print(self)
 
 
-
+class Create(Callback):
+    """"""
 
 class LetterGuess(Static, can_focus = True):
+    """"""
     class Create(Message):
         """Message sent when inputs are ready to be created."""
     
@@ -166,7 +169,7 @@ class LetterGuess(Static, can_focus = True):
             currentid = str(self.id)
             currentid = currentid[1]
             currentid = int(currentid) - 1
-            self.call_next("create")
+            Create()
 
 class WordGuess(Static):
     def compose(self) -> ComposeResult:
