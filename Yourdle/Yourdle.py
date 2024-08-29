@@ -16,6 +16,7 @@ from textual.app import App, ComposeResult
 from textual.containers import Horizontal, ScrollableContainer, Vertical
 from textual.reactive import reactive
 from textual.widgets import Button, Static
+from textual.message import Message
 
 
 #Functions for easily changing color of text.
@@ -134,13 +135,13 @@ class UserQuery(Static):
             yield UserQueryInput(str(i), id ="b1"+str(i), classes = "b1")
         for i in range(3, 8):
             yield UserQueryInput(str(i),id ="b2"+str(i),classes = "b2")
-#WHY IS IT NOT HIDING!?!?!?!?!?
 class UserQueryInput(Button):
     def on_button_pressed(self):
         print(self)
 
 
-
+class Create(Message):
+    """"""
 
 class LetterGuess(Static, can_focus = True):
     def on_load(self):
@@ -163,7 +164,7 @@ class LetterGuess(Static, can_focus = True):
             currentid = str(self.id)
             currentid = currentid[1]
             currentid = int(currentid) - 1
-            self.post_message)
+            self.post_message(Create)
 
 class WordGuess(Static):
     def compose(self) -> ComposeResult:
