@@ -46,6 +46,7 @@ UserQueryBackground{
 
 UserQuery{
     layer: top;
+    layers: qbottom qtop;
     width: 80%;
     height: 70%;
     layout: horizontal;
