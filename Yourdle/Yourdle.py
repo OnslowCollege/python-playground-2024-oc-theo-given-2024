@@ -55,7 +55,11 @@ class UserQueryBackground(Static):
         global num_tries
         global word_length
         if button.id[1] == "1":
-            num_tries = int(button.id[2])
+            if button.id[2] == 1 and len(button.id) == 3:
+                num_tries = 10
+            else:
+                print (len(button.id))
+                num_tries = int(button.id[2])
             self.query(".b1").add_class("hide")
             self.query(".b2").add_class("show")
         if button.id[1] == "2":
