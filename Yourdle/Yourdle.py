@@ -56,7 +56,7 @@ class UserQueryBackground(Static):
         global word_length
         if button.id[1] == "1":
             if len(button.id) == 4:
-                num_tries = button.id[2:3]
+                num_tries = int(button.id[2:4])
             else:
                 print (len(button.id))
                 num_tries = int(button.id[2])
