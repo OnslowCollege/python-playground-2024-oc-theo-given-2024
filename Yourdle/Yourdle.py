@@ -11,54 +11,9 @@ from letter_list_6 import word_list_6
 from letter_list_7 import word_list_7
 
 #Importing Textual modules
-from textual import events
 from textual.app import App, ComposeResult
-from textual.containers import Horizontal, ScrollableContainer, Vertical
-from textual.reactive import reactive
-from textual.widgets import Button, Static
 from textual.message import Message
-from textual.events import Callback
-
-
-#Functions for easily changing color of text.
-def makegreen(skk) -> str:
-    """
-    Make the string entered have a green background.
-
-    Arguments:
-    ---------
-        skk: The text that is getting a green background.
-
-    Returns: The resulting text with a green background.
-
-    """
-    return (f"\033[0;37;42m{skk}\033[0;30m")
-
-def makeyellow(skk)-> str:
-    """
-    Make the string entered have a yellow background.
-
-    Arguments:
-    ---------
-        skk: The text that is getting a yellow background.
-
-    Returns: The resulting text with a yellow background.
-
-    """
-    return(f"\033[0;43m{skk}\033[0;30m")
-
-def makered(skk)-> str:
-    """
-    Make the string entered have a red background.
-
-    Arguments:
-    ---------
-        skk: The text that is getting a red background.
-
-    Returns: The resulting text with a red background.
-
-    """
-    return(f"\033[0;41m{skk}\033[0;30m")
+from textual.widgets import Button, Static
 
 #Dictionary containing all the word lists for easy access
 word_lists = {
@@ -85,37 +40,10 @@ fin_check = ""
 wrong_chars = ""
 wrong_chars_list: list[str] = []
 
-#While loop that forces the user to select a number of guesses within a range.
-while not valid_tries:
-    try:
-        num_tries = int(input("Enter the number of guesses you want (3-10): "))
-        if 3 <= num_tries <= 10:
-            valid_tries = True
-            print("")
-        else:
-            print("")
-            print("Invalid Input.")
-    except ValueError:
-        print("")
-        print("Invalid Input.")
-
-#While loop that forces the user to select a word length within a range.
-while not valid_length:
-    try:
-        word_length = int(input("Enter length of word you'll guess (3-7): "))
-        if 3 <= word_length <= 7:
-            valid_length = True
-            print("")
-        else:
-            print("")
-            print("Invalid Input.")
-    except ValueError:
-        print("")
-        print("Invalid Input.")
-
 #TEXTUAL
 currentid: str = ""
-
+word_length = 0
+num_tries = 0
 class UserQueryBackground(Static):
     class Create(Message):
         """Message sent when inputs are ready to be created."""
@@ -191,9 +119,9 @@ class Yourdle(App):
         yield UserQueryBackground()
     
     def on_create(self):
-        yield GuessContainer()
-        yield InputContainer()
-        
+        self.mount(GuessContainer())
+        self.mount(InputContainer())
+
 
 
 class GuessContainer(Static):
