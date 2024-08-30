@@ -84,6 +84,7 @@ InputContainer{
     height: 17fr;
     grid-size: 10 3;
     overflow-x:auto;
+    align: center middle;
 }
 
 Button{
