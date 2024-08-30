@@ -54,7 +54,7 @@ UserQuery{
     border: tall rgb(100, 100, 100);
 }
 
-.text{
+#text1{
     dock: bottom;
     align: center middle;
     width: 100%;
