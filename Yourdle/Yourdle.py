@@ -105,7 +105,7 @@ class LetterGuess(Static, can_focus = True):
 class WordGuess(Static):
     def compose(self) -> ComposeResult:
         for i in range(word_length):
-            yield LetterGuess(" ", id = ("l" + str(i+1)))
+            yield LetterGuess("", id = ("l" + str(i+1)))
     def on_key(self, event) -> None:
         letter = event.key.upper()
         global currentid
