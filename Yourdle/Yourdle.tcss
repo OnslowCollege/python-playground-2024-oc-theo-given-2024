@@ -23,6 +23,7 @@ WordGuess {
     margin: 1;
     padding: 1;
     align: center middle;
+    
 }
 
 LetterGuess{
