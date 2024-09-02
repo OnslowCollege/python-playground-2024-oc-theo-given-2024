@@ -80,7 +80,7 @@ class UserQueryInput(Button):
 class Create(Message):
     pass
 class UserInput(Message):
-    pass
+    key = ""
 
 class LetterGuess(Static, can_focus = True):
     def on_load(self):
