@@ -91,12 +91,11 @@ class LetterGuess(Static, can_focus = True):
         letter = event.key.upper()
         global currentid
         print(letter)
-        if self.renderable == "":
-            if letter in letter_list:
-                self.update(letter)
-                currentid = str(self.id)
-                currentid = currentid[1]
-                currentid = int(currentid) + 1
+        if self.renderable == "" and letter in letter_list:
+            self.update(letter)
+            currentid = str(self.id)
+            currentid = currentid[1]
+            currentid = int(currentid) + 1
         if letter == "BACKSPACE":
             self.update("")
             currentid = str(self.id)
