@@ -110,6 +110,10 @@ class WordGuess(Static):
     def on_key(self, event) -> None:
         letter = event.key.upper()
         global currentid
+        if int(currentid) != word_length + 1 and int(currentid) != 0:
+            if letter in letter_list or letter == "BACKSPACE":
+                self.query_one("#l" + str(currentid)).focus()
+
         if letter in letter_list and int(currentid) != word_length + 1 and int(currentid) != 0:
             self.query_one("#l" + str(currentid)).focus()
         if letter == "BACKSPACE" and int(currentid) != word_length + 1 and int(currentid) != 0:
