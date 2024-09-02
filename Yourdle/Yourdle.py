@@ -79,9 +79,6 @@ class UserQueryInput(Button):
     pass
 class Create(Message):
     pass
-class UserInput(Message):
-    pass
-
 class LetterGuess(Static, can_focus = True):
     def on_load(self):
         self.add_class("letterguess")
@@ -98,7 +95,6 @@ class LetterGuess(Static, can_focus = True):
             currentid = str(self.id)
             currentid = currentid[1]
             currentid = int(currentid) + 1
-            self.post_message(UserInput(event))
         if letter == "BACKSPACE":
             self.update("")
             currentid = str(self.id)
