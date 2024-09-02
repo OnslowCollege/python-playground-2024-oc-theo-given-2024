@@ -129,7 +129,7 @@ class GuessContainer(Static):
     def compose(self) -> ComposeResult:
         for i in range(num_tries):
             yield WordGuess(id=("c" + str(i)), disabled= True)
-        self.query_one("#c1").disabled = False
+        self.query_one("#c2").disabled = False
 
 class InputContainer(Static):
     def compose(self) -> ComposeResult:
