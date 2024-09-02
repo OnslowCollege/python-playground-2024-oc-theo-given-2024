@@ -91,7 +91,7 @@ class LetterGuess(Static, can_focus = True):
         letter = event.key.upper()
         global currentid
         print(letter)
-        if self.renderable != "":
+        if self.renderable == "":
             if letter in letter_list:
                 self.update(letter)
                 currentid = str(self.id)
