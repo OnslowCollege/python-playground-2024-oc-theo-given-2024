@@ -124,7 +124,9 @@ class WordGuess(Static):
                 valid_guess = False
         
         if valid_guess:
-            
+            user_guess = ""
+            for i in range(word_length):
+                user_guess=user_guess+self.query_one("#l"+str(i+1)).renderable
             for i in range(word_length):
                 if user_guess[i] == correct_answer[i]:
                     user_check = user_check + "-"
@@ -143,12 +145,14 @@ class WordGuess(Static):
             for i in range(word_length):
                 correct_chars.setdefault(answer_check[i], 0)
             for i in range(word_length):
-                correct_chars[answer_check[i]] = correct_chars[answer_check[i]] + 1
+                correct_chars[answer_check[i]]=correct_chars[answer_check[i]]+1
             
-            
+            guess_chars: dict[str, int] = {}
+            for i in range(word_length):
+                guess_chars.setdefault(fin_check[i], 0)
             
             for i in range(word_length):
-                self.query_one("#l" + str(i+1)).renerable
+                self.query_one("#l" + str(i+1)).renderable
 
 
 class Yourdle(App):
@@ -278,9 +282,7 @@ while user_tries != num_tries and not correct_guess:
         #Puts each character of the answer check into a dictionary
         
         #Creates a dictionary with each character in fin_check
-        guess_chars: dict[str, int] = {}
-        for i in range(word_length):
-            guess_chars.setdefault(fin_check[i], 0)
+        
         #Colors their guess and adds it to a string with all previous guesses
         #Also, adds all characters absent from the answer into a list.
         for i in range(word_length):
