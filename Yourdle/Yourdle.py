@@ -131,6 +131,8 @@ class GuessContainer(Static):
             yield WordGuess(id=("c" + str(i)), disabled= True)
     def on_mount(self):
         self.query_one("#c0").disabled = False
+    def key_enter(self):
+        
 
 class InputContainer(Static):
     def compose(self) -> ComposeResult:
