@@ -122,7 +122,23 @@ class WordGuess(Static):
         for i in range(word_length):
             if self.query_one("#l" + str(i+1)).renderable == "":
                 valid_guess = False
+        
         if valid_guess:
+            
+            for i in range(word_length):
+                if user_guess[i] == correct_answer[i]:
+                    user_check = user_check + "-"
+                    answer_check = answer_check + "_"
+                else:
+                    user_check = user_check + user_guess[i]
+                    answer_check = answer_check + correct_answer[i]
+            
+            
+            
+            
+            
+            
+            
             for i in range(word_length):
                 self.query_one("#l" + str(i+1)).renerable
 
@@ -246,13 +262,7 @@ while user_tries != num_tries and not correct_guess:
         user_tries = user_tries + 1
         
         #Removes correct letters from the answer and user guess for comparison
-        for i in range(word_length):
-            if user_guess[i] == correct_answer[i]:
-                user_check = user_check + "-"
-                answer_check = answer_check + "_"
-            else:
-                user_check = user_check + user_guess[i]
-                answer_check = answer_check + correct_answer[i]
+        
         
         #Looks for each character of the trimmed user input
         for i in range(word_length):
