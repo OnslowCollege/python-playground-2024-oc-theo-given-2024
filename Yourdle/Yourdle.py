@@ -66,6 +66,10 @@ class UserQueryBackground(Static):
             word_length = int(button.id[2])
             self.add_class("hide")
             self.add_class("bottomlayer")
+            global correct_answer
+            word_index = random.randrange(0, len(user_word_list))
+            correct_answer = user_word_list[word_index]
+            correct_answer = correct_answer.upper()
             self.post_message(Create())
 class UserQuery(Static):
     def compose(self):
@@ -190,9 +194,7 @@ user_word_list = word_lists[word_length]
 #Choosing the answer (For testing purposes)
 correct_answer = input("Enter the answer: ")
 if correct_answer == (""):
-    word_index = random.randrange(0, len(user_word_list))
-    correct_answer = user_word_list[word_index]
-    correct_answer = correct_answer.upper()
+    
 
 #Runs while the user still has guesses and they haven't yet guessed correctly
 while user_tries != num_tries and not correct_guess:
