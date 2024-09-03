@@ -112,9 +112,11 @@ class WordGuess(Static):
         if int(currentid) != word_length + 1 and int(currentid) != 0 and self.renderable == "" and (letter in letter_list or letter == "BACKSPACE"):  # noqa: E501
                 self.query_one("#l" + str(currentid)).focus()
     def key_enter(self):
+        global valid_guess
+        valid_guess = True
         for i in range:
             if self.query_one("#l" + str(i)) == "":
-                
+                valid_guess = False
 
 
 class Yourdle(App):
@@ -136,11 +138,11 @@ class GuessContainer(Static):
     def on_mount(self):
         self.query_one("#c0").disabled = False
     def key_enter(self):
-        
-        global num_tries
-        num_tries = num_tries + 1
-        self.query_one("#c" + str(num_tries))
-
+        if valid_guess:
+            global num_tries
+            self.query_one("#c" + str(num_tries)).disabled = True
+            num_tries = num_tries + 1
+            self.query_one("#c" + str(num_tries)).disabled = False
 class InputContainer(Static):
     def compose(self) -> ComposeResult:
         yield Button("Q")
