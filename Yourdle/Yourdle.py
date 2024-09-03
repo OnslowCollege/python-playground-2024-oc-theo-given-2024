@@ -133,9 +133,17 @@ class WordGuess(Static):
                     user_check = user_check + user_guess[i]
                     answer_check = answer_check + correct_answer[i]
             
+            for i in range(word_length):
+                if user_check[i] in answer_check:
+                    fin_check = fin_check + user_check[i]
+                else:
+                    fin_check = fin_check + "-"
             
-            
-            
+            correct_chars: dict[str, int] = {}
+            for i in range(word_length):
+                correct_chars.setdefault(answer_check[i], 0)
+            for i in range(word_length):
+                correct_chars[answer_check[i]] = correct_chars[answer_check[i]] + 1
             
             
             
@@ -265,18 +273,10 @@ while user_tries != num_tries and not correct_guess:
         
         
         #Looks for each character of the trimmed user input
-        for i in range(word_length):
-            if user_check[i] in answer_check:
-                fin_check = fin_check + user_check[i]
-            else:
-                fin_check = fin_check + "-"
+        
         
         #Puts each character of the answer check into a dictionary
-        correct_chars: dict[str, int] = {}
-        for i in range(word_length):
-            correct_chars.setdefault(answer_check[i], 0)
-        for i in range(word_length):
-            correct_chars[answer_check[i]] = correct_chars[answer_check[i]] + 1
+        
         #Creates a dictionary with each character in fin_check
         guess_chars: dict[str, int] = {}
         for i in range(word_length):
