@@ -145,6 +145,7 @@ class GuessContainer(Static):
             user_tries = user_tries + 1
             if user_tries != num_tries:
                 self.query_one("#c" + str(user_tries)).disabled = False
+                self.query_one("#c" + str(user_tries)).query_one("#l1").focus()
 class InputContainer(Static):
     def compose(self) -> ComposeResult:
         yield Button("Q")
