@@ -109,7 +109,8 @@ class WordGuess(Static):
     def on_key(self, event) -> None:
         letter = event.key.upper()
         global currentid
-        if int(currentid) != word_length + 1 and int(currentid) != 0 and self.renderable == "" and (letter in letter_list or letter == "BACKSPACE"):  # noqa: E501
+        if self.renderable == "" and (letter in letter_list or letter == "BACKSPACE"):  # noqa: SIM102
+            if int(currentid) != word_length + 1 and int(currentid) != 0:
                 self.query_one("#l" + str(currentid)).focus()
     def key_enter(self):
         global valid_guess
