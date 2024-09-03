@@ -67,6 +67,7 @@ class UserQueryBackground(Static):
             self.add_class("hide")
             self.add_class("bottomlayer")
             global correct_answer
+            user_word_list = word_lists[word_length]
             word_index = random.randrange(0, len(user_word_list))
             correct_answer = user_word_list[word_index]
             correct_answer = correct_answer.upper()
@@ -217,15 +218,13 @@ if __name__ == "__main__":
 
 
 #Selecting the word list of the users choice.
-user_word_list = word_lists[word_length]
+
 
 #Randomly selecting a word from the aforementioned list to be the answer.
 
 
 #Choosing the answer (For testing purposes)
-correct_answer = input("Enter the answer: ")
-if correct_answer == (""):
-    
+
 
 #Runs while the user still has guesses and they haven't yet guessed correctly
 while user_tries != num_tries and not correct_guess:
