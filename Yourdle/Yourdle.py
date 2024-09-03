@@ -31,7 +31,6 @@ correct_guess = False
 valid_guess = False
 valid_letter = False
 user_tries = 0
-current_letter = 1
 previous_guesses = ""
 colored_guess = ""
 user_check = ""
@@ -127,7 +126,8 @@ class WordGuess(Static):
         if valid_guess:
             user_guess = ""
             for i in range(word_length):
-                user_guess=user_guess+self.query_one("#l"+str(i+1)).renderable
+                current_letter = self.query_one("#l"+str(i+1)).renderable
+                user_guess = user_guess + str(current_letter)
             for i in range(word_length):
                 if user_guess[i] == correct_answer[i]:
                     user_check = user_check + "-"
