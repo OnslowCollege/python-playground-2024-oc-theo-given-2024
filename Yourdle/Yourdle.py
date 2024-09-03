@@ -128,6 +128,10 @@ class WordGuess(Static):
             for i in range(word_length):
                 current_letter = self.query_one("#l"+str(i+1)).renderable
                 user_guess = user_guess + str(current_letter)
+            
+            user_check = ""
+            answer_check = ""
+            fin_check = ""
             for i in range(word_length):
                 if user_guess[i] == correct_answer[i]:
                     user_check = user_check + "-"
