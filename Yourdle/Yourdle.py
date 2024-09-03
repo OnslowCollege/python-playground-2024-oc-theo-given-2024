@@ -114,7 +114,7 @@ class WordGuess(Static):
     def key_enter(self):
         global valid_guess
         valid_guess = True
-        for i in range:
+        for i in range(word_length):
             if self.query_one("#l" + str(i)) == "":
                 valid_guess = False
 
