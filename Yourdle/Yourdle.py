@@ -143,7 +143,8 @@ class GuessContainer(Static):
             global user_tries
             self.query_one("#c" + str(user_tries)).disabled = True
             user_tries = user_tries + 1
-            self.query_one("#c" + str(user_tries)).disabled = False
+            if user_tries != num_tries:
+                self.query_one("#c" + str(user_tries)).disabled = False
 class InputContainer(Static):
     def compose(self) -> ComposeResult:
         yield Button("Q")
