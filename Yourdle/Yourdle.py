@@ -115,7 +115,7 @@ class WordGuess(Static):
         global valid_guess
         valid_guess = True
         for i in range(word_length):
-            if self.query_one("#l" + str(i+1)) == "":
+            if self.query("#l" + str(i+1)) == "":
                 valid_guess = False
 
 
