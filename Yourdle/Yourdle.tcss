@@ -89,7 +89,7 @@ LetterGuess.focus{
 }
 
 :disabled{
-    border: red;
+    opacity: 100%;
 }
 
 InputContainer{
