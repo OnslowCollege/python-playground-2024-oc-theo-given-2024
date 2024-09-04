@@ -229,7 +229,7 @@ class InputContainer(Static):
         yield Button("M")
     def key_enter(self):
         for i in range(26):
-            
+            if self.query_one()
         self.query_one("#l"+str(i+1)).add_class("incorrect")
 
 if __name__ == "__main__":
