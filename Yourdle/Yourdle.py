@@ -195,7 +195,6 @@ class GuessContainer(Static):
         if valid_guess:
             global user_tries
             self.query_one("#c" + str(user_tries)).disabled = True
-            self.query_one("#c" + str(user_tries)).add_class("disabled")
             user_tries = user_tries + 1
             if user_tries != num_tries:
                 self.query_one("#c" + str(user_tries)).disabled = False

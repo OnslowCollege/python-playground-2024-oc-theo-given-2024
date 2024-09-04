@@ -88,10 +88,6 @@ LetterGuess.focus{
     border: tall rgb(255, 0, 0)
 }
 
-.disabled{
-    opacity: 100%;
-}
-
 InputContainer{
     background: $boost;
     layout: grid;
