@@ -182,9 +182,6 @@ class Yourdle(App):
     def on_create(self):
         self.mount(GuessContainer())
         self.mount(InputContainer())
-    
-    def on_button_pressed(self):
-        self.query_one(GuessContainer()).query_one("#c" + str(user_tries)).query_one("#l" + str(currentid)).post_message(ButtonPressed())  # noqa: E501
 
 
 
