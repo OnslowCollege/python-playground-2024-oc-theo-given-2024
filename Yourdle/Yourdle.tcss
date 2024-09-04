@@ -79,11 +79,17 @@ LetterGuess.focus{
 }
 
 .wrongspot{
-    background: yellow;
+    background: rgb(200, 200, 0);
+    border: tall rgb(255, 255, 0)
 }
 
 .incorrect{
-    background: red;
+    background: rgb(200, 0, 0);
+    border: tall rgb(255, 0, 0)
+}
+
+:disabled{
+    border: red;
 }
 
 InputContainer{
