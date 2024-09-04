@@ -157,7 +157,7 @@ class WordGuess(Static):
                 guess_chars.setdefault(fin_check[i], 0)
             
             for i in range(word_length):
-                self.query_one("#l" + str(i+1)).renderable
+                user_guess 
 
 
 class Yourdle(App):
