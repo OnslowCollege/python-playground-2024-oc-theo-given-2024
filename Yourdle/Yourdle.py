@@ -245,35 +245,36 @@ if __name__ == "__main__":
 
 
 #Runs while the user still has guesses and they haven't yet guessed correctly
-while user_tries != num_tries and not correct_guess:
+#while user_tries != num_tries and not correct_guess:
     #Runs until the user inputs a guess that is valid
-    while not valid_guess:
-        try:
-            if num_tries-user_tries == 1:
-                user_guess = str(input("Enter your final guess: "))
-            else:
-                user_guess = str(input("Enter your guess: "))
-            user_guess = user_guess.upper()
-            if len(user_guess) == word_length:
-                valid_guess = True
+    #while not valid_guess:
+        #try:
+            #if num_tries-user_tries == 1:
+                #user_guess = str(input("Enter your final guess: "))
+            #else:
+                #user_guess = str(input("Enter your guess: "))
+            #user_guess = user_guess.upper()
+            #if len(user_guess) == word_length:
+                #valid_guess = True
                 #Makes sure all characters in the answer are letters
-                for i in range(word_length):
-                    valid_letter = False
-                    for j in range(len(letter_list)):
-                        if user_guess[i] == letter_list[j]:
-                            valid_letter = True
-                    if not valid_letter:
-                        valid_guess = False
-                    valid_letter = False
-                if not valid_guess:
-                    print("Invalid Input.")
-                print("")
-            else:
-                print("Invalid Input.")
-                print("")
-        except ValueError:
-            print("Invalid Input.")
-            print("")
+                #for i in range(word_length):
+                    #valid_letter = False
+                    #for j in range(len(letter_list)):
+                        #if user_guess[i] == letter_list[j]:
+                            #valid_letter = True
+                    #if not valid_letter:
+                        #valid_guess = False
+                    #valid_letter = False
+                #if not valid_guess:
+                    #print("Invalid Input.")
+                #print("")
+            #else:
+                #print("Invalid Input.")
+                #print("")
+        #except ValueError:
+            #print("Invalid Input.")
+            #
+            # print("")
     #Runs if the user guesses the correct word.
     #if user_guess == correct_answer:
         #correct_guess = True
