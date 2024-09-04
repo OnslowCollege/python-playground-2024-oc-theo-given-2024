@@ -182,6 +182,9 @@ class Yourdle(App):
     def on_create(self):
         self.mount(GuessContainer())
         self.mount(InputContainer())
+    
+    def on_button_pressed(self):
+        self.query_one(GuessContainer()).query_one("#c" + str(user_tries)).query_one()
 
 
 
@@ -273,8 +276,7 @@ if __name__ == "__main__":
                 #print("")
         #except ValueError:
             #print("Invalid Input.")
-            #
-            # print("")
+            #print("")
     #Runs if the user guesses the correct word.
     #if user_guess == correct_answer:
         #correct_guess = True
