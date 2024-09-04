@@ -165,6 +165,12 @@ class WordGuess(Static):
                         self.query_one("#l"+str(i+1)).add_class("wrongspot")
                     else:
                         self.query_one("#l"+str(i+1)).add_class("incorrect")
+                else:
+                    self.query_one("#l"+str(i+1)).add_class("incorrect")
+                    if user_guess[i] not in correct_answer:
+                        wrong_chars_list.append(user_guess[i])
+                    if wrong_chars_list.count(user_guess[i]) >= 2:
+                        wrong_chars_list.remove(user_guess[i])
 
 
 class Yourdle(App):
