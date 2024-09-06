@@ -38,6 +38,8 @@ answer_check = ""
 fin_check = ""
 wrong_chars = ""
 wrong_chars_list: list[str] = []
+correct_chars_list: list[str] = []
+dif_chars_list: list[str] = []
 
 #TEXTUAL
 currentid: str = ""
