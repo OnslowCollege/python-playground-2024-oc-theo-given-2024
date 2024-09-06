@@ -199,7 +199,7 @@ class GuessContainer(Static):
             if user_tries != num_tries:
                 self.query_one("#c" + str(user_tries)).disabled = False
                 self.query_one("#c" + str(user_tries)).query_one("#l1").focus()
-            for i in range(len(wrong_chars)):
+            for i in range(len(wrong_chars_list)):
                 ""
 
 class InputContainer(Static):
