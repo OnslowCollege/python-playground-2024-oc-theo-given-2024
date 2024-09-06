@@ -59,7 +59,6 @@ class UserQueryBackground(Static):
             if len(button.id) == 4:
                 num_tries = int(button.id[2:4])
             else:
-                print (len(button.id))
                 num_tries = int(button.id[2])
             self.query(".b1").add_class("hide")
             self.query(".b2").add_class("show")
@@ -209,9 +208,9 @@ class GuessContainer(Static):
                 self.query_one("#b" + dif_chars_list[i]).variant = "warning"
             for i in range(len(correct_chars_list)):
                 self.query_one("#b" + correct_chars_list[i]).variant ="success"
-    def on_button_pressed(self, button):
-        print (button)
-        self.post_message(f"events.Key(key='{button.id[1]}')")
+    def on_button_pressed(self, event):
+        print (event.button)
+        self.post_message(f"events.Key(key='{event.button.id[1]}')")
 
 class InputContainer(Static):
     def compose(self) -> ComposeResult:
