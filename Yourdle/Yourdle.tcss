@@ -98,6 +98,7 @@ InputContainer{
     grid-size: 10 3;
     overflow-x:auto;
     align: center middle;
+    dock: bottom;
 }
 
 Button{

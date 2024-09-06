@@ -181,7 +181,6 @@ class Yourdle(App):
     
     def on_create(self):
         self.mount(GuessContainer())
-        self.mount(InputContainer())
 
 
 
@@ -189,6 +188,7 @@ class GuessContainer(Static):
     def compose(self) -> ComposeResult:
         for i in range(num_tries):
             yield WordGuess(id=("c" + str(i)), disabled= True)
+        yield InputContainer()
     def on_mount(self):
         self.query_one("#c0").disabled = False
     def key_enter(self):
