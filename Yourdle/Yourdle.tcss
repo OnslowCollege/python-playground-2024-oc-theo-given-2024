@@ -98,14 +98,11 @@ InputContainer{
     grid-size: 10 3;
     overflow-x:auto;
     align: center middle;
+    dock: bottom;
 }
 
 Button{
     width: 1;
     height: 3;
     margin: 1;
-}
-
-GuessContainer{
-    dock: bottom;
 }
