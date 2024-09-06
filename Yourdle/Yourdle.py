@@ -200,7 +200,7 @@ class GuessContainer(Static):
                 self.query_one("#c" + str(user_tries)).disabled = False
                 self.query_one("#c" + str(user_tries)).query_one("#l1").focus()
             for i in range(len(wrong_chars_list)):
-                self.query_one("#b" + wrong_chars_list[i]).variant
+                self.query_one("#b" + wrong_chars_list[i]).variant = "error"
 
 class InputContainer(Static):
     def compose(self) -> ComposeResult:
