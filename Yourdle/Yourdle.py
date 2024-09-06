@@ -209,6 +209,8 @@ class GuessContainer(Static):
                 self.query_one("#b" + dif_chars_list[i]).variant = "warning"
             for i in range(len(correct_chars_list)):
                 self.query_one("#b" + correct_chars_list[i]).variant ="success"
+    def on_button_pressed(self, button):
+        ""
 
 class InputContainer(Static):
     def compose(self) -> ComposeResult:
