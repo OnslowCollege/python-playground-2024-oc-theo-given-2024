@@ -161,10 +161,12 @@ class WordGuess(Static):
             for i in range(word_length):
                 if user_guess[i] == correct_answer[i]:
                     self.query_one("#l"+str(i+1)).add_class("correct")
+                    correct_chars_list.append(user_guess[i])
                 elif user_guess[i] == fin_check[i]:
                     guess_chars[fin_check[i]] = guess_chars[fin_check[i]] + 1
                     if guess_chars[fin_check[i]] <= correct_chars[fin_check[i]]:
                         self.query_one("#l"+str(i+1)).add_class("wrongspot")
+                        dif_chars_list.append(user_guess[i])
                     else:
                         self.query_one("#l"+str(i+1)).add_class("incorrect")
                 else:
@@ -203,6 +205,10 @@ class GuessContainer(Static):
                 self.query_one("#c" + str(user_tries)).query_one("#l1").focus()
             for i in range(len(wrong_chars_list)):
                 self.query_one("#b" + wrong_chars_list[i]).variant = "error"
+            for i in range(len(dif_chars_list)):
+                self.query_one("#b" + dif_chars_list[i]).variant = "warning"
+            for i in range(len(correct_chars_list)):
+                self.query_one("#b" + correct_chars_list[i]).variant ="success"
 
 class InputContainer(Static):
     def compose(self) -> ComposeResult:
