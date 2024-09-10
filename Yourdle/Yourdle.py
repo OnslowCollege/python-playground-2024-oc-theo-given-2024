@@ -14,7 +14,7 @@ from textual.app import App, ComposeResult
 from textual.message import Message
 from textual.widgets import Button, Static
 
-from textual.src.textual import events
+from textual import events
 
 #Dictionary containing all the word lists for easy access
 word_lists = {
@@ -211,7 +211,7 @@ class GuessContainer(Static):
                 self.query_one("#b" + correct_chars_list[i]).variant ="success"
     def on_button_pressed(self, event):
         print (event.button)
-        self.post_message(events.Key())
+        self.post_message(events.Key(key=event.button.id[1]))
 
 class InputContainer(Static):
     def compose(self) -> ComposeResult:
