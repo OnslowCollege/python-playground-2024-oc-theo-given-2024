@@ -9,11 +9,12 @@ from letter_list_4 import word_list_4
 from letter_list_5 import word_list_5
 from letter_list_6 import word_list_6
 from letter_list_7 import word_list_7
-
 #Importing Textual modules
 from textual.app import App, ComposeResult
 from textual.message import Message
 from textual.widgets import Button, Static
+
+from textual.src.textual import events
 
 #Dictionary containing all the word lists for easy access
 word_lists = {
@@ -210,7 +211,7 @@ class GuessContainer(Static):
                 self.query_one("#b" + correct_chars_list[i]).variant ="success"
     def on_button_pressed(self, event):
         print (event.button)
-        self.post_message(f"events.Key(key={event.button.id[1]})")
+        self.post_message(events.Key())
 
 class InputContainer(Static):
     def compose(self) -> ComposeResult:
