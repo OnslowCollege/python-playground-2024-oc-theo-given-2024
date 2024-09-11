@@ -46,7 +46,7 @@ UserQueryBackground{
 
 UserQuery{
     layers: bottom top;
-    width: 80%;
+    width: 90%;
     height: 70%;
     layout: horizontal;
     align: center middle;
@@ -61,8 +61,12 @@ UserQuery{
     height: 20%;
 }
 
-UserQueryInput{
+UserQueryInput.b1{
+    width: 1fr;
+}
 
+UserQueryInput.b2{
+    width: 1fr;
 }
 
 LetterGuess.focus{
