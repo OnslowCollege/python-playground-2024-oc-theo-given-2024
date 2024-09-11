@@ -209,11 +209,11 @@ class GuessContainer(Static):
                 self.query_one("#c" + str(user_tries)).disabled = False
                 self.query_one("#c" + str(user_tries)).query_one("#l1").focus()
             for i in range(len(wrong_chars_list)):
-                self.query_one("#b" + wrong_chars_list[i]).variant = "error"
+                app.query_one("#b" + wrong_chars_list[i]).variant = "error"
             for i in range(len(dif_chars_list)):
-                self.query_one("#b" + dif_chars_list[i]).variant = "warning"
+                app.query_one("#b" + dif_chars_list[i]).variant = "warning"
             for i in range(len(correct_chars_list)):
-                self.query_one("#b" + correct_chars_list[i]).variant ="success"
+                app.query_one("#b" + correct_chars_list[i]).variant ="success"
     def on_button_pressed(self, event):
         letter = event.button.id[1]
         
