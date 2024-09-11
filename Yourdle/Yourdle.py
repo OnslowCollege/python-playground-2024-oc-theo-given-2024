@@ -212,7 +212,9 @@ class GuessContainer(Static):
     def on_button_pressed(self, event):
         letter = event.button.id[1]
         currentguess = self.query_one("#c" + str(user_tries))
-        currentguess.post_message(events.Key(key=letter,character=letter))
+        for i in range(word_length):
+            if currentguess.query_one("#l")
+            currentguess.post_message(events.Key(key=letter,character=letter))
 
 class InputContainer(Static):
     def compose(self) -> ComposeResult:
