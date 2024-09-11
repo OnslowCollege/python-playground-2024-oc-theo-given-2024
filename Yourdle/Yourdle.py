@@ -216,7 +216,7 @@ class GuessContainer(Static):
         
         for i in range(word_length):
             currentletter = currentguess.query_one("#l" + str(i+1))
-            if currentletter.renderable == "" and letterposted:
+            if currentletter.renderable == "" and not letterposted:
                 currentletter.post_message(events.Key(key=letter,character=letter))
                 letterposted = True
 
