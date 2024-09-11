@@ -177,6 +177,7 @@ class WordGuess(Static):
                         wrong_chars_list.remove(user_guess[i])
     def on_descendant_focus(self):
         global currentfocus
+        
         currentfocus = Yourdle.focused
 
 
