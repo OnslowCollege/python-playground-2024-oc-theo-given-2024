@@ -3,8 +3,6 @@ Screen {
     layers: bottom top;
 }
 
-
-
 .b2{
     display: block;
 }
@@ -56,6 +54,12 @@ UserQuery{
     border: tall rgb(100, 100, 100);
 }
 
+UserQueryInput{
+    width: 2;
+    margin: 1;
+}
+
+
 .text{
     dock: top;
     content-align: center top;
@@ -99,8 +103,3 @@ InputContainer{
     align: center middle;
 }
 
-Button{
-    width: 1;
-    height: 3;
-    margin: 1;
-}
