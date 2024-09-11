@@ -65,10 +65,6 @@ UserQueryInput.b1{
     width: 1fr;
 }
 
-UserQueryInput.b2{
-    width: 1fr;
-}
-
 LetterGuess.focus{
     border: thick rgb(100, 100, 100);
 }
