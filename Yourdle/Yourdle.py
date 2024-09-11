@@ -178,7 +178,7 @@ class WordGuess(Static):
     def on_descendant_focus(self):
         global currentfocus
         
-        currentfocus = Yourdle.focused
+        currentfocus = focused
 
 
 class Yourdle(App):
