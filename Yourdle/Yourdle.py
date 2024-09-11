@@ -213,8 +213,9 @@ class GuessContainer(Static):
         letter = event.button.id[1]
         currentguess = self.query_one("#c" + str(user_tries))
         for i in range(word_length):
-            if currentguess.query_one("#l" + str(i+1)) == Yourdle:
-                currentguess.post_message(events.Key(key=letter,character=letter))
+            currentletter = currentguess.query_one("#l" + str(i+1))
+            if currentletter == Yourdle.focused:
+                currentletter.post_message(events.Key(key=letter,character=letter))
 
 class InputContainer(Static):
     def compose(self) -> ComposeResult:
