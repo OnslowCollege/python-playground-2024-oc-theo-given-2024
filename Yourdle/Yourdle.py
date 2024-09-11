@@ -212,12 +212,13 @@ class GuessContainer(Static):
     def on_button_pressed(self, event):
         letter = event.button.id[1]
         currentguess = self.query_one("#c" + str(user_tries))
-        
+        letterposted = False
         
         for i in range(word_length):
             currentletter = currentguess.query_one("#l" + str(i+1))
-            if currentletter.renderable == "":
+            if currentletter.renderable == "" and letterposted:
                 currentletter.post_message(events.Key(key=letter,character=letter))
+                letterposted = True
 
 class InputContainer(Static):
     def compose(self) -> ComposeResult:
