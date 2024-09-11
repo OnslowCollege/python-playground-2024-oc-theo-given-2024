@@ -215,14 +215,8 @@ class GuessContainer(Static):
                 self.query_one("#b" + correct_chars_list[i]).variant ="success"
     def on_button_pressed(self, event):
         letter = event.button.id[1]
-        currentguess = self.query_one("#c" + str(user_tries))
-        letterposted = False
         
-        for i in range(word_length):
-            currentletter = currentguess.query_one("#l" + str(i+1))
-            if currentletter.renderable == "" and not letterposted:
-                currentletter.post_message(events.Key(key=letter,character=letter))
-                letterposted = True
+        currentfocus.post_message(events.Key(key=letter,character=letter))
 
 class InputContainer(Static):
     def compose(self) -> ComposeResult:
