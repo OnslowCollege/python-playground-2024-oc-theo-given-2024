@@ -212,7 +212,7 @@ class GuessContainer(Static):
     def on_button_pressed(self, event):
         letter = event.button.id[1]
         for i in range(num_tries):
-            
+            self.query_one("#c" + str(i))
         self.post_message(events.Key(key=letter, character=letter))
 
 class InputContainer(Static):
