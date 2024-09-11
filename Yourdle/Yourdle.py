@@ -175,6 +175,9 @@ class WordGuess(Static):
                         wrong_chars_list.append(user_guess[i])
                     if wrong_chars_list.count(user_guess[i]) >= 2:
                         wrong_chars_list.remove(user_guess[i])
+    def on_descendant_focus(self):
+        global currentfocus
+        currentfocus = Yourdle.focused
 
 
 class Yourdle(App):
@@ -186,9 +189,6 @@ class Yourdle(App):
     def on_create(self):
         self.mount(GuessContainer())
 
-    def on_descendant_focus(self):
-        global currentfocus
-        currentfocus = Yourdle.focused
 
 
 
