@@ -211,6 +211,8 @@ class GuessContainer(Static):
                 self.query_one("#b" + correct_chars_list[i]).variant ="success"
     def on_button_pressed(self, event):
         letter = event.button.id[1]
+        for i in range(num_tries):
+            
         self.post_message(events.Key(key=letter, character=letter))
 
 class InputContainer(Static):
