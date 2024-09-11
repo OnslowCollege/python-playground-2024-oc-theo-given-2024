@@ -186,6 +186,10 @@ class Yourdle(App):
     def on_create(self):
         self.mount(GuessContainer())
 
+    def on_descendant_focus(self):
+        global currentfocus
+        currentfocus = Yourdle.focused
+
 
 
 class GuessContainer(Static):
