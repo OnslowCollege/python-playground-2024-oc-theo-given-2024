@@ -215,7 +215,7 @@ class GuessContainer(Static):
         
         
         for i in range(word_length):
-            currentletter = Yourdle.focused
+            currentletter = currentguess.query_one("#l" + str(i+1))
             if currentletter == Yourdle.focused:
                 currentletter.post_message(events.Key(key=letter,character=letter))
 
