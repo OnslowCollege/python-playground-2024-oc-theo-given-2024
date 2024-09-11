@@ -6,7 +6,7 @@ Screen {
 
 
 .b2{
-    display: none;
+    display: block;
 }
 
 .show{
@@ -63,7 +63,7 @@ UserQuery{
     height: 20%;
 }
 
-UserQueryInput.b1{
+UserQueryInput{
     width: 1fr;
 }
 
