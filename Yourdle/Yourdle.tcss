@@ -55,9 +55,9 @@ UserQuery{
 }
 
 UserQueryInput{
-    width: 1;
+    width: 0;
     margin: 1;
-    height: 2fr
+    height: 2fr;
 }
 
 
@@ -84,12 +84,12 @@ LetterGuess.focus{
 
 .wrongspot{
     background: rgb(200, 200, 0);
-    border: tall rgb(255, 255, 0)
+    border: tall rgb(255, 255, 0);
 }
 
 .incorrect{
     background: rgb(200, 0, 0);
-    border: tall rgb(255, 0, 0)
+    border: tall rgb(255, 0, 0);
 }
 
 InputContainer{
