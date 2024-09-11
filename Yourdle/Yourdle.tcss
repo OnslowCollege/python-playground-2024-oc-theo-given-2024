@@ -55,8 +55,9 @@ UserQuery{
 }
 
 UserQueryInput{
-    width: 2;
+    width: 1;
     margin: 1;
+    height: 2fr
 }
 
 
