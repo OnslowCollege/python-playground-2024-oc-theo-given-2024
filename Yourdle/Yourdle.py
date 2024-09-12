@@ -214,10 +214,7 @@ class GuessContainer(Static):
                 app.query_one("#b" + dif_chars_list[i]).variant = "warning"
             for i in range(len(correct_chars_list)):
                 app.query_one("#b" + correct_chars_list[i]).variant ="success"
-    def on_button_pressed(self, event):
-        letter = event.button.id[1]
-        global currentfocus
-        currentfocus.post_message(events.Key(key=letter,character=letter))
+    
 
 class InputContainer(Static):
     def compose(self) -> ComposeResult:
@@ -247,6 +244,11 @@ class InputContainer(Static):
         yield Button("B", id = "bB")
         yield Button("N", id = "bN")
         yield Button("M", id = "bM")
+    def on_button_pressed(self, event):
+        letter = event.button.id[1]
+        global currentfocus
+        
+        currentfocus.post_message(events.Key(key=letter,character=letter))
     
 
 if __name__ == "__main__":
