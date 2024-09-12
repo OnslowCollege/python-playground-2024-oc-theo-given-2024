@@ -90,6 +90,8 @@ class LetterGuess(Static, can_focus = True):
         self.add_class("letterguess")
     def on_focus(self):
         self.add_class("focus")
+        global currentfocus
+        currentfocus = app.focused
     def on_blur(self):
         self.remove_class("focus")
     def on_key(self, event) -> None:
@@ -175,10 +177,6 @@ class WordGuess(Static):
                         wrong_chars_list.append(user_guess[i])
                     if wrong_chars_list.count(user_guess[i]) >= 2:
                         wrong_chars_list.remove(user_guess[i])
-    def on_descendant_focus(self):
-        global currentfocus
-        
-        currentfocus = app.focused
 
 
 class Yourdle(App):
@@ -246,7 +244,7 @@ class InputContainer(Static):
         yield Button("M", id = "bM")
     def on_button_pressed(self, event):
         letter = event.button.id[1]
-        
+
         currentfocus.post_message(events.Key(key=letter,character=letter))
     
 
