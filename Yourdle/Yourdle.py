@@ -246,7 +246,6 @@ class InputContainer(Static):
         yield Button("M", id = "bM")
     def on_button_pressed(self, event):
         letter = event.button.id[1]
-        global currentfocus
         
         currentfocus.post_message(events.Key(key=letter,character=letter))
     
