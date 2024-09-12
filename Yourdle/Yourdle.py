@@ -246,7 +246,6 @@ class InputContainer(Static):
         letter = event.button.id[1]
 
         currentfocus.post_message(events.Key(key=letter,character=letter))
-    
 
 if __name__ == "__main__":
     app = Yourdle()
