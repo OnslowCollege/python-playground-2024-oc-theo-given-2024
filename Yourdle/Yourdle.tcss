@@ -101,7 +101,5 @@ InputContainer{
     padding: 1;
     height: 17fr;
     grid-size: 10 3;
-    overflow-y:auto;
-    align: center middle;
 }
 
