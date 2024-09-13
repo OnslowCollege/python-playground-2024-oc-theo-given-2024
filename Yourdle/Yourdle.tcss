@@ -103,6 +103,4 @@ InputContainer{
     grid-size: 8;
 }
 
-Button{
-    margin: 1;
-}
+
