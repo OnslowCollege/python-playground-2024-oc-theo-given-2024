@@ -100,7 +100,7 @@ InputContainer{
     max-width: 100%;
     padding: 1;
     height: auto;
-    grid-size: 8;
+    grid-size: 7;
 }
 
 
