@@ -247,6 +247,10 @@ class InputContainer(Static):
 
         currentfocus.post_message(events.Key(key=letter,character=letter))
 
+class ButtonContainer(Static):
+    
+
+
 if __name__ == "__main__":
     app = Yourdle()
     app.run()
