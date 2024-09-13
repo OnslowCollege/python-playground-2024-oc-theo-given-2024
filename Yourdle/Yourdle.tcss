@@ -95,7 +95,7 @@ LetterGuess.focus{
 
 InputContainer{
     background: $boost;
-    layout: grid;
+    layout: horizontal;
     margin: 1;
     max-width: 100%;
     padding: 1;
