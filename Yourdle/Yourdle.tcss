@@ -57,9 +57,9 @@ UserQuery{
 UserQueryInput{
     width: 1fr;
     margin: 1;
-    height: 2fr;
+    height: 1fr;
     min-width: 1;
-    content-align: center middle;
+    align: center middle;
 }
 
 
