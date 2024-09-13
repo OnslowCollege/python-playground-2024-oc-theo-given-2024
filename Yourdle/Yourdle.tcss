@@ -101,6 +101,7 @@ InputContainer{
     padding: 1;
     height: auto;
     grid-size: 7;
+    grid-gutter: 1;
 }
 
 
