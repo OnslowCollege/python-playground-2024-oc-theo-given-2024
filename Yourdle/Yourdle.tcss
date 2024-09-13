@@ -45,7 +45,6 @@ UserQueryBackground{
 }
 
 UserQuery{
-    layers: bottom top;
     width: 90%;
     height: 70%;
     layout: horizontal;
@@ -55,7 +54,6 @@ UserQuery{
 }
 
 UserQueryInput{
-    layer: bottom
     width: 1fr;
     margin: 1;
     height: 1fr;
@@ -69,7 +67,6 @@ UserQueryInput{
     content-align: center top;
     width: 100%;
     height: 20%;
-    layer: top
 }
 
 
