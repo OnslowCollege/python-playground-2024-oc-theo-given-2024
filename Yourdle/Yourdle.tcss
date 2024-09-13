@@ -99,7 +99,7 @@ InputContainer{
     margin: 1;
     max-width: 100%;
     padding: 1;
-    height: 17fr;
-    grid-size: 7 4;
+    height: auto;
+    grid-size: 7;
 }
 
