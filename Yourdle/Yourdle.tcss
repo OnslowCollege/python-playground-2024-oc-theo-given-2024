@@ -59,7 +59,7 @@ UserQueryInput{
     margin: 1;
     height: 2fr;
     min-width: 1;
-    content-align: center middle;
+    align: center middle;
 }
 
 
