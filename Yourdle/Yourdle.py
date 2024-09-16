@@ -46,7 +46,6 @@ dif_chars_list: list[str] = []
 currentid: str = ""
 word_length = 0
 num_tries = 0
-currentfocus = 
 class UserQueryBackground(Static):
     class Create(Message):
         """Message sent when inputs are ready to be created."""
