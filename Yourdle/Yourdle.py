@@ -123,6 +123,7 @@ class WordGuess(Static):
     def on_mount(self):
         print (self.id)
         if self.id == "c0":
+            print("It should work.")
             self.query_one("#l1").focus()
     def key_enter(self):
         global valid_guess
