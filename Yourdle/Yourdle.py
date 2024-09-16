@@ -121,6 +121,7 @@ class WordGuess(Static):
             if int(currentid) != word_length + 1 and int(currentid) != 0:
                 self.query_one("#l" + str(currentid)).focus()
     def on_mount(self):
+        print (self.id)
         if self.id == "c0":
             self.query_one("#l1").focus()
     def key_enter(self):
