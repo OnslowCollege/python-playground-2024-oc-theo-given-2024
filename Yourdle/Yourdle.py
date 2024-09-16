@@ -111,6 +111,9 @@ class LetterGuess(Static, can_focus = True):
             
 
 class WordGuess(Static):
+    def on_load(self):
+        if self.id == "c0":
+            self.query_one("#l1").focus()
     def compose(self) -> ComposeResult:
         for i in range(word_length):
             yield LetterGuess("", id = ("l" + str(i+1)))
