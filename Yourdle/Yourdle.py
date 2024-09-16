@@ -120,7 +120,7 @@ class WordGuess(Static):
         if self.renderable == "" and (letter in letter_list or letter == "BACKSPACE"):  # noqa: SIM102
             if int(currentid) != word_length + 1 and int(currentid) != 0:
                 self.query_one("#l" + str(currentid)).focus()
-    def on_mount(self):
+    def on_show(self):
         print (self.id)
         if self.id == "c0":
             print("It should work.")
