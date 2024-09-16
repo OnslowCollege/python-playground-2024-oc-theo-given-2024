@@ -90,11 +90,13 @@ class LetterGuess(Static, can_focus = True):
         self.add_class("letterguess")
     def on_focus(self):
         self.add_class("focus")
+        print("Thingie has been focused")
         global currentfocus
         currentfocus = app.focused
     def on_blur(self):
         self.remove_class("focus")
     def on_key(self, event) -> None:
+        print("Key has been entered")
         letter = event.key.upper()
         global currentid
         print(letter)
