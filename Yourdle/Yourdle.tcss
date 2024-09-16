@@ -104,4 +104,6 @@ InputContainer{
     grid-gutter: 1;
 }
 
-
+.Ib{
+    width: 1fr;
+}
