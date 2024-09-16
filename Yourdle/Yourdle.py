@@ -120,6 +120,9 @@ class WordGuess(Static):
         if self.renderable == "" and (letter in letter_list or letter == "BACKSPACE"):  # noqa: SIM102
             if int(currentid) != word_length + 1 and int(currentid) != 0:
                 self.query_one("#l" + str(currentid)).focus()
+    def on_mount(self):
+        if self.id == "c0":
+            self.query_one("#l1").focus()
     def key_enter(self):
         global valid_guess
         valid_guess = True
@@ -188,8 +191,6 @@ class Yourdle(App):
     def on_create(self):
         self.mount(GuessContainer())
         self.mount(InputContainer())
-    def on_load(self):
-        self.query_one(GuessContainer).query_one("#c0").query_one("#l1").focus()
 
 
 
