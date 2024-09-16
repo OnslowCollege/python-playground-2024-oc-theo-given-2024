@@ -46,6 +46,7 @@ dif_chars_list: list[str] = []
 currentid: str = ""
 word_length = 0
 num_tries = 0
+currentfocus = 
 class UserQueryBackground(Static):
     class Create(Message):
         """Message sent when inputs are ready to be created."""
@@ -114,8 +115,6 @@ class WordGuess(Static):
     def compose(self) -> ComposeResult:
         for i in range(word_length):
             yield LetterGuess("", id = ("l" + str(i+1)))
-        if self.id == "c0":
-            self.query_one("#l1").focus()
     def on_key(self, event) -> None:
         letter = event.key.upper()
         global currentid
