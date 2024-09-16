@@ -124,7 +124,6 @@ class WordGuess(Static):
                 print("Next letter has been focused")
                 self.query_one("#l" + str(currentid)).focus()
     def on_show(self):
-        print (self.id)
         if self.id == "c0":
             print("It should work.")
             self.query_one("#l1").focus()
