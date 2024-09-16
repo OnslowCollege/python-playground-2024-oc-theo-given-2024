@@ -188,6 +188,7 @@ class Yourdle(App):
     def on_create(self):
         self.mount(GuessContainer())
         self.mount(InputContainer())
+    def on_load(self):
         self.query_one(GuessContainer).query_one("#c0").query_one("#l1").focus()
 
 
