@@ -88,7 +88,6 @@ class Create(Message):
 class LetterGuess(Static, can_focus = True):
     def on_load(self):
         self.add_class("letterguess")
-        print(self)
     def on_focus(self):
         self.add_class("focus")
         global currentfocus
