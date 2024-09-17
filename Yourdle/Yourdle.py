@@ -85,6 +85,8 @@ class UserQueryInput(Button):
     pass
 class Create(Message):
     pass
+class Backspace(Message):
+    pass
 class LetterGuess(Static, can_focus = True):
     def on_load(self):
         self.add_class("letterguess")
@@ -112,6 +114,8 @@ class LetterGuess(Static, can_focus = True):
             currentid = str(self.id)
             currentid = int(currentid[1])
             currentid = currentid - 1
+    def on_backspace(self):
+        pass
 
 class WordGuess(Static):
     def compose(self) -> ComposeResult:
