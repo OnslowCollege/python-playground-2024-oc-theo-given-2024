@@ -101,14 +101,12 @@ class LetterGuess(Static, can_focus = True):
         if self.renderable == "" and letter in letter_list:
             self.update(letter)
             currentid = str(self.id)
-            currentid = currentid[1]
-            currentid = int(currentid) + 1
-        if letter == "BACKSPACE":
+            currentid = int(currentid[1])
+            currentid = currentid + 1
+        if letter == "BACKSPACE" and self.renderable != "":
             self.update("")
             currentid = str(self.id)
-            currentid = currentid[1]
-            currentid = int(currentid) - 1
-            
+            currentid = int(currentid[1])
 
 class WordGuess(Static):
     def compose(self) -> ComposeResult:
