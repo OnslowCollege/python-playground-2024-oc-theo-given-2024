@@ -115,7 +115,7 @@ class LetterGuess(Static, can_focus = True):
             currentid = int(currentid[1])
             currentid = currentid - 1
     def on_backspace(self):
-        pass
+        self.update("")
 
 class WordGuess(Static):
     def compose(self) -> ComposeResult:
