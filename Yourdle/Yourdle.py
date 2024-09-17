@@ -126,7 +126,10 @@ class WordGuess(Static):
         global currentid
         if letter in letter_list or letter == "BACKSPACE":  # noqa: SIM102
             if int(currentid) != word_length + 1 and int(currentid) != 0:
-                self.query_one("#l" + str(currentid)).focus()
+                currentletter = self.query_one("#l" + str(currentid))
+                currentletter.focus()
+                if letter == "BACKSPACE":
+                    currentletter.post_message(Backspace())
     def on_show(self):
         if self.id == "c0":
             self.query_one("#l1").focus()
