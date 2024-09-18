@@ -209,7 +209,9 @@ class Yourdle(App):
         self.mount(currentgc)
 
 class CorrectAnswer(Static):
-    pass
+    def compose(self) -> ComposeResult:
+        for i in range(word_length):
+            yield Static(correct_answer[i], id = ("l" + str(i+1)))
 class Win(Message):
     pass
 
