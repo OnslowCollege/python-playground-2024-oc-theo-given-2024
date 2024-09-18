@@ -210,6 +210,7 @@ class Yourdle(App):
 
 class CorrectAnswer(Static):
     def compose(self) -> ComposeResult:
+        global correct_answer
         for i in range(word_length):
             yield Static(correct_answer[i], classes="lc")
 class Win(Message):
