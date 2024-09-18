@@ -205,7 +205,8 @@ class Yourdle(App):
         self.mount(GuessContainer(id="gc"))
         self.mount(InputContainer())
     def on_win(self):
-        self.mount(self.query_one("#gc"))
+        currentgc = self.query_one("#gc")
+        self.mount(currentgc)
 
 
 class Win(Message):
