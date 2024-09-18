@@ -103,7 +103,7 @@ LetterGuess.focus{
     border: tall rgb(44, 169, 44);
 }
 
-.correct:disabled{
+LetterGuess:disabled{
     background: green;
     border: tall rgb(44, 169, 44);
 }
