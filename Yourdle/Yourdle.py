@@ -202,10 +202,10 @@ class Yourdle(App):
         yield UserQueryBackground()
     
     def on_create(self):
-        self.mount(GuessContainer())
+        self.mount(GuessContainer(classes= "gc"))
         self.mount(InputContainer())
     def on_win(self):
-        self.mount(self.query_one(GuessContainer()))
+        self.mount(self.query_one("#gc"))
 
 
 class Win(Message):
