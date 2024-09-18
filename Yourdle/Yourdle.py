@@ -179,7 +179,7 @@ class WordGuess(Static):
                     correct_chars_list.append(user_guess[i])
                     correct_letters = correct_letters + 1
                     if correct_letters == word_length:
-                        Yourdle.mount(GuessContainer())
+                        self.post_message(Win())
                 elif user_guess[i] == fin_check[i]:
                     guess_chars[fin_check[i]] = guess_chars[fin_check[i]] + 1
                     if guess_chars[fin_check[i]] <= correct_chars[fin_check[i]]:
@@ -204,8 +204,12 @@ class Yourdle(App):
     def on_create(self):
         self.mount(GuessContainer())
         self.mount(InputContainer())
+    def on_win(self):
+        self.mount(GuessContainer())
 
 
+class Win(Message):
+    pass
 
 
 class GuessContainer(Static):
