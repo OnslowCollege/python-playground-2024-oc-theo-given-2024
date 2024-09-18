@@ -209,6 +209,7 @@ class Yourdle(App):
     def on_win(self):
         currentgc = self.query_one("#gc")
         currentwg = self.query_one("#c" + str(user_tries))
+        currentwg.disabled = True
         self.mount(currentgc)
 
 class CorrectAnswer(Static):
