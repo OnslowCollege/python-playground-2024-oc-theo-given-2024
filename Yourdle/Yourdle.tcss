@@ -103,6 +103,11 @@ LetterGuess.focus{
     border: tall rgb(44, 169, 44);
 }
 
+.correct:disabled{
+    background: green;
+    border: tall rgb(44, 169, 44);
+}
+
 .wrongspot{
     background: rgb(200, 200, 0);
     border: tall rgb(255, 255, 0);
