@@ -172,11 +172,14 @@ class WordGuess(Static):
             guess_chars: dict[str, int] = {}
             for i in range(word_length):
                 guess_chars.setdefault(fin_check[i], 0)
-            
+            correct_letters = 0
             for i in range(word_length):
                 if user_guess[i] == correct_answer[i]:
                     self.query_one("#l"+str(i+1)).add_class("correct")
                     correct_chars_list.append(user_guess[i])
+                    correct_letters = correct_letters + 1
+                    if correct_letters == word_length:
+                        app.mount(GuessContainer())
                 elif user_guess[i] == fin_check[i]:
                     guess_chars[fin_check[i]] = guess_chars[fin_check[i]] + 1
                     if guess_chars[fin_check[i]] <= correct_chars[fin_check[i]]:
