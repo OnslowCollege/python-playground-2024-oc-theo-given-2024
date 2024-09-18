@@ -224,10 +224,10 @@ class Win(Message):
 class GuessContainer(Static):
     def compose(self) -> ComposeResult:
         for i in range(num_tries):
-            yield WordGuess(id=("c" + str(i)))
-            self.query_one("#c" + str(i)).focusable = False
+            yield WordGuess(id=("c" + str(i)), disabled= True)
     def on_mount(self):
-        self.query_one("#c0").focusable = True
+        self.query_one("#c0").focusable = False
+        self.query_one("#c0").disabled = False
     def key_enter(self):
         if valid_guess:
             global user_tries
