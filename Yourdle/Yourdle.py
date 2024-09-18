@@ -211,7 +211,7 @@ class Yourdle(App):
 class CorrectAnswer(Static):
     def compose(self) -> ComposeResult:
         for i in range(word_length):
-            yield Static(correct_answer[i], id = ("l" + str(i+1)))
+            yield Static(correct_answer[i], classes="lc")
 class Win(Message):
     pass
 
