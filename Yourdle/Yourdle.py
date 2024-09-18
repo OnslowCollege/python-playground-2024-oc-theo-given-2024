@@ -41,6 +41,7 @@ wrong_chars = ""
 wrong_chars_list: list[str] = []
 correct_chars_list: list[str] = []
 dif_chars_list: list[str] = []
+correct_answer = ""
 
 #TEXTUAL
 currentid: str = ""
@@ -202,6 +203,7 @@ class Yourdle(App):
         yield UserQueryBackground()
     
     def on_create(self):
+        self.mount(CorrectAnswer())
         self.mount(GuessContainer(id="gc"))
         self.mount(InputContainer())
     def on_win(self):
@@ -212,7 +214,7 @@ class CorrectAnswer(Static):
     def compose(self) -> ComposeResult:
         global correct_answer
         for i in range(word_length):
-            yield Static(correct_answer[i], classes="lc")
+            yield Static(correct_answer[i], classes="lc correct")
 class Win(Message):
     pass
 
