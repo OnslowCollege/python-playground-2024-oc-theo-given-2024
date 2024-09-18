@@ -45,6 +45,17 @@ LetterGuess{
     content-align: center middle;
 }
 
+CorrectAnswer{
+    background: $boost;
+    layout: grid;
+    margin: 1;
+    max-width: 100%;
+    padding: 1;
+    height: auto;
+    grid-size: 7;
+    grid-gutter: 1;
+}
+
 UserQueryBackground{
     layer: top;
     dock: top;
