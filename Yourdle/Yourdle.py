@@ -208,7 +208,8 @@ class Yourdle(App):
         currentgc = self.query_one("#gc")
         self.mount(currentgc)
 
-
+class CorrectAnswer(Static):
+    pass
 class Win(Message):
     pass
 
