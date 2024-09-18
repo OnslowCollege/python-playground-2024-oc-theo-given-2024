@@ -208,7 +208,7 @@ class Yourdle(App):
         self.mount(InputContainer())
     def on_win(self):
         currentgc = self.query_one("#gc")
-        currentwg = self.query_one("c")
+        currentwg = self.query_one("c" + )
         self.mount(currentgc)
 
 class CorrectAnswer(Static):
