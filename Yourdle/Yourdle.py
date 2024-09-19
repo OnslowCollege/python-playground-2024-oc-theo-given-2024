@@ -207,10 +207,8 @@ class Yourdle(App):
         self.mount(GuessContainer(id="gc"))
         self.mount(InputContainer())
     def on_win(self):
-        currentgc = self.query_one("#gc")
         currentwg = self.query_one("#c" + str(user_tries))
         currentwg.disabled = True
-        self.mount(currentgc)
 
 class CorrectAnswer(Static):
     def compose(self) -> ComposeResult:
