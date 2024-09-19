@@ -113,8 +113,8 @@ Static:disabled{
 }
 
 .incorrect{
-    background: rgb(200, 0, 0);
-    border: tall rgb(255, 0, 0);
+    background: rgb(160, 0, 0);
+    border: tall rgb(220, 0, 0);
 }
 
 InputContainer{
