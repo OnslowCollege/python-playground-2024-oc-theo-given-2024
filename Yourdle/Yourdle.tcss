@@ -108,7 +108,7 @@ Static:disabled{
 }
 
 .wrongspot{
-    background: rgb(200, 200, 0);
+    background: rgb(220, 200, 0);
     border: tall rgb(255, 255, 0);
 }
 
