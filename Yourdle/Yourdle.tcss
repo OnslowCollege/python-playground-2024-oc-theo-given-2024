@@ -107,9 +107,10 @@ Static:disabled{
     opacity: 100%
 }
 
-.wrongspot{
-    background: rgb(235, 225, 0);
+.wrongspot:disabled{
+    background: rgb(220, 220, 0);
     border: tall rgb(255, 255, 0);
+    opacity: 85%;
 }
 
 .incorrect{
