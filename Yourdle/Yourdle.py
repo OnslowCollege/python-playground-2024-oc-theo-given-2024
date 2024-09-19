@@ -203,8 +203,10 @@ class Yourdle(App):
         yield UserQueryBackground()
     
     def on_create(self):
+        #Tells me the answer to the current game (Will be removed after)
         self.mount(CorrectAnswer())
-        self.mount(GuessContainer(id="gc"))
+        #Adding the guess container and button containers
+        self.mount(GuessContainer())
         self.mount(InputContainer())
     def on_win(self):
         currentwg = self.query_one("#c" + str(user_tries))
