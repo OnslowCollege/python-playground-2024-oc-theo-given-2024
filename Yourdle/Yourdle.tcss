@@ -108,8 +108,8 @@ Static:disabled{
 }
 
 .wrongspot{
-    background: rgb(255, 200, 0);
-    border: tall rgb(255, 255, 0);
+    background: rgb(235, 235, 200);
+    border: tall rgb(255, 255, 150);
 }
 
 .incorrect{
