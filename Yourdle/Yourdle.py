@@ -76,10 +76,10 @@ class UserQueryBackground(Static):
             self.post_message(Create())
 class UserQuery(Static):
     def compose(self):
-        yield Static("Enter the number of guesses you would like!", classes="b1 text")
+        yield Label("Enter the number of guesses you would like!", classes="b1 text")
         for i in range(3, 11):
             yield UserQueryInput(str(i), id ="b1"+str(i), classes = "b1")
-        yield Static("Enter the length of the word you'll guess!", classes="b2 text")
+        yield Label("Enter the length of the word you'll guess!", classes="b2 text")
         for i in range(3, 8):
             yield UserQueryInput(str(i),id ="b2"+str(i),classes = "b2")
 class UserQueryInput(Button):
