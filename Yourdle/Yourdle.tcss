@@ -101,10 +101,10 @@ UserQueryInput{
 
 
 .text{
-    dock: top;
+    layer: top;
     content-align: center top;
     width: 100%;
-    height: 20%;
+    height: 100%;
 }
 
 
