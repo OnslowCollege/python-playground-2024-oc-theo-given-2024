@@ -14,7 +14,7 @@ from letter_list_7 import word_list_7
 from textual import events
 from textual.app import App, ComposeResult
 from textual.message import Message
-from textual.widgets import Button, Static
+from textual.widgets import Button, Static, Label
 
 #Dictionary containing all the word lists for easy access
 word_lists = {
