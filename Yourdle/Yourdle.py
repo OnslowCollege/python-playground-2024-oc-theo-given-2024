@@ -220,7 +220,6 @@ class CorrectAnswer(Static):
 class Win(Message):
     pass
 
-
 class GuessContainer(Static):
     def compose(self) -> ComposeResult:
         for i in range(num_tries):
