@@ -64,6 +64,17 @@ UserQueryBackground{
     align: center middle;
 }
 
+WinBackground{
+    layer: top;
+    dock: top;
+    height: 100%;
+    width: 100%;
+    background: rgb(50, 50, 50);
+    align: center middle;
+}
+
+
+
 UserQuery{
     width: 90%;
     height: 70%;
@@ -107,7 +118,7 @@ Static:disabled{
     opacity: 100%
 }
 
-.wrongspot:disabled{
+.wrongspot{
     background: rgb(220, 220, 0);
     border: tall rgb(255, 255, 0);
     opacity: 85%;

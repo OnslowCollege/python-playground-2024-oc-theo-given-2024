@@ -220,12 +220,12 @@ class CorrectAnswer(Static):
 class Win(Message):
     pass
 
-class WinScreen(Static):
+class WinBackground(Static):
     def compose(self):
         yield CorrectGuessesContainer()
 
 class CorrectGuessesContainer(Static):
-    
+
 
 class GuessContainer(Static):
     def compose(self) -> ComposeResult:
