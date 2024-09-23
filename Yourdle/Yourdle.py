@@ -223,9 +223,11 @@ class Win(Message):
 
 class WinBackground(Static):
     def compose(self):
-        yield CorrectGuessesContainer()
+        yield WinContainer()
 
-class 
+class WinContainer(Static):
+    def compose(self):
+        yield CorrectGuessesContainer()
 class CorrectGuessesContainer(Static):
     pass
 
