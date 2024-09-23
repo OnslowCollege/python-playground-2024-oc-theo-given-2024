@@ -95,15 +95,15 @@ UserQueryInput{
     width: 1fr;
     margin: 1;
     height: 1fr;
-    min-width: 1;
+    min-width: 0;
     align: center middle;
+    layer: top;
 }
 
 
 .text{
-    display: none;
+    display: block;
     dock: top;
-    layer: top;
     content-align: center top;
     width: 100%;
     height: 100%;
