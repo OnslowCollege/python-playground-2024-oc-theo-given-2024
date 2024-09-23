@@ -211,6 +211,7 @@ class Yourdle(App):
     def on_win(self):
         currentwg = self.query_one("#c" + str(user_tries))
         currentwg.disabled = True
+        self.mount(WinBackground())
 
 class CorrectAnswer(Static):
     def compose(self) -> ComposeResult:
@@ -224,7 +225,9 @@ class WinBackground(Static):
     def compose(self):
         yield CorrectGuessesContainer()
 
+class 
 class CorrectGuessesContainer(Static):
+    pass
 
 
 class GuessContainer(Static):
