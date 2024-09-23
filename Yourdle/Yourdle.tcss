@@ -86,7 +86,7 @@ UserQuery{
     width: 90%;
     height: 70%;
     layout: horizontal;
-    align: center middle;
+    align: center top;
     background: rgb(75, 75, 75);
     border: tall rgb(100, 100, 100);
 }
