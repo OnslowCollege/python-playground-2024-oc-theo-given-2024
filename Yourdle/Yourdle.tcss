@@ -101,8 +101,9 @@ UserQueryInput{
 
 
 .text{
+    display:block;
+    dock: top;
     layer: top;
-    
     width: 100%;
     height: 1;
 }
