@@ -212,6 +212,7 @@ class Yourdle(App):
         currentwg = self.query_one("#c" + str(user_tries))
         currentwg.disabled = True
         self.query_one(CorrectAnswer).add_class("hide")
+        #Hiding the original shti
         self.query_one(GuessContainer).add_class("hide")
         self.query_one(InputContainer).add_class("hide")
         self.mount(WinBackground())
