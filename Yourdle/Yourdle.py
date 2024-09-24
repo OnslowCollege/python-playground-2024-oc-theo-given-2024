@@ -211,6 +211,9 @@ class Yourdle(App):
     def on_win(self):
         currentwg = self.query_one("#c" + str(user_tries))
         currentwg.disabled = True
+        self.query_one(CorrectAnswer).add_class("hide")
+        self.query_one(GuessContainer).add_class("hide")
+        self.query_one(InputContainer).add_class("hide")
         self.mount(WinBackground())
 
 class CorrectAnswer(Static):

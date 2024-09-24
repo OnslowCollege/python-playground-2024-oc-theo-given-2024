@@ -12,7 +12,7 @@ Screen {
 }
 
 .hide{
-    display:none;
+    display: none;
 }
 
 WordGuess {
