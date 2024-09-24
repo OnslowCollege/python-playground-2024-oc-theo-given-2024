@@ -76,7 +76,6 @@ WinContainer{
     align: center middle;
     background: rgb(75, 75, 75);
     border: tall rgb(100, 100, 100);
-    offset: 1 1;
 }
 
 UserQuery{
