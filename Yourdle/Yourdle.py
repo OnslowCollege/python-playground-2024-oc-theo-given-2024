@@ -230,7 +230,7 @@ class WinContainer(Static):
         yield CorrectGuessesContainer()
 class CorrectGuessesContainer(Static):
     def compose(self):
-        yield Static("You win! Here's the guesses you made!",classes="text")
+        yield Label("You win! Here's the guesses you made!",classes="text")
 
 
 class GuessContainer(Static):
