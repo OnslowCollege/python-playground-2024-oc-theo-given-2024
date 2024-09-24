@@ -235,8 +235,11 @@ class WinContainer(Static):
 class CorrectGuessesContainer(Static):
     def compose(self):
         yield Label("You win! Here's the guesses you made!",classes="text")
+        yield 
 
-
+class WinGuess(Static):
+    def compose(self):
+        
 class GuessContainer(Static):
     def compose(self) -> ComposeResult:
         for i in range(num_tries):
