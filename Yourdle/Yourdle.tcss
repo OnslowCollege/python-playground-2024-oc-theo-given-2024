@@ -83,15 +83,16 @@ UserQueryBackground{
 }
 
 WinBackground{
-    height: 100%;
+    height: auto;
     width: 100%;
     background: rgb(50, 50, 50);
     align: center middle;
+    padding: 1;
 }
 
 WinContainer{
     width: 90%;
-    height: 70%;
+    height: auto;
     layout: vertical;
     align: center top;
     background: rgb(75, 75, 75);
