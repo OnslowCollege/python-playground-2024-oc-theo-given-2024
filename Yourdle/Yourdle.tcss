@@ -25,6 +25,16 @@ WordGuess {
     align: center middle;
 }
 
+WordGuessWin{
+    layout: horizontal;
+    background: $boost;
+    height: 5;
+    width: 100%;
+    margin: 1;
+    padding: 1;
+    align: center middle;
+}
+
 .lc{
     height: 100%;
     width: 9;
@@ -36,6 +46,16 @@ WordGuess {
 }
 
 LetterGuess{
+    height: 100%;
+    width: 9;
+    margin: 0;
+    background: rgb(50, 50, 50);
+    border: tall rgb(100, 100, 100);
+    text-align: center;
+    content-align: center middle;
+}
+
+LetterGuessWin{
     height: 100%;
     width: 9;
     margin: 0;

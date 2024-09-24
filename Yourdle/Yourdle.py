@@ -240,7 +240,7 @@ class CorrectGuessesContainer(Static):
 class WordGuessWin(Static):
     def compose(self):
         for i in range(word_length):
-            yield LetterGuess("", id = ("l" + str(i+1)))
+            yield LetterGuess("", id = ("wl" + str(i+1)))
 
 class LetterGuessWin(Static):
     pass
