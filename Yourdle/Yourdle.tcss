@@ -96,11 +96,12 @@ UserQueryInput{
     height: 1fr;
     min-width: 0;
     align: center middle;
-    layer: top;
+    layer: bottom;
 }
 
 
 .text{
+    content-align: center middle;
     layer: top;
     width: 100%;
     height: 1;
