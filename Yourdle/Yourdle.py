@@ -275,9 +275,7 @@ class WordGuessWin(Static):
         for i in range(word_length):
             yield LetterGuess("", id = ("wl" + str(i+1)))
             try:
-                finallg = self.query_one("#wl" + str(word_length))
-                if self.id == "wc" + str(num_tries-1) and finallg.id == "wl" + str(word_length):
-                    app.post_message(WinLoad())
+                app.post_message(WinLoad())
             except:
                 pass
     def on_new_letter_guess(self, color, letter):
