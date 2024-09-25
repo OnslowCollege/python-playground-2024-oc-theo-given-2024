@@ -120,7 +120,8 @@ class LetterGuess(Static, can_focus = True):
         self.update("")
     def on_win(self):
         global currentwlg
-        postwc = app.query_one(WinBackground).query_one(WinContainer)
+        postwb = app.query_one(WinBackground)
+        postwc = postwb.query_one(WinContainer)
         postcgc = postwc.query_one(CorrectGuessesContainer)
         postwlg = postcgc.query_one("#wc" + str(currentwlg))
         if "correct" in self.classes:
