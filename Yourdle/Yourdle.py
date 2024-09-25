@@ -285,7 +285,7 @@ class WordGuessWin(Static):
         currentwlg = currentwlg + 1
         loadedwlg = self.query_one("wl" + currentwlg)
         loadedwlg.add_class(color)
-        loadedwlg.renderable = letter
+        loadedwlg.update(letter)
 
 class LetterGuessWin(Static):
     pass
