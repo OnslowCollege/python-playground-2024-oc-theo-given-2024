@@ -239,8 +239,8 @@ class NewWordguess(Message):
 
 class NewLetterguess(Message):
     def __init__(self, color) -> None:
-        super().__init__()
         self.color = color
+        super().__init__()
 class WinBackground(Static):
     def compose(self):
         yield WinContainer()
