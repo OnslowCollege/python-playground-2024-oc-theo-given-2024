@@ -117,6 +117,8 @@ class LetterGuess(Static, can_focus = True):
             currentid = int(currentid[1])
     def on_backspace(self):
         self.update("")
+    def on_win(self):
+        
 
 class WordGuess(Static):
     def compose(self) -> ComposeResult:
@@ -197,7 +199,7 @@ class WordGuess(Static):
     def on_win(self):
         for i in range(word_length):
             currentlg = self.query_one("#l" + str(i+1))
-            
+            currentlg.post_message(Win())
 
 
 class Yourdle(App):
