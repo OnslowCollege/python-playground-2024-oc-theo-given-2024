@@ -130,6 +130,7 @@ class LetterGuess(Static, can_focus = True):
             postwlg.post_message(NewLetterGuess("incorrect", self.renderable))
         elif "wrongspot" in self.classes:
             postwlg.post_message(NewLetterGuess("wrongspot", self.renderable))
+        
 class WordGuess(Static):
     def compose(self) -> ComposeResult:
         for i in range(word_length):
@@ -209,7 +210,7 @@ class WordGuess(Static):
     def on_win(self):
         for i in range(word_length):
             currentlg = self.query_one("#l" + str(i+1))
-            currentlg.post_message(Win())
+            currentlg.post_message(Win().stop)
 
 
 class Yourdle(App):
