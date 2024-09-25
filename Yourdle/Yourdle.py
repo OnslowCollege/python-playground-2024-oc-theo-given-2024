@@ -263,7 +263,7 @@ class CorrectGuessesContainer(Static):
             yield WordGuessWin(id=("wc" + str(i)), disabled= True)
             
         for i in range(num_tries):
-            currentwg = app.query_one("#c" + str(i))
+            currentwg = GuessContainer.query_one("#c" + str(i))
             currentwg.post_message(Win())
 
 class WordGuessWin(Static):
