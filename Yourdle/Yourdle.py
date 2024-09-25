@@ -194,6 +194,10 @@ class WordGuess(Static):
                         wrong_chars_list.append(user_guess[i])
                     if wrong_chars_list.count(user_guess[i]) >= 2:
                         wrong_chars_list.remove(user_guess[i])
+    def on_win(self):
+        for i in range(word_length):
+            currentlg = self.query_one("#l" + str(i+1))
+            
 
 
 class Yourdle(App):
