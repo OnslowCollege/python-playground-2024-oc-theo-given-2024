@@ -228,6 +228,11 @@ class CorrectAnswer(Static):
 class Win(Message):
     pass
 
+class NewWordguess(Message):
+    pass
+
+class NewLetterguess(Message):
+    pass
 class WinBackground(Static):
     def compose(self):
         yield WinContainer()
