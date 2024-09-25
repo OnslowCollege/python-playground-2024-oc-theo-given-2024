@@ -276,7 +276,7 @@ class WordGuessWin(Static):
     def on_letter_guess_win(self, color):
         global currentwlg
         currentwlg = currentwlg + 1
-        currentwlg.add_class(color)
+        self.query_one("wl" + currentwlg).add_class(color)
 
 class LetterGuessWin(Static):
     pass
