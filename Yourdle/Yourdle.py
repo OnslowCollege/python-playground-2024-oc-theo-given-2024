@@ -125,7 +125,8 @@ class LetterGuess(Static, can_focus = True):
         postwlg = postcgc.query_one("#wc" + str(currentwlg))
         if "correct" in self.classes:
             postwlg.post_message(NewLetterguess("correct"))
-        
+        elif "incorrect" in self.classes:
+            postwlg.post_message(NewLetterguess("incorrect"))
 
 class WordGuess(Static):
     def compose(self) -> ComposeResult:
