@@ -232,9 +232,7 @@ class Yourdle(App):
         self.query_one(GuessContainer).add_class("hide")
         self.query_one(InputContainer).add_class("hide")
         self.mount(WinBackground())
-        for i in range(num_tries):
-            currentwg = app.query_one("#c" + str(i))
-            currentwg.post_message(Win())
+        
 
 class CorrectAnswer(Static):
     def compose(self) -> ComposeResult:
@@ -263,6 +261,10 @@ class CorrectGuessesContainer(Static):
         yield Label("You win! Here's the guesses you made!",classes="text")
         for i in range(num_tries):
             yield WordGuessWin(id=("wc" + str(i)), disabled= True)
+            
+        for i in range(num_tries):
+            currentwg = app.query_one("#c" + str(i))
+            currentwg.post_message(Win())
 
 class WordGuessWin(Static):
     def compose(self):
