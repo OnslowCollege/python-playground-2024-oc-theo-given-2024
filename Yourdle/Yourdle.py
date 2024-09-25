@@ -251,8 +251,9 @@ class NewWordguess(Message):
     pass
 
 class NewLetterguess(Message):
-    def __init__(self, color) -> None:
+    def __init__(self, color, letter) -> None:
         self.color = color
+        self.letter = letter
         super().__init__()
 class WinBackground(Static):
     def compose(self):
