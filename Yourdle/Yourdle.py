@@ -268,7 +268,9 @@ class WordGuessWin(Static):
         for i in range(word_length):
             yield LetterGuess("", id = ("wl" + str(i+1)))
     def on_letter_guess_win(self, color):
-        
+        global currentwlg
+        currentwlg = currentwlg + 1
+        currentwlg.add_class(color)
 
 class LetterGuessWin(Static):
     pass
