@@ -125,12 +125,13 @@ class LetterGuess(Static, can_focus = True):
         postwc = postwb.query_one(WinContainer)
         postcgc = postwc.query_one(CorrectGuessesContainer)
         postwlg = postcgc.query_one("#wc" + str(currentwlg))
+        currentkey = self.renderable
         if "correct" in self.classes:
-            postwlg.post_message(NewLetterGuess("correct", self.renderable))
+            postwlg.post_message(NewLetterGuess("correct", currentkey))
         elif "incorrect" in self.classes:
-            postwlg.post_message(NewLetterGuess("incorrect", self.renderable))
+            postwlg.post_message(NewLetterGuess("incorrect", currentkey))
         elif "wrongspot" in self.classes:
-            postwlg.post_message(NewLetterGuess("wrongspot", self.renderable))
+            postwlg.post_message(NewLetterGuess("wrongspot", currentkey))
         
 class WordGuess(Static):
     def compose(self) -> ComposeResult:
