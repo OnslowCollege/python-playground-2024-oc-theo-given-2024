@@ -118,6 +118,7 @@ class LetterGuess(Static, can_focus = True):
     def on_backspace(self):
         self.update("")
     def on_win(self):
+        currentwlg = app.query_one(CorrectGuessesContainer).query_one("#wc" + str(i))
         
 
 class WordGuess(Static):
