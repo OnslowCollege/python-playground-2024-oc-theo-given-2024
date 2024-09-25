@@ -127,7 +127,8 @@ class LetterGuess(Static, can_focus = True):
             postwlg.post_message(NewLetterguess("correct"))
         elif "incorrect" in self.classes:
             postwlg.post_message(NewLetterguess("incorrect"))
-
+        elif "wrongspot" in self.classes:
+            postwlg.post_message(NewLetterguess("wrongspot"))
 class WordGuess(Static):
     def compose(self) -> ComposeResult:
         for i in range(word_length):
@@ -266,6 +267,8 @@ class WordGuessWin(Static):
     def compose(self):
         for i in range(word_length):
             yield LetterGuess("", id = ("wl" + str(i+1)))
+    def on_letter_guess_win(self, color):
+        
 
 class LetterGuessWin(Static):
     pass
