@@ -247,10 +247,10 @@ class Win(Message):
 
 class WinLoad(Message):
     pass
-class NewWordguess(Message):
+class NewWordGuess(Message):
     pass
 
-class NewLetterguess(Message):
+class NewLetterGuess(Message):
     def __init__(self, color, letter) -> None:
         self.color = color
         self.letter = letter
@@ -280,10 +280,12 @@ class WordGuessWin(Static):
                     app.post_message(WinLoad())
             except:
                 pass
-    def on_letter_guess_win(self, color):
+    def on_new_letter_guess(self, color, letter):
         global currentwlg
         currentwlg = currentwlg + 1
-        self.query_one("wl" + currentwlg).add_class(color)
+        loadedwlg = self.query_one("wl" + currentwlg)
+        loadedwlg.add_class(color)
+        loadedwlg.renderable = letter
 
 class LetterGuessWin(Static):
     pass
