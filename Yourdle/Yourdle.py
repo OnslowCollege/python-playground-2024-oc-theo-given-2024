@@ -216,6 +216,7 @@ class Yourdle(App):
         self.query_one(GuessContainer).add_class("hide")
         self.query_one(InputContainer).add_class("hide")
         self.mount(WinBackground())
+        for i in range()
 
 class CorrectAnswer(Static):
     def compose(self) -> ComposeResult:
