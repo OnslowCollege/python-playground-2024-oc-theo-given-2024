@@ -42,6 +42,7 @@ wrong_chars_list: list[str] = []
 correct_chars_list: list[str] = []
 dif_chars_list: list[str] = []
 correct_answer = ""
+currentwlg = 0
 
 #TEXTUAL
 currentid: str = ""
@@ -118,7 +119,10 @@ class LetterGuess(Static, can_focus = True):
     def on_backspace(self):
         self.update("")
     def on_win(self):
-        currentwlg = app.query_one(CorrectGuessesContainer).query_one("#wc" + str(i))
+        global currentwlg
+        postwlg = app.query_one(CorrectGuessesContainer).query_one("#wc" + str(currentwlg))
+        if "correct" in self.classes:
+            postwlg.post_message(NewLetterguess("correct"))
         
 
 class WordGuess(Static):
