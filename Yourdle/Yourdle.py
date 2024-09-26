@@ -126,6 +126,7 @@ class LetterGuess(Static, can_focus = True):
         postcgc = postwc.query_one(CorrectGuessesContainer)
         postwlg = postcgc.query_one("#wc" + str(currentwlg))
         currentkey = self.renderable
+        print (currentkey)
         if "correct" in self.classes:
             postwlg.post_message(NewLetterGuess("correct", currentkey))
         elif "incorrect" in self.classes:
