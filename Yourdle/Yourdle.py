@@ -213,7 +213,7 @@ class WordGuess(Static):
     def on_win(self):
         for i in range(word_length):
             currentlg = self.query_one("#l" + str(i+1))
-            currentlg.post_message(Win())
+            #currentlg.post_message(Win())
 
 
 class Yourdle(App):
