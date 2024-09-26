@@ -211,9 +211,11 @@ class WordGuess(Static):
                     if wrong_chars_list.count(user_guess[i]) >= 2:
                         wrong_chars_list.remove(user_guess[i])
     def on_win(self):
+        print("isthishappening")
         for i in range(word_length):
             currentlg = self.query_one("#l" + str(i+1))
             print(currentlg)
+            print("pleasework")
             #currentlg.post_message(Win())
 
 
