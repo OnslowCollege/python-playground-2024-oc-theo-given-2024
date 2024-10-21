@@ -120,7 +120,6 @@ class LetterGuess(Static, can_focus = True):
         self.update("")
     def on_win(self, event):
         global currentwlg
-        event.stop()
         postwb = app.query_one(WinBackground)
         postwc = postwb.query_one(WinContainer)
         postcgc = postwc.query_one(CorrectGuessesContainer)
@@ -133,6 +132,7 @@ class LetterGuess(Static, can_focus = True):
             postwlg.post_message(NewLetterGuess("incorrect", currentkey))
         elif "wrongspot" in self.classes:
             postwlg.post_message(NewLetterGuess("wrongspot", currentkey))
+        event.stop()
         
 class WordGuess(Static):
     def compose(self) -> ComposeResult:
