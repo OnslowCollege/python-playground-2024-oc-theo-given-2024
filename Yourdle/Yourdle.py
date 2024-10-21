@@ -215,7 +215,7 @@ class WordGuess(Static):
         for i in range(word_length):
             currentlg = self.query_one("#l" + str(i+1))
             print(currentlg)
-            #currentlg.post_message(Win())
+            currentlg.post_message(Win())
         event.stop()
 
 
