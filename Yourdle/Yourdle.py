@@ -147,6 +147,7 @@ class WordGuess(Static):
                 currentletter.focus()
                 if letter == "BACKSPACE":
                     currentletter.post_message(Backspace())
+        event.stop()
     def on_show(self):
         if self.id == "c0":
             self.query_one("#l1").focus()
