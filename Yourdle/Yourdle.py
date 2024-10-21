@@ -232,7 +232,7 @@ class Yourdle(App):
         #Adding the guess and button containers
         self.mount(GuessContainer())
         self.mount(InputContainer())
-    def on_win(self):
+    def on_win(self, event):
         currentwg = self.query_one("#c" + str(user_tries))
         currentwg.disabled = True
         self.query_one(CorrectAnswer).add_class("hide")
@@ -240,6 +240,7 @@ class Yourdle(App):
         self.query_one(GuessContainer).add_class("hide")
         self.query_one(InputContainer).add_class("hide")
         self.mount(WinBackground())
+        event.stop()
     def on_win_load(self):
         for i in range(num_tries):
             currentwg = app.query_one(GuessContainer).query_one("#c" + str(i))
