@@ -197,7 +197,7 @@ class WordGuess(Static):
                     correct_chars_list.append(user_guess[i])
                     correct_letters = correct_letters + 1
                     if correct_letters == word_length:
-                        app.query_one(Yourdle).post_message(Win())
+                        app.post_message(Win())
                 elif user_guess[i] == fin_check[i]:
                     guess_chars[fin_check[i]] = guess_chars[fin_check[i]] + 1
                     if guess_chars[fin_check[i]] <= correct_chars[fin_check[i]]:
@@ -211,13 +211,12 @@ class WordGuess(Static):
                         wrong_chars_list.append(user_guess[i])
                     if wrong_chars_list.count(user_guess[i]) >= 2:
                         wrong_chars_list.remove(user_guess[i])
-    def on_win(self):
-        print("isthishappening")
+    def on_win(self, event):
         for i in range(word_length):
             currentlg = self.query_one("#l" + str(i+1))
             print(currentlg)
-            print("pleasework")
             #currentlg.post_message(Win())
+        event.stop()
 
 
 class Yourdle(App):
