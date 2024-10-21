@@ -286,12 +286,12 @@ class WordGuessWin(Static):
                 app.post_message(WinLoad())
             except:
                 pass
-    def on_new_letter_guess(self, color, letter):
+    def on_new_letter_guess(self, event):
         global currentwlg
         currentwlg = currentwlg + 1
         loadedwlg = self.query_one("wl" + currentwlg)
-        loadedwlg.add_class(color)
-        loadedwlg.update(letter)
+        loadedwlg.add_class(event.color)
+        loadedwlg.update(event.letter)
 
 class LetterGuessWin(Static):
     pass
