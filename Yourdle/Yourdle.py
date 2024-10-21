@@ -289,9 +289,10 @@ class WordGuessWin(Static):
     def on_new_letter_guess(self, event):
         global currentwlg
         currentwlg = currentwlg + 1
-        loadedwlg = self.query_one("#wl" + str(currentwlg))
-        loadedwlg.add_class(event.color)
-        loadedwlg.update(event.letter)
+        if currentwlg < word_length:
+            loadedwlg = self.query_one("#wl" + str(currentwlg))
+            loadedwlg.add_class(event.color)
+            loadedwlg.update(event.letter)
 
 class LetterGuessWin(Static):
     pass
