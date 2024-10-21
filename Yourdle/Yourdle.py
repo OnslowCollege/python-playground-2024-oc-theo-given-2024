@@ -197,7 +197,7 @@ class WordGuess(Static):
                     correct_chars_list.append(user_guess[i])
                     correct_letters = correct_letters + 1
                     if correct_letters == word_length:
-                        app.post_message(Win())
+                        Yourdle.post_message(Win())
                 elif user_guess[i] == fin_check[i]:
                     guess_chars[fin_check[i]] = guess_chars[fin_check[i]] + 1
                     if guess_chars[fin_check[i]] <= correct_chars[fin_check[i]]:
