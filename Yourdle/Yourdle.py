@@ -303,7 +303,7 @@ class GuessContainer(Static):
             yield WordGuess(id=("c" + str(i)), disabled= True)
     def on_mount(self):
         self.query_one("#c0").disabled = False
-    def key_enter(self, event):
+    def key_enter(self):
         if valid_guess:
             global user_tries
             self.query_one("#c" + str(user_tries)).disabled = True
