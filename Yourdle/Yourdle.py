@@ -121,13 +121,10 @@ class LetterGuess(Static, can_focus = True):
         currentkey = self.renderable
         print(currentkey)
         if "correct" in self.classes:
-            print("correct")
             postwgw.post_message(NewLetterGuess("correct", currentkey, self))
         elif "incorrect" in self.classes:
-            print("incorrect")
             postwgw.post_message(NewLetterGuess("incorrect", currentkey, self))
         elif "wrongspot" in self.classes:
-            print("wrongspot")
             postwgw.post_message(NewLetterGuess("wrongspot", currentkey, self))
         event.stop()
         
