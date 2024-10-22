@@ -317,7 +317,6 @@ class GuessContainer(Static):
                 app.query_one("#b" + dif_chars_list[i]).variant = "warning"
             for i in range(len(correct_chars_list)):
                 app.query_one("#b" + correct_chars_list[i]).variant ="success"
-        event.stop()
     
 
 class InputContainer(Static):
