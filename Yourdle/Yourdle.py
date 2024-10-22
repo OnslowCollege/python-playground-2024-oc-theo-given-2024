@@ -42,7 +42,6 @@ wrong_chars_list: list[str] = []
 correct_chars_list: list[str] = []
 dif_chars_list: list[str] = []
 correct_answer = ""
-wlgcounter = 0
 
 #TEXTUAL
 currentid: str = ""
@@ -118,7 +117,6 @@ class LetterGuess(Static, can_focus = True):
     def on_backspace(self):
         self.update("")
     def on_win(self, event):
-        global wlgcounter
         postwgw = self.parent
         currentkey = self.renderable
         print(currentkey)
