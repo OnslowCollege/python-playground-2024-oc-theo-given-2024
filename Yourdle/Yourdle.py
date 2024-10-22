@@ -234,6 +234,7 @@ class Yourdle(App):
     def on_win(self, event):
         currentwg = self.query_one("#c" + str(user_tries))
         currentwg.disabled = True
+        #Hiding the answer given at the beginning (Will be removed after)
         self.query_one(CorrectAnswer).add_class("hide")
         #Hiding the original shti
         self.query_one(GuessContainer).add_class("hide")
