@@ -42,7 +42,7 @@ wrong_chars_list: list[str] = []
 correct_chars_list: list[str] = []
 dif_chars_list: list[str] = []
 correct_answer = ""
-currentwlg = 0
+wlgcounter = 0
 
 #TEXTUAL
 currentid: str = ""
@@ -101,7 +101,6 @@ class LetterGuess(Static, can_focus = True):
     def on_key(self, event) -> None:
         letter = event.key.upper()
         global currentid
-        print(letter)
         if self.renderable == "" and letter in letter_list:
             self.update(letter)
             currentid = str(self.id)
@@ -119,19 +118,16 @@ class LetterGuess(Static, can_focus = True):
     def on_backspace(self):
         self.update("")
     def on_win(self, event):
-        global currentwlg
-        postwb = app.query_one(WinBackground)
-        postwc = postwb.query_one(WinContainer)
-        postcgc = postwc.query_one(CorrectGuessesContainer)
-        postwlg = postcgc.query_one("#wc" + str(currentwlg))
-        currentkey = self.id
+        global wlgcounter
+        postwgw = self.parent
+        currentkey = self.renderable
         print(currentkey)
         if "correct" in self.classes:
-            postwlg.post_message(NewLetterGuess("correct", currentkey))
+            postwgw.post_message(NewLetterGuess("correct", currentkey, self))
         elif "incorrect" in self.classes:
-            postwlg.post_message(NewLetterGuess("incorrect", currentkey))
+            postwgw.post_message(NewLetterGuess("incorrect", currentkey, self))
         elif "wrongspot" in self.classes:
-            postwlg.post_message(NewLetterGuess("wrongspot", currentkey))
+            postwgw.post_message(NewLetterGuess("wrongspot", currentkey, self))
         event.stop()
         
 class WordGuess(Static):
@@ -147,7 +143,6 @@ class WordGuess(Static):
                 currentletter.focus()
                 if letter == "BACKSPACE":
                     currentletter.post_message(Backspace())
-        event.stop()
     def on_show(self):
         if self.id == "c0":
             self.query_one("#l1").focus()
@@ -214,7 +209,6 @@ class WordGuess(Static):
     def on_win(self, event):
         for i in range(word_length):
             currentlg = self.query_one("#l" + str(i+1))
-            print(currentlg)
             currentlg.post_message(Win())
         event.stop()
 
@@ -260,9 +254,10 @@ class NewWordGuess(Message):
     pass
 
 class NewLetterGuess(Message):
-    def __init__(self, color, letter) -> None:
+    def __init__(self, color, letter, widget) -> None:
         self.color = color
         self.letter = letter
+        self.widget = widget
         super().__init__()
 class WinBackground(Static):
     def compose(self):
@@ -275,7 +270,7 @@ class CorrectGuessesContainer(Static):
     def compose(self):
         yield Label("You win! Here's the guesses you made!",classes="text")
         for i in range(num_tries):
-            yield WordGuessWin(id=("wc" + str(i)), disabled= True)
+            yield WordGuessWin(id=("wgw" + str(i)), disabled= True)
             
         
 
@@ -283,26 +278,28 @@ class WordGuessWin(Static):
     def compose(self):
         for i in range(word_length):
             #Creating squares for information to be put into
-            yield LetterGuess("", id = ("wl" + str(i+1)))
-            #Telling the app to begin coloring and adding text to the squares
+            yield LetterGuess("", id = ("lgw" + str(i+1)))
+        #Telling the app to begin coloring and adding text to the squares
+        if self.id == "wgw"+str(num_tries-1):
             app.post_message(WinLoad())
     def on_new_letter_guess(self, event):
         #Recieving the info present in a square, and subsequently applying them
-        global currentwlg
-        currentwlg = currentwlg + 1
-        if currentwlg <= word_length:
-            loadedwlg = self.query_one("#wl" + str(currentwlg))
-            loadedwlg.add_class(event.color)
-            loadedwlg.update(event.letter)
+        currentlgw = event.widget
+        currentlgw_id = currentlgw.id
+        currentlgw_pos = currentlgw_id[-1]
+        loadedlgw = self.query_one("#lgw" + str(currentlgw_pos))
+        loadedlgw.add_class(event.color)
+        loadedlgw.update(event.letter)
+        event.stop()
 
-class LetterGuessWin(Static):
-    pass
 class GuessContainer(Static):
     def compose(self) -> ComposeResult:
         for i in range(num_tries):
             yield WordGuess(id=("c" + str(i)), disabled= True)
     def on_mount(self):
         self.query_one("#c0").disabled = False
+    def on_key(self, event):
+        event.stop()
     def key_enter(self):
         if valid_guess:
             global user_tries
