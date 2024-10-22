@@ -282,13 +282,15 @@ class CorrectGuessesContainer(Static):
 class WordGuessWin(Static):
     def compose(self):
         for i in range(word_length):
+            #Creating squares for information to be put into
             yield LetterGuess("", id = ("wl" + str(i+1)))
-            
+            #Telling the app to begin coloring and adding text to the squares
             app.post_message(WinLoad())
     def on_new_letter_guess(self, event):
+        #Recieving the info present in a square, and subsequently applying them
         global currentwlg
         currentwlg = currentwlg + 1
-        if currentwlg < word_length:
+        if currentwlg <= word_length:
             loadedwlg = self.query_one("#wl" + str(currentwlg))
             loadedwlg.add_class(event.color)
             loadedwlg.update(event.letter)
