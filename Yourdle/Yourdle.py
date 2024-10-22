@@ -282,7 +282,7 @@ class WordGuessWin(Static):
             app.post_message(WinLoaded())
     def on_new_letter_guess(self, event):
         #Recieving the info present in a square, and subsequently applying them
-        
+        print("message recieved")
         currentlgw = event.widget
         currentlgw_id = currentlgw.id
         currentlgw_pos = currentlgw_id[-1]
