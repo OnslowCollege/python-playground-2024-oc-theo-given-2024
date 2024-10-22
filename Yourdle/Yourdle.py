@@ -233,7 +233,7 @@ class Yourdle(App):
         self.query_one(InputContainer).add_class("hide")
         self.mount(WinBackground())
         event.stop()
-    def on_win_load(self):
+    def on_win_loaded(self):
         for i in range(num_tries):
             currentwg = app.query_one(GuessContainer).query_one("#c" + str(i))
             currentwg.post_message(Win())
@@ -246,7 +246,7 @@ class CorrectAnswer(Static):
 class Win(Message):
     pass
 
-class WinLoad(Message):
+class WinLoaded(Message):
     pass
 class NewWordGuess(Message):
     pass
@@ -279,9 +279,10 @@ class WordGuessWin(Static):
             yield LetterGuess("", id = ("lgw" + str(i+1)))
         #Telling the app to begin coloring and adding text to the squares
         if self.id == "wgw"+str(num_tries-1):
-            app.post_message(WinLoad())
+            app.post_message(WinLoaded())
     def on_new_letter_guess(self, event):
         #Recieving the info present in a square, and subsequently applying them
+        
         currentlgw = event.widget
         currentlgw_id = currentlgw.id
         currentlgw_pos = currentlgw_id[-1]
