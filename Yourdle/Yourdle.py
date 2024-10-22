@@ -276,7 +276,9 @@ class WordGuessWin(Static):
     def compose(self):
         for i in range(word_length):
             #Creating squares for information to be put into
-            yield LetterGuess("", id = ("lgw" + str(i+1)))
+            currentlg_id = ("lgw" + str(i+1))
+            yield LetterGuess("", id = currentlg_id)
+            self.query_one("#" + currentlg_id).post_message()
         #Telling the app to begin coloring and adding text to the squares
         if self.id == "wgw"+str(num_tries-1):
             app.post_message(WinLoaded())
