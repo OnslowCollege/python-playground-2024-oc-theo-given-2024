@@ -283,10 +283,8 @@ class WordGuessWin(Static):
     def compose(self):
         for i in range(word_length):
             yield LetterGuess("", id = ("wl" + str(i+1)))
-            try:
-                app.post_message(WinLoad())
-            except:
-                pass
+            
+            app.post_message(WinLoad())
     def on_new_letter_guess(self, event):
         global currentwlg
         currentwlg = currentwlg + 1
