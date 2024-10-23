@@ -56,7 +56,7 @@ class UserQueryBackground(Static):
     def compose(self):
         yield UserQuery()
     
-    #
+    #Making the buttons record information and hide themselves once pressed
     def on_button_pressed(self, event):
         button = event.button
         global num_tries
