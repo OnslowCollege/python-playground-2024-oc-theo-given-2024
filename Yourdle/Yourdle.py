@@ -279,8 +279,7 @@ class CorrectGuessesContainer(Static):
         yield Label("You win! Here's the guesses you made!",classes="text")
         for i in range(num_tries):
             yield WordGuessWin(id=("wgw" + str(i)), disabled= True)
-            
-        
+
 
 class WordGuessWin(Static):
     def compose(self):
