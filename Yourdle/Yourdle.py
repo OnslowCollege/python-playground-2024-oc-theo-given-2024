@@ -280,6 +280,7 @@ class CorrectGuessesContainer(Static):
         else:
             yield Label("You lost. Here's the correct answer:",classes="text")
             yield CorrectAnswer()
+        
         if correct_guess == False:
             yield Label("Here's the guesses you made:",classes="text")
         for i in range(user_tries):
@@ -328,7 +329,7 @@ class GuessContainer(Static):
             #Disabling the current slot for words
             self.query_one("#c" + str(user_tries)).disabled = True
             #Causing the end screen sequence after the user runs out of guesses
-            if user_tries+1 == num_tries:
+            if user_tries + 1 == num_tries:
                 correct_guess = False
                 app.post_message(Win())
             else:
