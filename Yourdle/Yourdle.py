@@ -118,9 +118,11 @@ class LetterGuess(Static, can_focus = True):
     def on_backspace(self):
         self.update("")
     def on_win(self, event):
-        postwgw = self.parent
-        postgc = postwgw.parent
-        postwgw_id = postwgw.id
+        postwg = self.parent
+        postgc = postwg.parent
+        postwg_id = postwg.id[-1]
+        postwgw_id = "wgw" + postwg_id
+        postwgw = postgc.query_one(post)
         currentkey = self.renderable
         print(currentkey)
         if "correct" in self.classes:
