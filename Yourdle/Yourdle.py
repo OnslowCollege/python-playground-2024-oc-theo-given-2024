@@ -125,6 +125,7 @@ class LetterGuess(Static, can_focus = True):
         postwgw = postgc.query_one(post)
         currentkey = self.renderable
         print(currentkey)
+        #current problem: not posting to the correct place
         if "correct" in self.classes:
             postwgw.post_message(NewLetterGuess("correct", currentkey, self))
         elif "incorrect" in self.classes:
