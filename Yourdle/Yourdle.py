@@ -320,7 +320,7 @@ class GuessContainer(Static):
         if valid_guess:
             #Establishing global variables
             global user_tries
-            global correct_answer
+            global correct_guess
             #Disabling the current slot for words
             self.query_one("#c" + str(user_tries)).disabled = True
             #Increasing the counter of tries the user has
@@ -331,7 +331,7 @@ class GuessContainer(Static):
                 self.query_one("#c" + str(user_tries)).query_one("#l1").focus()
             #Causing the end screen sequence after the user runs out of guesses
             if user_tries == num_tries:
-                correct_answer = False
+                correct_guess = False
                 app.post_message(Win())
             #Coloring buttons when information about the word is gained
             for i in range(len(wrong_chars_list)):
