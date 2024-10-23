@@ -156,11 +156,12 @@ class WordGuess(Static):
         global valid_guess
         global correct_guess
         valid_guess = True
+        
         for i in range(word_length):
             user_guess = ""
             current_letter = self.query_one("#l"+str(i+1)).renderable
             user_guess = user_guess + str(current_letter)
-            if self.query_one("#l" + str(i+1)).renderable == "":
+            if current_letter == "":
                 valid_guess = False
             
         
