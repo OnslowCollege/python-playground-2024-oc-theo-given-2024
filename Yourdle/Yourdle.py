@@ -28,7 +28,7 @@ word_lists = {
 
 valid_tries = False
 valid_length = False
-correct_guess = True
+correct_guess = False
 valid_guess = False
 valid_letter = False
 user_tries = 0
@@ -199,10 +199,7 @@ class WordGuess(Static):
                     correct_chars_list.append(user_guess[i])
                     correct_letters = correct_letters + 1
                     if correct_letters == word_length:
-                        app.post_message(Win())
-                    #Causing the end screen sequence after the user runs out of guesses
-                    if user_tries == num_tries:
-                        correct_guess = False
+                        correct_guess = True
                         app.post_message(Win())
                 elif user_guess[i] == fin_check[i]:
                     guess_chars[fin_check[i]] = guess_chars[fin_check[i]] + 1
@@ -333,6 +330,9 @@ class GuessContainer(Static):
             self.query_one("#c" + str(user_tries)).disabled = True
             #Increasing the counter of tries the user has
             user_tries = user_tries + 1
+            #Causing the end screen sequence after the user runs out of guesses
+            if user_tries == num_tries and not correct_guess:
+                app.post_message(Win())
             #Enabling and focusing the next slot for words
             if user_tries != num_tries:
                 self.query_one("#c" + str(user_tries)).disabled = False
