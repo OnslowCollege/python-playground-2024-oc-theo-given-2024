@@ -79,6 +79,8 @@ class UserQueryBackground(Static):
             correct_answer = user_word_list[word_index]
             correct_answer = correct_answer.upper()
             self.post_message(Create())
+
+#Widget containing the buttons for choosing settings
 class UserQuery(Static):
     def compose(self):
         yield Label("Enter the number of guesses you would like!", classes="b1 text")
@@ -89,28 +91,35 @@ class UserQuery(Static):
             yield UserQueryInput(str(i),id ="b2"+str(i),classes = "b2")
 class UserQueryInput(Button):
     pass
+#Message sent after settings have been recieved to create the game
 class Create(Message):
     pass
+#Message sent for deleting an inputted letter
 class Backspace(Message):
     pass
+#The widget the contains single letters
 class LetterGuess(Static, can_focus = True):
     def on_load(self):
         self.add_class("letterguess")
-        print(self.id)
+    #Creates a border to show which letter is selected
     def on_focus(self):
         self.add_class("focus")
         global currentfocus
         currentfocus = app.focused
+    #Removes border when unselected
     def on_blur(self):
         self.remove_class("focus")
+    #Event caused when the user inputs a key
     def on_key(self, event) -> None:
         letter = event.key.upper()
         global currentid
+        #Making sure the space isn't full and the key entered is a letter
         if self.renderable == "" and letter in letter_list:
             self.update(letter)
             currentid = str(self.id)
             currentid = int(currentid[1])
             currentid = currentid + 1
+        #
         if letter == "BACKSPACE" and self.renderable == "":
             self.update("")
             currentid = str(self.id)
