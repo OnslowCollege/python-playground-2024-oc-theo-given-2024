@@ -172,7 +172,6 @@ class WordGuess(Static):
             valid_guess = False
         
         if valid_guess:
-            
             user_check = ""
             answer_check = ""
             fin_check = ""
