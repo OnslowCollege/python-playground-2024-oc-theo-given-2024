@@ -69,6 +69,7 @@ class UserQueryBackground(Static):
             self.add_class("hide")
             self.add_class("bottomlayer")
             global correct_answer
+            global user_word_list
             user_word_list = word_lists[word_length]
             word_index = random.randrange(0, len(user_word_list))
             correct_answer = user_word_list[word_index]
@@ -163,7 +164,8 @@ class WordGuess(Static):
             user_guess = user_guess + str(current_letter)
             if current_letter == "":
                 valid_guess = False
-            
+        if user_guess not in user_word_list:
+            valid_guess = False
         
         if valid_guess:
             user_guess = ""
