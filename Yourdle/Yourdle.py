@@ -154,6 +154,7 @@ class WordGuess(Static):
             self.query_one("#l1").focus()
     def key_enter(self):
         global valid_guess
+        global correct_guess
         valid_guess = True
         for i in range(word_length):
             if self.query_one("#l" + str(i+1)).renderable == "":
@@ -198,6 +199,10 @@ class WordGuess(Static):
                     correct_chars_list.append(user_guess[i])
                     correct_letters = correct_letters + 1
                     if correct_letters == word_length:
+                        app.post_message(Win())
+                    #Causing the end screen sequence after the user runs out of guesses
+                    if user_tries == num_tries:
+                        correct_guess = False
                         app.post_message(Win())
                 elif user_guess[i] == fin_check[i]:
                     guess_chars[fin_check[i]] = guess_chars[fin_check[i]] + 1
@@ -332,10 +337,6 @@ class GuessContainer(Static):
             if user_tries != num_tries:
                 self.query_one("#c" + str(user_tries)).disabled = False
                 self.query_one("#c" + str(user_tries)).query_one("#l1").focus()
-            #Causing the end screen sequence after the user runs out of guesses
-            if user_tries == num_tries:
-                correct_guess = False
-                app.post_message(Win())
             #Coloring buttons when information about the word is gained
             for i in range(len(wrong_chars_list)):
                 app.query_one("#b" + wrong_chars_list[i]).variant = "error"
