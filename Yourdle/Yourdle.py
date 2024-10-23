@@ -118,14 +118,18 @@ class LetterGuess(Static, can_focus = True):
     def on_backspace(self):
         self.update("")
     def on_win(self, event):
-        postwg = self.parent
-        postgc = postwg.parent
-        postwg_id = postwg.id[-1]
-        postwgw_id = "wgw" + postwg_id
-        postwgw = postgc.query_one(post)
+        
+        #current problem: not posting to the correct place
+        #Step 1: Getting id of the parent
+        currentwg = self.parent
+        currentwg_id = currentwg.id[-1]
+        currentwg_id = "wgw" + 
+        
+        
+        postwgw = 
+        
         currentkey = self.renderable
         print(currentkey)
-        #current problem: not posting to the correct place
         if "correct" in self.classes:
             postwgw.post_message(NewLetterGuess("correct", currentkey, self))
         elif "incorrect" in self.classes:
