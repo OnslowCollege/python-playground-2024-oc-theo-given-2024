@@ -281,30 +281,35 @@ class Yourdle(App):
 class CorrectAnswer(Static):
     def compose(self) -> ComposeResult:
         global correct_answer
+        #Creates a container that has the correct answer inside
         for i in range(word_length):
             yield Static(correct_answer[i], classes="lc correct")
 class Win(Message):
+    #Message sent when the game is won
     pass
 
 class WinLoaded(Message):
-    pass
-class NewWordGuess(Message):
+    #Message sent when the win screen widgets have loaded
     pass
 
 class NewLetterGuess(Message):
+    #Message containing information from a letter container
     def __init__(self, color, letter, widget) -> None:
         self.color = color
         self.letter = letter
         self.widget = widget
         super().__init__()
 class WinBackground(Static):
+    #Loading the container inside the win screen
     def compose(self):
         yield WinContainer()
 
 class WinContainer(Static):
+    #Loading the container that contains the past guesses
     def compose(self):
         yield CorrectGuessesContainer()
 class CorrectGuessesContainer(Static):
+    #The container that has past guesses and correct answer if the user lost
     def compose(self):
         if correct_guess == True:
             yield Label("You win! Here's the guesses you made:",classes="text")
@@ -320,6 +325,7 @@ class CorrectGuessesContainer(Static):
 
 
 class WordGuessWin(Static):
+    #The version of the container for letters on the win screen
     def compose(self):
         for i in range(word_length):
             #Creating squares for information to be put into
