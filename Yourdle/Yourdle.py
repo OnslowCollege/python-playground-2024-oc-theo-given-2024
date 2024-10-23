@@ -118,15 +118,13 @@ class LetterGuess(Static, can_focus = True):
     def on_backspace(self):
         self.update("")
     def on_win(self, event):
-        
-        #current problem: not posting to the correct place
-        #Step 1: Getting id of the parent
+        #Getting id of the parent
         currentwg = self.parent
         currentwg_id = currentwg.id[-1]
         currentwg_id = "#wgw" + currentwg_id
-        #Step 2: Searching for the widget with the corresponding id
+        #Searching for the widget with the corresponding id
         postwgw = app.query_one(currentwg_id)
-        
+        #Posting information to the "win screen version" of the parent
         currentkey = self.renderable
         print(currentkey)
         if "correct" in self.classes:
@@ -135,6 +133,7 @@ class LetterGuess(Static, can_focus = True):
             postwgw.post_message(NewLetterGuess("incorrect", currentkey, self))
         elif "wrongspot" in self.classes:
             postwgw.post_message(NewLetterGuess("wrongspot", currentkey, self))
+        #Preventing unnecessary event bubbling
         event.stop()
         
 class WordGuess(Static):
