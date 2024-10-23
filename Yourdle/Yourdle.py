@@ -289,7 +289,7 @@ class WordGuessWin(Static):
             print (currentlg_id)
             yield LetterGuess("", id = currentlg_id)
         #Telling the app to begin coloring and adding text to the squares
-        if self.id == "wgw"+str(user_tries):
+        if self.id == "wgw"+str(user_tries-1):
             app.post_message(WinLoaded())
     def on_load(self):
         for i in range(word_length):
