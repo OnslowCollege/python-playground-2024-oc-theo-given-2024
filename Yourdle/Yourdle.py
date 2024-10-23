@@ -159,6 +159,7 @@ class WordGuess(Static):
         for i in range(word_length):
             if self.query_one("#l" + str(i+1)).renderable == "":
                 valid_guess = False
+            
         
         if valid_guess:
             user_guess = ""
