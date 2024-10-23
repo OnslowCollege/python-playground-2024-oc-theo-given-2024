@@ -279,7 +279,6 @@ class WordGuessWin(Static):
             currentlg_id = ("lgw" + str(i+1))
             print (currentlg_id)
             yield LetterGuess("", id = currentlg_id)
-            print("LetterGuess has Loaded")
             self.query_one("#" + currentlg_id).post_message(Win())
         #Telling the app to begin coloring and adding text to the squares
         if self.id == "wgw"+str(num_tries-1):
