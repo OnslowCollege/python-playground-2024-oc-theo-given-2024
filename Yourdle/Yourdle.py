@@ -158,20 +158,20 @@ class WordGuess(Static):
         global correct_guess
         valid_guess = True
         
+        #Creating a variable with the users current guess
+        user_guess = ""
         for i in range(word_length):
-            user_guess = ""
             current_letter = self.query_one("#l"+str(i+1)).renderable
             user_guess = user_guess + str(current_letter)
+            #Making the guess invalid if a letter is blank
             if current_letter == "":
                 valid_guess = False
+        
+        #Making the guess invalid if the guess isn't in the word list
         if user_guess not in user_word_list:
             valid_guess = False
         
         if valid_guess:
-            user_guess = ""
-            for i in range(word_length):
-                current_letter = self.query_one("#l"+str(i+1)).renderable
-                user_guess = user_guess + str(current_letter)
             
             user_check = ""
             answer_check = ""
