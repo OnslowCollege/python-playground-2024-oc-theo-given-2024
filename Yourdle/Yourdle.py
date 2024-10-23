@@ -119,7 +119,7 @@ class LetterGuess(Static, can_focus = True):
             currentid = str(self.id)
             currentid = int(currentid[1])
             currentid = currentid + 1
-        #
+        #Removing letters when backspace is pressed
         if letter == "BACKSPACE" and self.renderable == "":
             self.update("")
             currentid = str(self.id)
