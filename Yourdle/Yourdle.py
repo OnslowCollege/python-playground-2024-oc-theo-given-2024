@@ -232,7 +232,7 @@ class Yourdle(App):
         self.mount(GuessContainer())
         self.mount(InputContainer())
     def on_win(self, event):
-        currentwg = self.query_one("#c" + str(user_tries-1))
+        currentwg = self.query_one("#c" + str(user_tries))
         currentwg.disabled = True
         #Hiding the answer given at the beginning (Will be removed after)
         self.query_one(CorrectAnswer).add_class("hide")
