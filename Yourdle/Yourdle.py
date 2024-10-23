@@ -284,7 +284,7 @@ class WordGuessWin(Static):
         #Telling the app to begin coloring and adding text to the squares
         if self.id == "wgw"+str(num_tries-1):
             app.post_message(WinLoaded())
-    def on_win_loaded(self):
+    def on_load(self):
         for i in range(word_length):
             currentlg_id = ("lgw" + str(i+1))
             self.query_one("#" + currentlg_id).post_message(Win())
