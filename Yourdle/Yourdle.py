@@ -217,11 +217,13 @@ class WordGuess(Static):
             for i in range(word_length):
                 if user_guess[i] == correct_answer[i]:
                     self.query_one("#l"+str(i+1)).add_class("correct")
-                    #Creating 
+                    #Creating a list of correct letters for coloring buttons
                     correct_chars_list.append(user_guess[i])
                     correct_letters = correct_letters + 1
+                    #Checking if the user's guess is the correct answer
                     if correct_letters == word_length:
                         correct_guess = True
+                        #Telling the game to create the win screen
                         app.post_message(Win())
                 elif user_guess[i] == fin_check[i]:
                     guess_chars[fin_check[i]] = guess_chars[fin_check[i]] + 1
@@ -237,9 +239,11 @@ class WordGuess(Static):
                     if wrong_chars_list.count(user_guess[i]) >= 2:
                         wrong_chars_list.remove(user_guess[i])
     def on_win(self, event):
+        #Sending the win message to all children
         for i in range(word_length):
             currentlg = self.query_one("#l" + str(i+1))
             currentlg.post_message(Win())
+        #Preventing unnecessary event bubbling
         event.stop()
 
 
@@ -247,6 +251,7 @@ class Yourdle(App):
     CSS_PATH = "Yourdle.tcss"
 
     def compose(self) -> ComposeResult:
+        #Creating the background for the user to enter game settings
         yield UserQueryBackground()
     
     def on_create(self):
