@@ -26,14 +26,9 @@ word_lists = {
 
 #Setting Variables
 
-valid_tries = False
-valid_length = False
 correct_guess = False
 valid_guess = False
-valid_letter = False
 user_tries = 0
-previous_guesses = ""
-colored_guess = ""
 user_check = ""
 answer_check = ""
 fin_check = ""
@@ -336,6 +331,7 @@ class WordGuessWin(Static):
         if self.id == "wgw"+str(user_tries-1):
             app.post_message(WinLoaded())
     def on_load(self):
+        #Telling the letter containers to send their information
         for i in range(word_length):
             currentlg_id = ("lgw" + str(i+1))
             self.query_one("#" + currentlg_id).post_message(Win())
@@ -352,11 +348,14 @@ class WordGuessWin(Static):
 
 class GuessContainer(Static):
     def compose(self) -> ComposeResult:
+        #Creating word containers
         for i in range(num_tries):
             yield WordGuess(id=("c" + str(i)), disabled= True)
     def on_mount(self):
+        #Allowing the first word container to be typed into
         self.query_one("#c0").disabled = False
     def on_key(self, event):
+        #Preventing unnecessary event bubbling
         event.stop()
     def key_enter(self):
         if valid_guess:
@@ -385,6 +384,7 @@ class GuessContainer(Static):
 
 class InputContainer(Static):
     def compose(self) -> ComposeResult:
+        #Creating buttons for every letter
         yield Button("Q", id = "bQ", classes="Ib")
         yield Button("W", id = "bW", classes="Ib")
         yield Button("E", id = "bE", classes="Ib")
@@ -412,123 +412,13 @@ class InputContainer(Static):
         yield Button("N", id = "bN", classes="Ib")
         yield Button("M", id = "bM", classes="Ib")
     def on_button_pressed(self, event):
+        #Sending a key event when a button is pressed
         letter = event.button.id[1]
 
         currentfocus.post_message(events.Key(key=letter,character=letter))
 
 
 if __name__ == "__main__":
+    #Running the app
     app = Yourdle()
     app.run()
-
-
-
-#Selecting the word list of the users choice.
-
-
-#Randomly selecting a word from the aforementioned list to be the answer.
-
-
-#Choosing the answer (For testing purposes)
-
-
-#Runs while the user still has guesses and they haven't yet guessed correctly
-#while user_tries != num_tries and not correct_guess:
-    #Runs until the user inputs a guess that is valid
-    #while not valid_guess:
-        #try:
-            #if num_tries-user_tries == 1:
-                #user_guess = str(input("Enter your final guess: "))
-            #else:
-                #user_guess = str(input("Enter your guess: "))
-            #user_guess = user_guess.upper()
-            #if len(user_guess) == word_length:
-                #valid_guess = True
-                #Makes sure all characters in the answer are letters
-                #for i in range(word_length):
-                    #valid_letter = False
-                    #for j in range(len(letter_list)):
-                        #if user_guess[i] == letter_list[j]:
-                            #valid_letter = True
-                    #if not valid_letter:
-                        #valid_guess = False
-                    #valid_letter = False
-                #if not valid_guess:
-                    #print("Invalid Input.")
-                #print("")
-            #else:
-                #print("Invalid Input.")
-                #print("")
-        #except ValueError:
-            #print("Invalid Input.")
-            #print("")
-    #Runs if the user guesses the correct word.
-    #if user_guess == correct_answer:
-        #correct_guess = True
-        #Printing the user's last guess
-        #for i in range(word_length):
-            #colored_guess = colored_guess + makegreen(user_guess[i])
-        #previous_guesses = previous_guesses + colored_guess + "\n"
-        #print (previous_guesses)
-        #print ("You guessed correctly!")
-    #Runs if the user guesses an incorrect word
-    #else:
-        #Resets the valid guess boolean for the next guess
-        #valid_guess = False
-        #Increases the number of attempts the user has had by 1
-        #user_tries = user_tries + 1
-        
-        #Removes correct letters from the answer and user guess for comparison
-        
-        
-        #Looks for each character of the trimmed user input
-        
-        
-        #Puts each character of the answer check into a dictionary
-        
-        #Creates a dictionary with each character in fin_check
-        
-        #Colors their guess and adds it to a string with all previous guesses
-        #Also, adds all characters absent from the answer into a list.
-        #for i in range(word_length):
-            #if user_guess[i] == correct_answer[i]:
-                #colored_guess = colored_guess + makegreen(user_guess[i])
-            #elif user_guess[i] == fin_check[i]:
-                #guess_chars[fin_check[i]] = guess_chars[fin_check[i]] + 1
-                #if guess_chars[fin_check[i]] <= correct_chars[fin_check[i]]:
-                    #colored_guess = colored_guess + makeyellow(user_guess[i])
-                #else:
-                    #colored_guess = colored_guess + makered(user_guess[i])
-            #else:
-                #colored_guess = colored_guess + makered(user_guess[i])
-                #if user_guess[i] not in correct_answer:
-                    #wrong_chars_list.append(makered(user_guess[i]))
-                #if wrong_chars_list.count(makered(user_guess[i])) >= 2:
-                    #wrong_chars_list.remove(makered(user_guess[i]))
-        #previous_guesses = previous_guesses + colored_guess + "\n"
-        #Shows the user's last guess and all other guesses
-        #print (previous_guesses)
-        #Shows all incorrect characters the user has found so far
-        #print("")
-        #wrong_chars_list.sort()
-        #for i in range(len(wrong_chars_list)):
-            #if i < len(wrong_chars_list)-1:
-                #wrong_chars = wrong_chars + wrong_chars_list[i] + makered(" ")
-            #else:
-                #wrong_chars = wrong_chars + wrong_chars_list[i]
-        #print (wrong_chars)
-        #Resetting variables for the next guess
-        #colored_guess = ""
-        #user_check = ""
-        #answer_check = ""
-        #fin_check = ""
-        #wrong_chars = ""
-        #Tells the user how many tries they have left
-        #if num_tries-user_tries != 0:
-            #if num_tries-user_tries == 1:
-                #print ("You have 1 guess left.")
-            #else:
-                #print (f"You have {num_tries-user_tries} guesses left.")
-#Runs if the user runs out of guesses
-#if user_tries == num_tries:
-    #print(f"No more guesses left! The answer was: {makegreen(correct_answer)}")
