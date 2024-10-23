@@ -28,7 +28,7 @@ word_lists = {
 
 valid_tries = False
 valid_length = False
-correct_guess = False
+correct_guess = True
 valid_guess = False
 valid_letter = False
 user_tries = 0
@@ -232,7 +232,7 @@ class Yourdle(App):
         self.mount(GuessContainer())
         self.mount(InputContainer())
     def on_win(self, event):
-        currentwg = self.query_one("#c" + str(user_tries))
+        currentwg = self.query_one("#c" + str(user_tries-1))
         currentwg.disabled = True
         #Hiding the answer given at the beginning (Will be removed after)
         self.query_one(CorrectAnswer).add_class("hide")
@@ -275,8 +275,10 @@ class WinContainer(Static):
         yield CorrectGuessesContainer()
 class CorrectGuessesContainer(Static):
     def compose(self):
-        yield Label("You win! Here's the guesses you made!",classes="text")
-        
+        if correct_guess == True:
+            yield Label("You win! Here's the guesses you made:",classes="text")
+        else:
+            yield Label("You lost. Here's the guesses you made:",classes="text")
         for i in range(user_tries):
             yield WordGuessWin(id=("wgw" + str(i)), disabled= True)
 
