@@ -163,9 +163,6 @@ class WordGuess(Static):
         for i in range(word_length):
             current_letter = self.query_one("#l"+str(i+1)).renderable
             user_guess = user_guess + str(current_letter)
-            #Making the guess invalid if a letter is blank
-            if current_letter == "":
-                valid_guess = False
         
         #Making the guess invalid if the guess isn't in the word list
         if user_guess not in user_word_list:
