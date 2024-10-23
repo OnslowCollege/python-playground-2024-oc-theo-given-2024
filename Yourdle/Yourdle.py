@@ -229,13 +229,13 @@ class Yourdle(App):
     
     def on_create(self):
         #Tells me the answer to the current game (Will be removed after)
-        self.mount(CorrectAnswer())
+        #self.mount(CorrectAnswer())
         #Adding the guess and button containers
         self.mount(GuessContainer())
         self.mount(InputContainer())
     def on_win(self, event):
         #Hiding the answer given at the beginning (Will be removed after)
-        self.query_one(CorrectAnswer).add_class("hide")
+        #self.query_one(CorrectAnswer).add_class("hide")
         #Hiding the original shti
         self.query_one(GuessContainer).add_class("hide")
         self.query_one(InputContainer).add_class("hide")
