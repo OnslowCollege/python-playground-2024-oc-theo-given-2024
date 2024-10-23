@@ -297,13 +297,13 @@ class WordGuessWin(Static):
             self.query_one("#" + currentlg_id).post_message(Win())
     def on_new_letter_guess(self, event):
         #Recieving the info present in a square, and subsequently applying them
-        print("message recieved")
         currentlgw = event.widget
         currentlgw_id = currentlgw.id
         currentlgw_pos = currentlgw_id[-1]
         loadedlgw = self.query_one("#lgw" + str(currentlgw_pos))
         loadedlgw.add_class(event.color)
         loadedlgw.update(event.letter)
+        #Preventing unnecessary event bubbling 
         event.stop()
 
 class GuessContainer(Static):
