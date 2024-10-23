@@ -244,7 +244,7 @@ class Yourdle(App):
         event.stop()
     def on_win_loaded(self, event):
         for i in range(num_tries):
-            currentwg = app.query_one(GuessContainer).query_one("#c" + str(i))
+            currentwg = app.query_one("#c" + str(i))
             currentwg.post_message(Win())
         event.stop()
 
