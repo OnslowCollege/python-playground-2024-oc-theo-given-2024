@@ -279,7 +279,7 @@ class CorrectGuessesContainer(Static):
             yield Label("You win! Here's the guesses you made:",classes="text")
         else:
             yield Label("You lost. Here's the correct answer:",classes="text")
-            
+            yield CorrectAnswer()
         if correct_guess == False:
             yield Label("Here's the guesses you made:",classes="text")
         for i in range(user_tries):
