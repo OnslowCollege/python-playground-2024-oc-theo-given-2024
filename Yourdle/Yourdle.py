@@ -129,6 +129,7 @@ class LetterGuess(Static, can_focus = True):
             self.update("")
             currentid = str(self.id)
             currentid = int(currentid[1])
+    #Removes letters when the container for all the letters is selected
     def on_backspace(self):
         self.update("")
     def on_win(self, event):
@@ -152,11 +153,13 @@ class LetterGuess(Static, can_focus = True):
         
 class WordGuess(Static):
     def compose(self) -> ComposeResult:
+        #Creating spaces for letters
         for i in range(word_length):
             yield LetterGuess("", id = ("l" + str(i+1)))
     def on_key(self, event) -> None:
         letter = event.key.upper()
         global currentid
+        #For using backspace when the container for the letters is selected
         if letter in letter_list or letter == "BACKSPACE":  # noqa: SIM102
             if int(currentid) != word_length + 1 and int(currentid) != 0:
                 currentletter = self.query_one("#l" + str(currentid))
@@ -164,6 +167,7 @@ class WordGuess(Static):
                 if letter == "BACKSPACE":
                     currentletter.post_message(Backspace())
     def on_show(self):
+        #Selects the first letter of the first word when the game is created
         if self.id == "c0":
             self.query_one("#l1").focus()
     def key_enter(self):
@@ -182,6 +186,7 @@ class WordGuess(Static):
             valid_guess = False
         
         if valid_guess:
+            #Calulcating the color of each letter
             user_check = ""
             answer_check = ""
             fin_check = ""
@@ -212,6 +217,7 @@ class WordGuess(Static):
             for i in range(word_length):
                 if user_guess[i] == correct_answer[i]:
                     self.query_one("#l"+str(i+1)).add_class("correct")
+                    #Creating 
                     correct_chars_list.append(user_guess[i])
                     correct_letters = correct_letters + 1
                     if correct_letters == word_length:
