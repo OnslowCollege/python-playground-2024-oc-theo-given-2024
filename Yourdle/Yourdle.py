@@ -119,6 +119,8 @@ class LetterGuess(Static, can_focus = True):
         self.update("")
     def on_win(self, event):
         postwgw = self.parent
+        postgc = postwgw.parent
+        postwgw_id = postwgw.id
         currentkey = self.renderable
         print(currentkey)
         if "correct" in self.classes:
