@@ -14,7 +14,7 @@ from letter_list_7 import word_list_7
 from textual import events
 from textual.app import App, ComposeResult
 from textual.message import Message
-from textual.widgets import Button, Static, Label
+from textual.widgets import Button, Label, Static
 
 #Dictionary containing all the word lists for easy access
 word_lists = {
@@ -42,17 +42,21 @@ wrong_chars_list: list[str] = []
 correct_chars_list: list[str] = []
 dif_chars_list: list[str] = []
 correct_answer = ""
-
-#TEXTUAL
 currentid: str = ""
 word_length = 0
 num_tries = 0
+
+#Creating the background for asking the user's chosen settings at the beginning
 class UserQueryBackground(Static):
+    
     class Create(Message):
         """Message sent when inputs are ready to be created."""
     
+    #Creating the widget containing the buttons
     def compose(self):
         yield UserQuery()
+    
+    #
     def on_button_pressed(self, event):
         button = event.button
         global num_tries
