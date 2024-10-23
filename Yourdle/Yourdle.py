@@ -263,15 +263,19 @@ class Yourdle(App):
     def on_win(self, event):
         #Hiding the answer given at the beginning (Will be removed after)
         #self.query_one(CorrectAnswer).add_class("hide")
-        #Hiding the original shti
+        #Hiding the game containers
         self.query_one(GuessContainer).add_class("hide")
         self.query_one(InputContainer).add_class("hide")
+        #Creating the win screen
         self.mount(WinBackground())
+        #Preventing unnecessary event bubbling
         event.stop()
     def on_win_loaded(self, event):
+        #Telling the word containers to beam their info to the win screen
         for i in range(user_tries):
             currentwg = app.query_one("#c" + str(i))
             currentwg.post_message(Win())
+        #Preventing unnecessary event bubbling
         event.stop()
 
 class CorrectAnswer(Static):
