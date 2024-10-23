@@ -227,7 +227,7 @@ class Yourdle(App):
     
     def on_create(self):
         #Tells me the answer to the current game (Will be removed after)
-        self.mount(CorrectAnswer())
+        #self.mount(CorrectAnswer())
         #Adding the guess and button containers
         self.mount(GuessContainer())
         self.mount(InputContainer())
