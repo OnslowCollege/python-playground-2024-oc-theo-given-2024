@@ -234,10 +234,11 @@ class Yourdle(App):
         self.query_one(InputContainer).add_class("hide")
         self.mount(WinBackground())
         event.stop()
-    def on_win_loaded(self):
+    def on_win_loaded(self, event):
         for i in range(num_tries):
             currentwg = app.query_one(GuessContainer).query_one("#c" + str(i))
             currentwg.post_message(Win())
+        event.stop()
 
 class CorrectAnswer(Static):
     def compose(self) -> ComposeResult:
