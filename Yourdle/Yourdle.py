@@ -123,8 +123,8 @@ class LetterGuess(Static, can_focus = True):
         #Step 1: Getting id of the parent
         currentwg = self.parent
         currentwg_id = currentwg.id[-1]
-        currentwg_id = "wgw" + 
-        
+        currentwg_id = "wgw" + currentwg_id
+        #Step 2: Searching for the widget with the corresponding id
         
         postwgw = 
         
