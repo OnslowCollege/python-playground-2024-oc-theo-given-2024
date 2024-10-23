@@ -243,7 +243,7 @@ class Yourdle(App):
         self.mount(WinBackground())
         event.stop()
     def on_win_loaded(self, event):
-        for i in range(num_tries):
+        for i in range(user_tries):
             currentwg = app.query_one("#c" + str(i))
             currentwg.post_message(Win())
         event.stop()
@@ -277,7 +277,7 @@ class WinContainer(Static):
 class CorrectGuessesContainer(Static):
     def compose(self):
         yield Label("You win! Here's the guesses you made!",classes="text")
-        for i in range(num_tries):
+        for i in range(user_tries):
             yield WordGuessWin(id=("wgw" + str(i)), disabled= True)
 
 
