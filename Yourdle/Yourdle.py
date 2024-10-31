@@ -57,6 +57,7 @@ class UserQueryBackground(Static):
         global num_tries
         global word_length
         if button.id[1] == "1":
+            #Selecting number of tries the user will have
             if len(button.id) == 4:
                 num_tries = int(button.id[2:4])
             else:
@@ -64,15 +65,18 @@ class UserQueryBackground(Static):
             self.query(".b1").add_class("hide")
             self.query(".b2").add_class("show")
         if button.id[1] == "2":
+            #Selecting the length of the word the user will guess
             word_length = int(button.id[2])
             self.add_class("hide")
             self.add_class("bottomlayer")
             global correct_answer
             global user_word_list
+            #Selecting a random word from the word list to be the answer
             user_word_list = word_lists[word_length]
             word_index = random.randrange(0, len(user_word_list))
             correct_answer = user_word_list[word_index]
             correct_answer = correct_answer.upper()
+            #Telling the program to make the game interface
             self.post_message(Create())
 
 #Widget containing the buttons for choosing settings
