@@ -43,16 +43,19 @@ num_tries = 0
 
 #Creating the background for asking the user's chosen settings at the beginning
 class UserQueryBackground(Static):
-    """Background made when"""
+    """Background made for user queries when app is launched."""
+
     class Create(Message):
         """Message sent when inputs are ready to be created."""
     
     #Creating the widget containing the buttons
     def compose(self):
+        """Create child widgets on creation."""
         yield UserQuery()
     
     #Making the buttons record information and hide themselves once pressed
     def on_button_pressed(self, event):
+        """Code run when a button that enters a setting in pressed."""
         button = event.button
         global num_tries
         global word_length
@@ -81,7 +84,10 @@ class UserQueryBackground(Static):
 
 #Widget containing the buttons for choosing settings
 class UserQuery(Static):
+    """Contain buttons for choosing settings."""
+
     def compose(self):
+        """Create child widgets on creation."""
         yield Label("Enter the number of guesses you would like!", classes="b1 text")
         for i in range(3, 11):
             yield UserQueryInput(str(i), id ="b1"+str(i), classes = "b1")
@@ -89,27 +95,33 @@ class UserQuery(Static):
         for i in range(3, 8):
             yield UserQueryInput(str(i),id ="b2"+str(i),classes = "b2")
 class UserQueryInput(Button):
+    """Button used for entering desired settings."""
+
     pass
-#Message sent after settings have been recieved to create the game
 class Create(Message):
+    """Message sent after settings have been recieved to create the game."""
+    
     pass
-#Message sent for deleting an inputted letter
 class Backspace(Message):
+    """Message sent for deleting an inputted letter."""
+    
     pass
-#The widget the contains single letters
 class LetterGuess(Static, can_focus = True):
+    """The widget that contains single letters."""
+    
     def on_load(self):
+        """Give class 'letterguess' for styling purposes."""
         self.add_class("letterguess")
-    #Creates a border to show which letter is selected
     def on_focus(self):
+        """Create a border to show which letter is selected."""
         self.add_class("focus")
         global currentfocus
         currentfocus = app.focused
-    #Removes border when unselected
     def on_blur(self):
+        """Remove border when unselected."""
         self.remove_class("focus")
-    #Event caused when the user inputs a key
     def on_key(self, event) -> None:
+        """Event caused when the user inputs a key."""
         letter = event.key.upper()
         global currentid
         #Making sure the space isn't full and the key entered is a letter
@@ -130,8 +142,10 @@ class LetterGuess(Static, can_focus = True):
             currentid = int(currentid[1])
     #Removes letters when the container for all the letters is selected
     def on_backspace(self):
+        """Set the inside of the widget to be empty on backspace."""
         self.update("")
     def on_win(self, event):
+        """Code run when widget is told the user has won."""
         #Getting id of the parent
         currentwg = self.parent
         currentwg_id = currentwg.id[-1]
