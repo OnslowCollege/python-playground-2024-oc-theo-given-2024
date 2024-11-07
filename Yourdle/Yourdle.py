@@ -267,6 +267,8 @@ class WordGuess(Static):
 
 
 class Yourdle(App):
+    """The app container."""
+
     CSS_PATH = "Yourdle.tcss"
 
     def compose(self) -> ComposeResult:
@@ -275,6 +277,7 @@ class Yourdle(App):
         yield UserQueryBackground()
     
     def on_create(self):
+        """Code run after settings have been entered."""
         #Tells me the answer to the current game (Will be removed after)
         self.mount(CorrectAnswer())
         #Adding the guess and button containers
@@ -301,6 +304,8 @@ class Yourdle(App):
         event.stop()
 
 class CorrectAnswer(Static):
+    """Widget used for displaying the correct answer."""
+
     def compose(self) -> ComposeResult:
         """Create child widgets on creation."""
         global correct_answer
@@ -308,42 +313,49 @@ class CorrectAnswer(Static):
         for i in range(word_length):
             yield Static(correct_answer[i], classes="lc correct")
 class Win(Message):
-    #Message sent when the game is won
+    """Message sent when the game is won."""
+
     pass
 
 class WinLoaded(Message):
-    #Message sent when the win screen widgets have loaded
+    """Message sent when the win screen widgets have loaded."""
+
     pass
 
 class NewLetterGuess(Message):
-    #Message containing information from a letter container
+    """Message containing information from a letter container."""
+
     def __init__(self, color, letter, widget) -> None:
+        """Allow the message to carry information."""
         self.color = color
         self.letter = letter
         self.widget = widget
         super().__init__()
 class WinBackground(Static):
-    #Loading the container inside the win screen
+    """Container used for background inside the win screen."""
+
     def compose(self):
         """Create child widgets on creation."""
         yield WinContainer()
 
 class WinContainer(Static):
-    #Loading the container that contains the past guesses
+    """Container that contains the container of past guesses."""
+
     def compose(self):
         """Create child widgets on creation."""
         yield CorrectGuessesContainer()
 class CorrectGuessesContainer(Static):
-    #The container that has past guesses and correct answer if the user lost
+    """Container that has past guesses and correct answer if the user lost."""
+    
     def compose(self):
         """Create child widgets on creation."""
-        if correct_guess == True:
+        if correct_guess:
             yield Label("You win! Here's the guesses you made:",classes="text")
         else:
             yield Label("You lost. Here's the correct answer:",classes="text")
             yield CorrectAnswer()
         
-        if correct_guess == False:
+        if not correct_guess:
             yield Label("Here's the guesses you made:",classes="text")
         for i in range(user_tries):
             yield WordGuessWin(id=("wgw" + str(i)), disabled= True)
@@ -351,7 +363,8 @@ class CorrectGuessesContainer(Static):
 
 
 class WordGuessWin(Static):
-    #The version of the container for letters on the win screen
+    """Container of a whole word used solely for the win screen."""
+
     def compose(self):
         """Create child widgets on creation."""
         for i in range(word_length):
@@ -363,11 +376,12 @@ class WordGuessWin(Static):
         if self.id == "wgw"+str(user_tries-1):
             app.post_message(WinLoaded())
     def on_load(self):
-        #Telling the letter containers to send their information
+        """Telling the letter containers to send their information."""
         for i in range(word_length):
             currentlg_id = ("lgw" + str(i+1))
             self.query_one("#" + currentlg_id).post_message(Win())
     def on_new_letter_guess(self, event):
+        """Recieve colour and text before applying them to itself."""
         #Recieving the info present in a square, and subsequently applying them
         currentlgw = event.widget
         currentlgw_id = currentlgw.id
@@ -379,18 +393,21 @@ class WordGuessWin(Static):
         event.stop()
 
 class GuessContainer(Static):
+    """Container of all spaces to enter words."""
+
     def compose(self) -> ComposeResult:
         """Create child widgets on creation."""
         #Creating word containers
         for i in range(num_tries):
             yield WordGuess(id=("c" + str(i)), disabled= True)
     def on_mount(self):
-        #Allowing the first word container to be typed into
+        """Allow the first word container to be typed into."""
         self.query_one("#c0").disabled = False
     def on_key(self, event):
-        #Preventing unnecessary event bubbling
+        """Prevent unnecessary event bubbling."""
         event.stop()
     def key_enter(self):
+        """Event caused when the user inputs the enter key."""
         if valid_guess:
             #Establishing global variables
             global user_tries
@@ -416,6 +433,8 @@ class GuessContainer(Static):
     
 
 class InputContainer(Static):
+    """Container of buttons used for inputting characters."""
+
     def compose(self) -> ComposeResult:
         """Create child widgets on creation."""
         #Creating buttons for every letter
@@ -446,6 +465,7 @@ class InputContainer(Static):
         yield Button("N", id = "bN", classes="Ib")
         yield Button("M", id = "bM", classes="Ib")
     def on_button_pressed(self, event):
+        """Code run when a button in this container is pressed."""
         #Sending a key event when a button is pressed
         letter = event.button.id[1]
 
