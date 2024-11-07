@@ -182,8 +182,10 @@ class WordGuess(Static):
                 currentletter.focus()
                 if letter == "BACKSPACE":
                     currentletter.post_message(Backspace())
-        elif letter == "RIGHT":
-            
+        elif letter == "RIGHT" and int(currentid) != word_length + 1:
+            currentletter = self.query_one("#l" + str(currentid))
+            currentletter.focus()
+
     def on_show(self):
         """Event caused when the game screen is shown to the user."""
         #Selects the first letter of the first word when the game is created
