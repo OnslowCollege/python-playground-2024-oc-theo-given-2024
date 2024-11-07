@@ -185,13 +185,16 @@ class WordGuess(Static):
         letter = event.key.upper()
         global currentid
         #For using backspace when the container for the letters is selected
-        if letter in letter_list or letter == "BACKSPACE":  # noqa: SIM102
+        if letter in letter_list or letter == "BACKSPACE":
             if int(currentid) != word_length + 1 and int(currentid) != 0:
                 currentletter = self.query_one("#l" + str(currentid))
                 currentletter.focus()
                 if letter == "BACKSPACE":
                     currentletter.post_message(Backspace())
-        elif letter == "RIGHT" and int(currentid) != word_length + 1:
+        elif letter == "RIGHT" and int(currentid) != word_length + 1:  # noqa: SIM114
+            currentletter = self.query_one("#l" + str(currentid))
+            currentletter.focus()
+        elif letter == "LEFT" and int(currentid) != 0:
             currentletter = self.query_one("#l" + str(currentid))
             currentletter.focus()
 
