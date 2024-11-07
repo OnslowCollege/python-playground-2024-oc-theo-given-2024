@@ -130,13 +130,22 @@ class LetterGuess(Static, can_focus = True):
             currentid = str(self.id)
             currentid = int(currentid[1])
             currentid = currentid + 1
+        #Telling WordGuess to move focus right when the right arrow is pressed
+        elif letter == "RIGHT":
+            currentid = str(self.id)
+            currentid = int(currentid[1])
+            currentid = currentid + 1
+        elif letter == "LEFT":
+            currentid = str(self.id)
+            currentid = int(currentid[1])
+            currentid = currentid - 1
         #Removing letters when backspace is pressed
-        if letter == "BACKSPACE" and self.renderable == "":
+        elif letter == "BACKSPACE" and self.renderable == "":
             self.update("")
             currentid = str(self.id)
             currentid = int(currentid[1])
             currentid = currentid - 1
-        if letter == "BACKSPACE" and self.renderable != "":
+        elif letter == "BACKSPACE" and self.renderable != "":
             self.update("")
             currentid = str(self.id)
             currentid = int(currentid[1])
