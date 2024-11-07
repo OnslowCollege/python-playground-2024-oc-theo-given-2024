@@ -43,7 +43,7 @@ num_tries = 0
 
 #Creating the background for asking the user's chosen settings at the beginning
 class UserQueryBackground(Static):
-    
+    """Background made when"""
     class Create(Message):
         """Message sent when inputs are ready to be created."""
     
