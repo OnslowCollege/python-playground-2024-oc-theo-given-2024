@@ -294,15 +294,15 @@ class Yourdle(App):
     
     def on_create(self):
         """Code run after settings have been entered."""
-        #Tells me the answer to the current game (Will be removed after)
-        self.mount(CorrectAnswer())
+        #Tells me the answer to the current game (Will be commented out)
+        #self.mount(CorrectAnswer())
         #Adding the guess and button containers
         self.mount(GuessContainer())
         self.mount(InputContainer())
     def on_win(self, event):
         """Code run when widget is told the user has won."""
-        #Hiding the answer given at the beginning (Will be removed after)
-        self.query_one(CorrectAnswer).add_class("hide")
+        #Hiding the answer given at the beginning (Will be commented out)
+        #self.query_one(CorrectAnswer).add_class("hide")
         #Hiding the game containers
         self.query_one(GuessContainer).add_class("hide")
         self.query_one(InputContainer).add_class("hide")
