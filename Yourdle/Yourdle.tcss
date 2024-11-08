@@ -1,0 +1,160 @@
+Screen {
+    layout: vertical;
+    layers: bottom top;
+}
+
+.b2{
+    display: none;
+}
+
+.show{
+    display: block;
+}
+
+.hide{
+    display: none;
+}
+
+WordGuess {
+    layout: horizontal;
+    background: $boost;
+    height: 5;
+    min-height: 5;
+    width: 100%;
+    margin: 1;
+    padding: 1;
+    align: center middle;
+}
+
+WordGuessWin{
+    layout: horizontal;
+    background: $boost;
+    height: 5;
+    width: 100%;
+    margin: 1;
+    padding: 1;
+    align: center middle;
+}
+
+.lc{
+    height: 100%;
+    width: 9;
+    margin: 0;
+    background: rgb(50, 50, 50);
+    border: tall rgb(100, 100, 100);
+    text-align: center;
+    content-align: center middle;
+}
+
+LetterGuess{
+    height: 100%;
+    width: 9;
+    margin: 0;
+    background: rgb(50, 50, 50);
+    border: tall rgb(100, 100, 100);
+    text-align: center;
+    content-align: center middle;
+}
+
+CorrectAnswer{
+    layout: horizontal;
+    background: $boost;
+    height: 5;
+    width: 100%;
+    margin: 1;
+    padding: 1;
+    align: center middle;
+}
+
+UserQueryBackground{
+    height: 100%;
+    width: 100%;
+    background: rgb(50, 50, 50);
+    align: center middle;
+}
+
+WinBackground{
+    height: auto;
+    min-height: 100%;
+    width: 100%;
+    background: rgb(50, 50, 50);
+    align: center middle;
+    padding: 1;
+}
+
+WinContainer{
+    width: 90%;
+    height: auto;
+    layout: vertical;
+    align: center top;
+    background: rgb(75, 75, 75);
+    border: tall rgb(100, 100, 100);
+}
+
+UserQuery{
+    width: 90%;
+    height: 70%;
+    layout: horizontal;
+    background: rgb(75, 75, 75);
+    border: tall rgb(100, 100, 100);
+}
+
+UserQueryInput{
+    width: 1fr;
+    margin: 1;
+    height: 1fr;
+    min-width: 0;
+    align: center middle;
+    layer: bottom;
+}
+
+
+.text{
+    content-align: center middle;
+    width: 100%;
+    height: 1;
+}
+
+
+LetterGuess.focus{
+    border: thick rgb(100, 100, 100);
+}
+
+.bottomlayer{
+    layer: bottom;
+}
+
+.correct{
+    background: green;
+    border: tall rgb(44, 169, 44);
+}
+
+Static:disabled{
+    opacity: 100%
+}
+
+.wrongspot{
+    background: rgb(220, 220, 0);
+    border: tall rgb(255, 255, 0);
+    opacity: 85%;
+}
+
+.incorrect{
+    background: rgb(160, 0, 0);
+    border: tall rgb(220, 0, 0);
+}
+
+InputContainer{
+    background: $boost;
+    layout: grid;
+    margin: 1;
+    max-width: 100%;
+    padding: 1;
+    height: auto;
+    grid-size: 7;
+    grid-gutter: 1;
+}
+
+.Ib{
+    width: 1fr;
+}
